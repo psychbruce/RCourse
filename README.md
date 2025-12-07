@@ -1,32 +1,32 @@
 # 《R语言》课程代码文档（2025.12更新）
 
-## 课程大纲（代码文档索引目录）（内容建设中……）
+## 课程大纲与代码文档索引（内容建设中……）
 
 每一章均有单独的代码文档（R Markdown运行导出的HTML网页），点击章节进入相应网页浏览，然后可从右上角“Code” → “Download Rmd”下载原始代码文件。
 
 ### 第一模块：入门与筑基（共4周，8学时）
 
--   [第1章：基础入门（4学时）](/RCourse/Chap01)
--   [第2章：函数对象（2学时）](/RCourse/Chap02)
--   [第3章：数据结构（2学时）](/RCourse/Chap03)
+-   [第1章：基础入门（4学时）](/RCourse/Chap01){target="_blank"}
+-   [第2章：函数对象（2学时）](/RCourse/Chap02){target="_blank"}
+-   [第3章：数据结构（2学时）](/RCourse/Chap03){target="_blank"}
 
 ### 第二模块：处理与操作（共4周，8学时）
 
--   [第4章：字符处理（2学时）](/RCourse/Chap04)
--   [第5章：变量计算（2学时）](/RCourse/Chap05)
--   [第6章：数据操作（4学时）](/RCourse/Chap06)
+-   [第4章：字符处理（2学时）](/RCourse/Chap04){target="_blank"}
+-   [第5章：变量计算（2学时）](/RCourse/Chap05){target="_blank"}
+-   [第6章：数据操作（4学时）](/RCourse/Chap06){target="_blank"}
 
 ### 第三模块：统计与分析（共4周，8学时）
 
--   [第7章：基础统计（2学时）](/RCourse/Chap07)
--   [第8章：方差分析（2学时）](/RCourse/Chap08)
--   [第9章：回归分析（4学时）](/RCourse/Chap09)
+-   [第7章：基础统计（2学时）](/RCourse/Chap07){target="_blank"}
+-   [第8章：方差分析（2学时）](/RCourse/Chap08){target="_blank"}
+-   [第9章：回归分析（4学时）](/RCourse/Chap09){target="_blank"}
 
 ### 第四模块：数据可视化（共4周，8学时）
 
--   [第10章：绘图初阶（4学时）](/RCourse/Chap10)
--   [第11章：绘图中阶（2学时）](/RCourse/Chap11)
--   [第12章：绘图高阶（2学时）](/RCourse/Chap12)
+-   [第10章：绘图初阶（4学时）](/RCourse/Chap10){target="_blank"}
+-   [第11章：绘图中阶（2学时）](/RCourse/Chap11){target="_blank"}
+-   [第12章：绘图高阶（2学时）](/RCourse/Chap12){target="_blank"}
 
 ## 课程目标
 

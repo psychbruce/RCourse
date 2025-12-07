@@ -43,6 +43,7 @@ output:
   .table thead tr th { border-bottom-width: 0px; line-height: 1.2; }
   .table tbody tr td { border-top-width: 0px; line-height: 1.2; }
 </style>
+
 <p style="font-size: 12px">版权声明：本套课程材料开源，使用和分享必须遵守「创作共用许可协议 CC BY-NC-SA」（作者署名-非商业用途使用-以相同方式共享）<img src="https://psychbruce.github.io/img/CC-BY-NC-SA.jpg" width="120px" height="42px" style="float: right" /></p>
 ```
 

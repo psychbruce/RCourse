@@ -6,7 +6,7 @@
 
 ### 第一模块：入门与筑基（共4周，8学时）
 
--   第1章：基础入门（4学时）
+-   [第1章：基础入门（4学时）](/Chap01)
 -   第2章：函数对象（2学时）
 -   第3章：数据结构（2学时）
 
@@ -49,8 +49,8 @@
     -   R包速查参考手册：<https://posit.co/resources/cheatsheets/>
     -   bruceR包在线文档：<https://psychbruce.github.io/bruceR/>
     -   data.table包在线文档：<https://rdatatable.gitlab.io/data.table/>
+    -   ggplot2包在线文档：<https://ggplot2.tidyverse.org/>
+    -   补充资料
         -   data.table与dplyr对比：[English](https://atrebas.github.io/post/2019-03-03-datatable-dplyr/)
         -   data.table与pandas对比：[English](https://atrebas.github.io/post/2020-06-14-datatable-pandas/), [中文](https://cosx.org/2021/01/dt-pd/)
-    -   ggplot2包与R作图参考
-        -   <https://ggplot2.tidyverse.org/>
-        -   <https://r-graph-gallery.com/>
+        -   R作图参考：<https://r-graph-gallery.com/>

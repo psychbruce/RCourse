@@ -1,7 +1,5 @@
 # 《R语言》课程代码文档
 
-华东师范大学心理与认知科学学院《R语言》（专业必修）课程代码文档。
-
 ## 课程大纲（代码文档索引目录）（内容建设中……）
 
 每一章均有单独的代码文档（R Markdown运行导出的HTML网页），点击章节进入相应网页浏览，然后可从右上角“Code” → “Download Rmd”下载原始代码文件。
@@ -50,4 +48,9 @@
     -   RStudio编辑器下载：<https://posit.co/download/rstudio-desktop/>
     -   R包速查参考手册：<https://posit.co/resources/cheatsheets/>
     -   bruceR包在线文档：<https://psychbruce.github.io/bruceR/>
-
+    -   data.table包在线文档：<https://rdatatable.gitlab.io/data.table/>
+        -   data.table与dplyr对比：[English](https://atrebas.github.io/post/2019-03-03-datatable-dplyr/)
+        -   data.table与pandas对比：[English](https://atrebas.github.io/post/2020-06-14-datatable-pandas/), [中文](https://cosx.org/2021/01/dt-pd/)
+    -   ggplot2包与R作图参考
+        -   <https://ggplot2.tidyverse.org/>
+        -   <https://r-graph-gallery.com/>

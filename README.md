@@ -2,7 +2,7 @@
 
 ## 课程大纲与代码文档索引（内容建设中……）
 
-每一章均有单独的代码文档（R Markdown运行导出的HTML网页），点击章节进入相应网页浏览，然后可从右上角“Code” → “Download Rmd”下载原始代码文件。
+[课程大纲 (Syllabus 2026)](https://psychbruce.github.io/RCourse/Syllabus_R-Programming_BaoHWS_2026Spring.pdf) \| [课程云盘资料](https://share.weiyun.com/o0kwn42K)
 
 ### 第一模块：入门与筑基（共4周，8学时）
 
@@ -27,6 +27,8 @@
 -   [第10章：绘图初阶（4学时）](https://psychbruce.github.io/RCourse/Chap10) - 待更新
 -   [第11章：绘图中阶（2学时）](https://psychbruce.github.io/RCourse/Chap11) - 待更新
 -   [第12章：绘图高阶（2学时）](https://psychbruce.github.io/RCourse/Chap12) - 待更新
+
+注：每章对应一个代码文档（R Markdown运行导出的HTML网页），点击章节进入浏览，然后可从右上角“Code” → “Download Rmd”下载原始代码文件。
 
 ## 课程目标
 

@@ -10,10 +10,8 @@ output:
     toc_float:
       collapsed: false
       smooth_scroll: false
-    code_folding: show
     code_download: true
     anchor_sections: true
-    # df_print: kable
     highlight: pygments
 ---
 
@@ -27,14 +25,14 @@ output:
   pre code span.co { font-style: normal; color: #999; }
   pre code span.fu { color: #8959a8; }
   #header { text-align: center; }
-  h1, h2, h3 { font-weight: bold; }
+  h1, h2, h3, h4, h5, h6 { font-weight: bold; line-height: 2; }
   h1.title { font-size: 34px; }
   h1 { font-size: 32px; }
   h2 { font-size: 28px; }
   h3 { font-size: 24px; }
   h4 { font-size: 20px; }
   p, li { font-size: 20px; }
-  #TOC li { font-size: 16px; line-height: 1.25; }
+  #TOC li { font-size: 16px; line-height: 1.5; }
   button span { font-size: 16px; }
   .table { table-layout: fixed; width: auto; margin: 1em auto; }
   .table { border-top: 1px solid #111; border-bottom: 1px solid #111; }
@@ -62,19 +60,436 @@ knitr::opts_chunk$set(
 
 ------------------------------------------------------------------------
 
-（内容建设中……）
+# R语言总体介绍
 
-# 下载安装R包
+![](img/Programming.jpg)
 
-```{r Download pkgs, eval=FALSE}
+![](img/R-Python.png)
+
+![](images/clipboard-1295974631.png)
+
+**发展中国家的全球R包开发贡献（截至2023年10月）**
+
+-   占全球17%开发者
+-   占全球15%软件包
+-   占全球6%下载量
+
+（[Chuan-Peng et al., 2025, AMPPS](https://doi.org/10.1177/25152459251357565){.uri}）
+
+![发展中国家的全球R包开发贡献（截至2023年10月）](img/Fig.CRAN.pkgs.png)
+
+# R语言核心优势与编程理念
+
+![](images/clipboard-4189727267.png)
+
+**为什么要「编程」（而不是菜单操作）？**
+
+-   可再用（reusable）
+-   可复现（reproducible）
+-   可定制（modifiable）
+-   可拓展（extendable）
+
+**「函数式 + 向量化 + 管道流」编程理念⭐️**
+
+-   一套复杂流程，应集成为一个函数（function），避免复制粘贴很多遍
+    -   函数 = 一组程序的标准化流程 + 灵活的参数设置
+-   一个问题的解决方法不是唯一的，需要考虑简洁性和易读性
+    -   向量化批处理 \> for循环
+    -   管道操作符步步拆解 \> 多个函数层层嵌套
+
+**牢固掌握基础编程语法**
+
+-   赋值、判断、循环、对象类型与转换、函数与参数
+
+**全面了解选择最优R包**
+
+-   R包使用：站在巨人肩膀上，避免“重复造轮子”
+-   R包开发：你也可以批判创新，开发自己的R包
+
+![](images/clipboard-1047366451.png)
+
+# R软件和RStudio编辑器下载安装
+
+#### 【实践1】下载安装R软件、RStudio编辑器
+
+-   R最新版（<https://cran.r-project.org/>）
+    -   [Download R for Windows](https://cran.r-project.org/bin/windows/) → [install R for the first time](https://cran.r-project.org/bin/windows/base/){.uri} → Download R-x.x.x for Windows
+    -   [Download R for macOS](https://cran.r-project.org/bin/macosx/) → 选择最新版本下载安装
+    -   我们并不直接使用R自带软件界面“RGui”，因为实在太简陋了……
+-   RStudio最新版（<https://posit.co/download/rstudio-desktop/>）
+    -   所有代码编辑和运行，都将在RStudio编辑器中完成\~！⭐️
+    -   简介：“RStudio is an **Integrated Development Environment (IDE)** for R and Python. It includes a console, syntax-highlighting editor that supports direct code execution, and tools for plotting, history, debugging, and workspace management. RStudio is available in open source and commercial editions and runs on the desktop (Windows, Mac, and Linux).”
+    -   特色：“RStudio具有非常强大的功能，能够极大地提升数据分析和可视化的工作效率。它支持语法高亮、自动补齐、多标签视图、文件管理、图形窗口、扩展包管理、集成帮助查看器、代码格式化、版本控制、交互式调试以及其他功能。”
+-   Rtools本地编译工具（<https://cran.r-project.org/bin/windows/Rtools/>）
+    -   用于从源代码本地编译R包
+    -   仅Windows用户、R包开发时需要安装，务必装在C盘
+
+# RStudio编辑器设置
+
+#### 【实践2】设置RStudio界面
+
+-   RStudio最上排“Tools”菜单 → “Global Options”菜单
+    -   “Code”—“Display”—“Syntax”
+        -   勾选所有（语法高亮显示）
+    -   “Console”—“Display”
+        -   勾选“Show syntax highlighting in console input”（语法高亮显示）
+    -   “Appearance”
+        -   Editor font：选择字体“Consolas”（内置）或“Maple Mono SC NF”（需额外安装）
+        -   Editor theme：选择主题配色“Tomorrow Night Bright”（对比醒目，深色护眼）
+    -   “Pane Layout”
+        -   左上角：Source（代码/脚本文件）
+        -   左下角：Console（控制台/运行结果/临时代码）
+        -   右上角：Environment（运行环境与变量）、Files（文件夹）、Plots（作图结果）、Packages（R包管理）、Help（帮助文档）
+        -   右下角：Build（R包开发）、VCS（Git版本控制）
+
+# R包下载与管理
+
+#### 【探索发现】官方平台（CRAN）现在一共发布了多少个R程序包？
+
+-   点击看看实时统计：<https://cran.r-project.org/web/packages/index.html>
+
+#### 【探索发现】现有R包能覆盖哪些学科领域和统计方法？
+
+-   点击看看主题目录：<https://cran.r-project.org/web/views/>
+
+#### 【实践3】下载安装R程序包
+
+安装/更新R包的两种方式：
+
+1.  点菜单
+    -   RStudio编辑器 → 右上方“Packages”窗口 → “Install”和“Update”
+    -   进入“Install”菜单，输入R包名称（如：`tidyverse`），即可安装
+2.  写代码
+    -   CRAN正式版R包：`install.packages("pkgname")`
+    -   GitHub开发版R包：`devtools::install_github("username/pkgname")`
+
+```{r, eval=FALSE}
+## 复制下面的代码，粘贴到RStudio的Console中，运行
 install.packages("tidyverse")
 install.packages("bruceR", dep=TRUE)
+# 参数 dependencies=TRUE 安装所有依赖包
 ```
 
-# 加载本地R包
+#### 【探索发现】安装遇到报错怎么办？
 
-```{r Load pkgs, warning=FALSE}
+-   仔细阅读报错信息
+    -   `package ‘XXX’ is not available for this version of R`
+        -   这个包可能只存在于GitHub平台？
+        -   拼错了？
+-   检查网络连接，换一个镜像
+    -   “Tools”菜单 → “Global Options”菜单 → “Packages” → “Change” → 选一个国内镜像
+-   重启RStudio
+    -   重启软件“包治百病”
+-   手动卸载、重装这个R包
+    -   能确保解除当前R包占用
+-   更新R软件和所有R包
+    -   及时更新是一种好习惯
+
+![](images/clipboard-3875994862.png)
+
+#### 【实践4】加载本地R包
+
+注：`tidyverse`和`bruceR`是两个常用的综合R包，国内多所高校（包括北大）在本科及研究生R语言教学中均有使用。
+
+```{r, warning=FALSE}
 ## Load R packages
 library(tidyverse)
 library(bruceR)
 ```
+
+# 【作业1】R软件安装与配置
+
+请在平台提交截图：
+
+-   你设置好的RStudio编辑器布局截图，其中包括【实践4】的代码和成功运行结果
+
+------------------------------------------------------------------------
+
+# R代码编程环境
+
+**总体建议：为每个项目单独建立一个“R Project”，使用“R Markdown”文档格式写代码。**
+
+-   **R Markdown（兼具代码呈现与运行结果报告）⭐️**
+    -   `.Rmd`文档格式
+-   R Script（仅能保存R代码，没有运行结果）
+    -   `.R`文档格式
+-   R Console（仅能临时在控制台运行，无法保存代码）
+    -   没有文档，RStudio中的Console
+
+## （1）R Project（项目）
+
+#### 【实践5】为《R语言》课程学习建立一个独立的项目环境
+
+-   RStudio最上排“File”菜单 → “New Project”菜单
+    -   “New Directory” → “New Project” → 起一个项目名称 (如“Project_R_Course”) → “Browse”选择存储该项目的上级目录 → “Create Project”
+
+## （2）R Console（控制台）
+
+#### 【探索发现】R语言的赋值符号问题：赋值一定要用`<-`，不能用`=`吗？
+
+-   可以只用`=`赋值，完全没问题！
+-   好习惯：`=`、`<`等符号前后加空格！
+
+#### 【实践6】逐行运行代码，体会写法差异
+
+小贴士：逐行运行代码的快捷键是Ctrl + Enter哦\~！
+
+```{r}
+## 把123赋值给x
+x=123
+x = 123   # 推荐写法（与其他编程语言保持一致）
+x<-123
+x <- 123  # 官方写法（也是AI味儿的写法）
+
+print(x)  # 打印对象
+cat(x)    # 打印对象里的内容（文本输出）
+```
+
+```{r}
+## 把-1赋值给x
+x=-1
+x = -1   # 推荐写法（与其他编程语言保持一致）
+x<--1
+x <- -1  # 官方写法（也是AI味儿的写法）
+
+print(x)  # 打印对象
+cat(x)    # 打印对象里的内容（文本输出）
+```
+
+```{r, eval=FALSE}
+a  # 如果还没有赋值，就会找不到对象
+```
+
+```         
+错误: 找不到对象'a'
+```
+
+## （3）R Script（脚本文件）
+
+-   新建一个R Script脚本文件（`.R`）
+    -   “File” → “New File” → “R Script”（也有快捷键：Ctrl + Shift + N）
+    -   保存（快捷键：Ctrl + S）并取一个文档名
+
+#### 【知识点】R包与R函数的调用方式
+
+![](images/clipboard-245149326.png)
+
+#### 【实践7】调用R包函数
+
+```{r, eval=FALSE}
+set.wd()  # 如果不加载R包，就无法直接使用里面的函数
+```
+
+```         
+错误于set.wd(): 没有"set.wd"这个函数
+```
+
+```{r}
+library(bruceR)  # 加载R包
+set.wd()  # 调用R函数（已载入环境）
+
+x = set.wd()  # 调用R函数并将结果赋值给x
+x
+
+bruceR::set.wd()  # 明确调用R包函数（函数重名才用到）
+
+bruceR:::p.trans(0)  # 调用R包隐藏函数（一般情况用不到）
+```
+
+也试试这些代码：
+
+```{r, eval=FALSE}
+set.wd()  # set working directory to the path of the currently opened file
+set.wd("~/")  # set working directory to the home path
+set.wd("../")  # set working directory to the parent path
+set.wd(ask=TRUE)  # select a folder with the prompt of a dialog
+```
+
+#### 【实践8】查询函数的帮助文档
+
+```{r, eval=FALSE}
+## 1. help(函数名)
+help(set.wd)
+
+## 2. ?函数名
+?set.wd
+
+## 3. ?包名::函数名
+?bruceR::set.wd
+
+## 4. 将光标移至函数名中的任意位置，按F1(或Fn + F1)
+set.wd()
+```
+
+#### 【知识点】RStudio实用快捷键（拓展了解，慢慢尝试）
+
+![](images/clipboard-3715683662.png)
+
+## （4）R Markdown（综合文档）
+
+-   新建一个R Markdown综合文档（`.Rmd`）
+    -   “File” → “New File” → “R Markdown” → 输入文档标题、作者姓名等信息
+
+![](images/clipboard-2325467990.png)
+
+#### 【探索发现】为什么要使用R Markdown？
+
+-   融合文字、代码、结果、图表，适用于研究论文补充材料（HTML文档）
+    -   Markdown语法
+    -   R、Python等编程语言
+    -   LaTeX数学公式
+    -   HTML脚本
+    -   CSS样式
+    -   ……
+-   辅助提高程序的结构性、逻辑性、简洁性，减少bug
+-   无需手动运行，每次“Knit”（自动运行渲染）都重新完整运行一遍
+-   高效率（自动整理结果）、可复现（完整记录所有处理步骤）、动态交互呈现
+
+![](images/clipboard-4071714572.png)
+
+![](images/clipboard-2896875714.png)
+
+#### 【知识点】Markdown语法基础
+
+```         
+# 一级标题
+
+## 二级标题
+
+### 三级标题
+
+#### 四级标题
+
+普通文字，**粗体文字**，*斜体文字*，***粗斜体文字***，上标^2^，下标~2~
+
+段内代码`mean(1:5)`用反引号
+
+-   无序列表A
+    -   无序列表A1
+        -   无序列表A1-1
+        -   无序列表A1-2
+    -   无序列表A2
+-   无序列表B
+-   无序列表C
+
+1.  有序列表01
+2.  有序列表02
+3.  有序列表03
+```
+
+普通文字，**粗体文字**，*斜体文字*，***粗斜体文字***，上标^2^，下标~2~
+
+段内代码`mean(1:5)`用反引号
+
+-   无序列表A
+    -   无序列表A1
+        -   无序列表A1-1
+        -   无序列表A1-2
+    -   无序列表A2
+-   无序列表B
+-   无序列表C
+
+1.  有序列表01
+2.  有序列表02
+3.  有序列表03
+
+> 以上都可以通过RStudio编辑器的“Visual”所见即所得模式快捷设置
+
+#### 【知识点】R Markdown代码块设置 {.tabset .tabset-fade .table-pill}
+
+![](images/clipboard-1173882494.png)
+
+##### eval 运行代码
+
+`{r, eval=TRUE}` 运行代码
+
+```{r, eval=TRUE}
+print(123)  # 运行代码
+```
+
+`{r, eval=FALSE}` 不运行代码
+
+```{r, eval=FALSE}
+print(123)  # 不运行代码
+```
+
+##### echo 显示代码
+
+`{r, echo=TRUE}` 显示代码
+
+```{r, echo=TRUE}
+print(123)  # 显示代码
+```
+
+`{r, echo=FALSE}` 不显示代码（但运行）
+
+```{r, echo=FALSE}
+print(123)  # 不显示代码（但运行）
+```
+
+##### results 显示结果
+
+`{r, results=TRUE}` 显示结果
+
+```{r, results=TRUE}
+print(123)  # 显示结果
+```
+
+`{r, results=FALSE}` 不显示结果（但运行）
+
+```{r, results=FALSE}
+print(123)  # 不显示结果（但运行）
+```
+
+##### include 显示代码+显示结果
+
+`{r, include=TRUE}` 显示代码+显示结果
+
+```{r, include=TRUE}
+print(123)  # 显示代码+显示结果
+```
+
+`{r, include=FALSE}` 不显示代码+不显示结果（但运行）
+
+```{r, include=FALSE}
+print(123)  # 不显示代码+不显示结果（但运行）
+```
+
+#### 【实践9】设置Rmd文档属性
+
+请在自己新建的R Markdown文档开头，替换修改以下属性信息，并删掉注释。
+
+```         
+---
+title: "标题"
+subtitle: "副标题"
+author: "你的姓名+学号"
+date: "`r Sys.Date()`"  # 自动获取当前日期
+output:
+  html_document:           # HTML输出文档设置
+    toc: true              # 生成目录
+    toc_depth: 3           # 目录最多显示到3级标题
+    toc_float:             # 目录浮动
+      collapsed: false     # 目录展开
+    code_download: true    # 显示下载代码按钮
+    anchor_sections: true  # 节标题定位标
+    highlight: pygments    # 代码高亮配色方案(建议用pygments)
+    theme: default         # 页面整体主题方案
+---
+```
+
+主题方案：
+
+-   default, cerulean, cosmo, darkly, flatly, journal, lumen, paper, readable, sandstone, simplex, spacelab, united, yeti
+
+![](images/clipboard-2093389103.png)
+
+# 【作业2】建立R Markdown模板
+
+请完成下列步骤后，在平台提交最终截图：
+
+-   将Rmd文档属性设置为你的信息（标题、副标题、姓名、学号、日期等），自选任意一种你喜欢的主题方案
+-   修改Rmd新建文档中自带的R代码块例子，体现代码块参数`eval`、`echo`、`results`、`include`的不同设定分别会得到什么结果，并用多级标题分块整理这4个参数对应的效果
+-   Knit渲染（快捷键：Ctrl + Shift + K）得到HTML网页结果，将网页截图提交
+
+![Knit按钮（运行所有代码并渲染得到HTML网页，比如你现在正在看的这个网页就是这样来的）](images/clipboard-70125348.png)

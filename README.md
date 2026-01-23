@@ -2,11 +2,12 @@
 
 ## 课程大纲与代码文档索引（内容建设中……）
 
-[课程大纲 (Syllabus 2026)](https://psychbruce.github.io/RCourse/Syllabus_R-Programming_BaoHWS_2026Spring.pdf) \| [课程云盘资料](https://share.weiyun.com/o0kwn42K)
+[课程大纲 Syllabus 2026](https://psychbruce.github.io/RCourse/Syllabus_R-Programming_BaoHWS_2026Spring.pdf) \| [云盘资料](https://share.weiyun.com/o0kwn42K)\
+（本课程不依赖PPT，以每章代码实践为主，营造沉浸式学习体验）
 
 ### 第一模块：入门与筑基（共4周，8学时）
 
--   [第1章：基础入门（4学时）](https://psychbruce.github.io/RCourse/Chap01) - 待更新
+-   [第1章：基础入门（4学时）](https://psychbruce.github.io/RCourse/Chap01)
 -   [第2章：函数对象（2学时）](https://psychbruce.github.io/RCourse/Chap02) - 待更新
 -   [第3章：数据结构（2学时）](https://psychbruce.github.io/RCourse/Chap03) - 待更新
 

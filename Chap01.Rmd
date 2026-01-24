@@ -1,8 +1,8 @@
 ---
 title: "《R语言》第1章：基础入门"
 subtitle: "https://psychbruce.github.io/RCourse/"
-author: "包寒吴霜"
-date: "`r Sys.Date()`"
+author: "授课教师：包寒吴霜"
+# date: "`r Sys.Date()`"
 output:
   html_document:
     toc: true
@@ -13,35 +13,10 @@ output:
     code_download: true
     anchor_sections: true
     highlight: pygments
+    css: RmdCSS.css
 ---
 
 ```{=html}
-<style type="text/css">
-  body { font-family: "Source Sans Pro", "Arial", sans-serif;
-         font-size: 20px; color: #000; }
-  code { font-family: "Maple Mono SC NF", "Consolas", monospace; }
-  pre code { font-size: 16.8px; }
-  pre code span.do { font-style: normal; font-weight: bold; }
-  pre code span.co { font-style: normal; color: #999; }
-  pre code span.fu { color: #8959a8; }
-  #header { text-align: center; }
-  h1, h2, h3, h4, h5, h6 { font-weight: bold; line-height: 2; }
-  h1.title { font-size: 34px; }
-  h1 { font-size: 32px; }
-  h2 { font-size: 28px; }
-  h3 { font-size: 24px; }
-  h4 { font-size: 20px; }
-  p, li { font-size: 20px; }
-  #TOC li { font-size: 16px; line-height: 1.5; }
-  button span { font-size: 16px; }
-  .table { table-layout: fixed; width: auto; margin: 1em auto; }
-  .table { border-top: 1px solid #111; border-bottom: 1px solid #111; }
-  .table thead { background-color: #f0f0f0; }
-  .table tr.even { background-color: #f5f5f5; }
-  .table thead tr th { border-bottom-width: 0px; line-height: 1.2; }
-  .table tbody tr td { border-top-width: 0px; line-height: 1.2; }
-</style>
-
 <p style="font-size: 12px">版权声明：本套课程材料开源，使用和分享必须遵守「创作共用许可协议 CC BY-NC-SA」（来源引用-非商业用途使用-以相同方式共享）<img src="https://psychbruce.github.io/img/CC-BY-NC-SA.jpg" width="120px" height="42px" style="float: right" /></p>
 ```
 
@@ -138,11 +113,13 @@ knitr::opts_chunk$set(
         -   Editor theme：选择主题配色“Tomorrow Night Bright”（对比醒目，深色护眼）
     -   “Pane Layout”
         -   左上角：Source（代码/脚本文件）
-        -   左下角：Console（控制台/运行结果/临时代码）
-        -   右上角：Environment（运行环境与变量）、Files（文件夹）、Plots（作图结果）、Packages（R包管理）、Help（帮助文档）
+        -   左下角：Console（控制台/命令行/运行结果/临时代码）
+        -   右上角：Environment（运行环境与变量）、Files（文件夹）、Plots（作图结果）、Packages（R包管理）、Help（帮助文档）、Viewer（浏览器）
         -   右下角：Build（R包开发）、VCS（Git版本控制）
 
-# R包下载与管理
+![](img/RStudio-Pane-Layout.png)
+
+# R包安装与管理
 
 #### 【探索发现】官方平台（CRAN）现在一共发布了多少个R程序包？
 
@@ -213,7 +190,7 @@ library(bruceR)
     -   `.Rmd`文档格式
 -   R Script（仅能保存R代码，没有运行结果）
     -   `.R`文档格式
--   R Console（仅能临时在控制台运行，无法保存代码）
+-   R Console（仅能临时在命令行运行，无法保存代码）
     -   没有文档，RStudio中的Console
 
 ## （1）R Project（项目）
@@ -223,7 +200,7 @@ library(bruceR)
 -   RStudio最上排“File”菜单 → “New Project”菜单
     -   “New Directory” → “New Project” → 起一个项目名称 (如“Project_R_Course”) → “Browse”选择存储该项目的上级目录 → “Create Project”
 
-## （2）R Console（控制台）
+## （2）R Console（命令行）
 
 #### 【探索发现】R语言的赋值符号问题：赋值一定要用`<-`，不能用`=`吗？
 
@@ -241,8 +218,8 @@ x = 123   # 推荐写法（与其他编程语言保持一致）
 x<-123
 x <- 123  # 官方写法（也是AI味儿的写法）
 
-print(x)  # 打印对象
-cat(x)    # 打印对象里的内容（文本输出）
+print(x)  # 查看对象
+cat(x)    # 连接并打印对象里的字符（文本输出）
 ```
 
 ```{r}
@@ -252,8 +229,8 @@ x = -1   # 推荐写法（与其他编程语言保持一致）
 x<--1
 x <- -1  # 官方写法（也是AI味儿的写法）
 
-print(x)  # 打印对象
-cat(x)    # 打印对象里的内容（文本输出）
+print(x)  # 查看对象
+cat(x)    # 连接并打印对象里的字符（文本输出）
 ```
 
 ```{r, eval=FALSE}
@@ -262,6 +239,16 @@ a  # 如果还没有赋值，就会找不到对象
 
 ```         
 错误: 找不到对象'a'
+```
+
+#### 【探索发现】为什么R语言`cat()`函数名称叫“cat”？
+
+-   可以问问AI
+
+```{r}
+## 比较print()和cat()有什么不同
+print(c("Hello", "World"))   # 字符串向量
+cat("Hello", "World", "\n")  # 拼接字符串（\n表示换行）
 ```
 
 ## （3）R Script（脚本文件）

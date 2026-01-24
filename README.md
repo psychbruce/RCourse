@@ -1,33 +1,33 @@
 # 《R语言》课程代码文档
 
-## 课程大纲与代码文档索引（内容建设中……）
+## 课程大纲与代码文档索引
 
 [课程大纲 Syllabus 2026](https://psychbruce.github.io/RCourse/Syllabus_R-Programming_BaoHWS_2026Spring.pdf) \| [云盘资料](https://share.weiyun.com/o0kwn42K)\
 （本课程不依赖PPT，以每章代码实践为主，营造沉浸式学习体验）
 
 ### 第一模块：入门与筑基（共4周，8学时）
 
--   [第1章：基础入门（4学时）](https://psychbruce.github.io/RCourse/Chap01)
--   [第2章：函数对象（2学时）](https://psychbruce.github.io/RCourse/Chap02) - 待更新
--   [第3章：数据结构（2学时）](https://psychbruce.github.io/RCourse/Chap03) - 待更新
+-   [第1章：基础入门（4学时）](https://psychbruce.github.io/RCourse/Chap01)（随堂作业1、2）
+-   [第2章：函数对象（2学时）](https://psychbruce.github.io/RCourse/Chap02)（随堂作业3）
+-   [第3章：数据结构（2学时）](https://psychbruce.github.io/RCourse/Chap03) - 待上传
 
 ### 第二模块：处理与操作（共4周，8学时）
 
--   [第4章：字符处理（2学时）](https://psychbruce.github.io/RCourse/Chap04) - 待更新
--   [第5章：变量计算（2学时）](https://psychbruce.github.io/RCourse/Chap05) - 待更新
--   [第6章：数据操作（4学时）](https://psychbruce.github.io/RCourse/Chap06) - 待更新
+-   [第4章：字符处理（2学时）](https://psychbruce.github.io/RCourse/Chap04) - 待上传
+-   [第5章：变量计算（2学时）](https://psychbruce.github.io/RCourse/Chap05) - 待上传
+-   [第6章：数据操作（4学时）](https://psychbruce.github.io/RCourse/Chap06) - 待上传
 
 ### 第三模块：统计与分析（共4周，8学时）
 
--   [第7章：基础统计（2学时）](https://psychbruce.github.io/RCourse/Chap07) - 待更新
--   [第8章：方差分析（2学时）](https://psychbruce.github.io/RCourse/Chap08) - 待更新
--   [第9章：回归分析（4学时）](https://psychbruce.github.io/RCourse/Chap09) - 待更新
+-   [第7章：基础统计（2学时）](https://psychbruce.github.io/RCourse/Chap07) - 待上传
+-   [第8章：方差分析（2学时）](https://psychbruce.github.io/RCourse/Chap08) - 待上传
+-   [第9章：回归分析（4学时）](https://psychbruce.github.io/RCourse/Chap09) - 待上传
 
 ### 第四模块：数据可视化（共4周，8学时）
 
--   [第10章：绘图初阶（4学时）](https://psychbruce.github.io/RCourse/Chap10) - 待更新
--   [第11章：绘图中阶（2学时）](https://psychbruce.github.io/RCourse/Chap11) - 待更新
--   [第12章：绘图高阶（2学时）](https://psychbruce.github.io/RCourse/Chap12) - 待更新
+-   [第10章：绘图初阶（4学时）](https://psychbruce.github.io/RCourse/Chap10) - 待上传
+-   [第11章：绘图中阶（2学时）](https://psychbruce.github.io/RCourse/Chap11) - 待上传
+-   [第12章：绘图高阶（2学时）](https://psychbruce.github.io/RCourse/Chap12) - 待上传
 
 注：每章对应一个代码文档（R Markdown运行导出的HTML网页），点击章节进入浏览，然后可从右上角“Code” → “Download Rmd”下载原始代码文件。
 

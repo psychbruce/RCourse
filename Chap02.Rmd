@@ -17,7 +17,7 @@ output:
 ---
 
 ```{=html}
-<p style="font-size: 12px">版权声明：本套课程材料开源，使用和分享必须遵守「创作共用许可协议 CC BY-NC-SA」（来源引用-非商业用途使用-以相同方式共享）<img src="https://psychbruce.github.io/img/CC-BY-NC-SA.jpg" width="120px" height="42px" style="float: right" /></p>
+<p style="font-size: 12px">版权声明：本套课程材料开源，使用和分享必须遵守「创作共用许可协议 CC BY-NC-SA」（来源引用-非商业用途使用-以相同方式共享）<img src="img/CC-BY-NC-SA.jpg" width="120px" height="42px" style="float: right" /></p>
 ```
 
 ```{r Config, include=FALSE}
@@ -35,12 +35,12 @@ knitr::opts_chunk$set(
 
 ------------------------------------------------------------------------
 
-#### 本章所需R包
+#### 课程要点复习
 
--   回顾：[Chap01 \# R包安装与管理](https://psychbruce.github.io/RCourse/Chap01#R%E5%8C%85%E5%AE%89%E8%A3%85%E4%B8%8E%E7%AE%A1%E7%90%86){.uri}
+-   [Chap01 \# R包安装与管理](https://psychbruce.github.io/RCourse/Chap01#R%E5%8C%85%E5%AE%89%E8%A3%85%E4%B8%8E%E7%AE%A1%E7%90%86){.uri}
 
 ```{r}
-## 加载R包
+## 本章所需R包
 library(bruceR)
 ```
 
@@ -67,7 +67,9 @@ library(bruceR)
 
 ![](images/clipboard-2482543966.png)
 
-## 向量
+## 向量（vector）
+
+-   单维、单类型数据
 
 ### （1）数值向量
 
@@ -276,7 +278,9 @@ pi %>% sqrt() %>% log() %>% abs()  # tidy系列管道操作符（建议使用）
 
 ![](images/clipboard-3625589507.png)
 
-## 列表
+## 列表（list）
+
+-   单维、多类型数据
 
 #### 【实践7】列表构建与操作
 
@@ -293,6 +297,8 @@ pi %>% sqrt() %>% log() %>% abs()  # tidy系列管道操作符（建议使用）
 ```{r}
 l = list(Year=2000:2015, Month=1:12, Day=1:31, Letter=LETTERS)
 l
+names(l)
+length(l)
 l$Year
 l[2]    # 取第2个子集，返回list子集
 l[[2]]  # 取第2个元素，返回元素本身，相当于 l$Month
@@ -459,9 +465,9 @@ for (x in 1:5) {
 
 # 【作业3】编程解决抛硬币问题
 
-问题情境：一枚硬币，连续扔了N次都是正面朝上，再扔一次反面朝上的概率是多少？
+问题情境：一枚硬币，连续抛了N次都是正面朝上，再抛一次反面朝上的概率是多少？
 
--   比如，一枚硬币连续抛了 3 次都是正面朝上，再抛一次反面朝上的概率是多少？
+-   比如，一枚硬币，连续抛了3次都是正面朝上，再抛一次反面朝上的概率是多少？
 -   连续10次呢？连续1000次呢？连续1亿次呢？……
 
 思路提示：用假设检验的思想，判断这枚硬币是不是普通硬币（H0：硬币是普通的）。

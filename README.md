@@ -3,7 +3,7 @@
 ## 课程大纲与代码文档索引
 
 [课程大纲 Syllabus 2026](https://psychbruce.github.io/RCourse/Syllabus_R-Programming_BaoHWS_2026Spring.pdf) \| [云盘资料](https://share.weiyun.com/o0kwn42K)\
-（本课程不依赖PPT，以每章代码实践为主，营造沉浸式学习体验）
+（本课程不依赖PPT，以每章代码文档的实践学习为主）
 
 ### 第一模块：入门与筑基（共4周，8学时）
 
@@ -57,3 +57,27 @@
         -   data.table与dplyr对比：[English](https://atrebas.github.io/post/2019-03-03-datatable-dplyr/)
         -   data.table与pandas对比：[English](https://atrebas.github.io/post/2020-06-14-datatable-pandas/), [中文](https://cosx.org/2021/01/dt-pd/)
         -   R作图参考：<https://r-graph-gallery.com/>
+-   本课程代码文档R Markdown配置
+    -   网页CSS样式：<https://psychbruce.github.io/RCourse/RmdCSS.css>
+        -   另存为文件，放于Rmd文档同级别目录，并在下方代码中配置
+    -   Rmd文档属性配置模板（见Rmd文档开头位置）
+
+```         
+---
+title: "标题"
+subtitle: "副标题"
+author: "姓名"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    toc: true
+    toc_depth: 3
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+    code_download: true
+    anchor_sections: true
+    highlight: pygments
+    css: RmdCSS.css
+---
+```

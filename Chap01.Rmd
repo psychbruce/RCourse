@@ -17,7 +17,7 @@ output:
 ---
 
 ```{=html}
-<p style="font-size: 12px">版权声明：本套课程材料开源，使用和分享必须遵守「创作共用许可协议 CC BY-NC-SA」（来源引用-非商业用途使用-以相同方式共享）<img src="https://psychbruce.github.io/img/CC-BY-NC-SA.jpg" width="120px" height="42px" style="float: right" /></p>
+<p style="font-size: 12px">版权声明：本套课程材料开源，使用和分享必须遵守「创作共用许可协议 CC BY-NC-SA」（来源引用-非商业用途使用-以相同方式共享）<img src="img/CC-BY-NC-SA.jpg" width="120px" height="42px" style="float: right" /></p>
 ```
 
 ```{r Config, include=FALSE}
@@ -446,12 +446,12 @@ print(123)  # 不显示代码+不显示结果（但运行）
 
 请在自己新建的R Markdown文档开头，替换修改以下属性信息，并删掉注释。
 
-```         
+```{r, eval=FALSE}
 ---
 title: "标题"
 subtitle: "副标题"
 author: "你的姓名+学号"
-date: "`r Sys.Date()`"  # 自动获取当前日期
+date: "`r Sys.Date()`"     # 自动获取当前日期
 output:
   html_document:           # HTML输出文档设置
     toc: true              # 生成目录

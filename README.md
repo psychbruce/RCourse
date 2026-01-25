@@ -14,7 +14,7 @@
 ### 第二模块：处理与操作（共4周，8学时）
 
 -   [第4章：字符处理（2学时）](https://psychbruce.github.io/RCourse/Chap04)（随堂作业5）
--   [第5章：变量计算（2学时）](https://psychbruce.github.io/RCourse/Chap05) - 待上传
+-   [第5章：变量计算（2学时）](https://psychbruce.github.io/RCourse/Chap05)（随堂作业6）
 -   [第6章：数据操作（4学时）](https://psychbruce.github.io/RCourse/Chap06) - 待上传
 
 ### 第三模块：统计与分析（共4周，8学时）

@@ -191,6 +191,11 @@ name %>%
   sort() %>%
   str_remove_all("博士|\\s") %>%
   str_subset("^[周吴郑王]")  # 赵钱孙李，周吴郑王
+
+## 补充：字符向量 vs. 固定位置字符提取
+"Psychology"[1]  # 长度为1的字符向量，[1]仍然是字符串，而不是第1个字母
+str_sub("Psychology", 1, 1)  # 提取第1个字母
+str_sub("Psychology", 1, 5)  # 提取第1~5个字母
 ```
 
 #### 【探索发现】stringr包的函数功能

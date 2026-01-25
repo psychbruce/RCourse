@@ -37,11 +37,12 @@ knitr::opts_chunk$set(
 
 #### 课程要点复习
 
--   [Chap02 \# R对象类型（一维向量、列表）](https://psychbruce.github.io/RCourse/Chap02#%E7%9F%A5%E8%AF%86%E7%82%B9r%E5%AF%B9%E8%B1%A1%E4%B8%8E%E5%87%BD%E6%95%B0){.uri}
+-   [Chap02 \# R对象类型（向量、列表）](https://psychbruce.github.io/RCourse/Chap02#%E7%9F%A5%E8%AF%86%E7%82%B9r%E5%AF%B9%E8%B1%A1%E4%B8%8E%E5%87%BD%E6%95%B0){.uri}
 
 ```{r, message=FALSE, warning=FALSE}
 ## 本章所需R包
 library(bruceR)
+library(rvest)  # 网络爬虫
 ```
 
 # R对象类型：二维数据表结构
@@ -284,12 +285,13 @@ xml %>% html_elements(".column-news-title") %>% html_text2()
 
 # 【作业4】任选公开数据导入
 
-请开始准备个人期末大作业，自主选择任意一个感兴趣的公开数据，写出数据导入代码：
+作业要求：
 
--   数据选择：按照自己的兴趣，从国内外期刊中选择一篇公开了研究数据的论文，下载其中一个公开数据（有可能存放于[OSF](https://osf.io/)、[SciDB](https://www.scidb.cn/psych)等平台），数据文件一般为CSV、Excel等格式
--   数据导入：参考【实践4】代码，使用`bruceR`包的`import()`函数，将该数据导入为`data.table`对象
+-   开始准备个人期末大作业，自主选择任意一个感兴趣的公开数据，写出数据导入代码
+    -   数据选择：按照自己的兴趣，从国内外期刊中选择一篇公开了研究数据的论文，下载其中一个公开数据（有可能存放于[OSF](https://osf.io/)、[SciDB](https://www.scidb.cn/psych)等平台），数据文件一般为CSV、Excel等格式
+    -   数据导入：参考【实践4】代码，使用`bruceR`包的`import()`函数，将该数据导入为`data.table`对象
 
-平台提交内容：
+平台提交：
 
 -   自选论文的DOI链接和公开数据链接
 -   原数据打开后的前几行、前几列截图

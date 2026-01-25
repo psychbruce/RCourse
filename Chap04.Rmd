@@ -1,0 +1,232 @@
+---
+title: "《R语言》第4章：字符处理"
+subtitle: "https://psychbruce.github.io/RCourse/"
+author: "授课教师：包寒吴霜"
+# date: "`r Sys.Date()`"
+output:
+  html_document:
+    toc: true
+    toc_depth: 3
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+    code_download: true
+    anchor_sections: true
+    highlight: pygments
+    css: RmdCSS.css
+---
+
+```{=html}
+<p style="font-size: 12px">版权声明：本套课程材料开源，使用和分享必须遵守「创作共用许可协议 CC BY-NC-SA」（来源引用-非商业用途使用-以相同方式共享）<img src="img/CC-BY-NC-SA.jpg" width="120px" height="42px" style="float: right" /></p>
+```
+
+```{r Config, include=FALSE}
+options(
+  knitr.kable.NA = "",
+  digits = 4
+)
+knitr::opts_chunk$set(
+  comment = "",
+  fig.width = 8,
+  fig.height = 6,
+  dpi = 500
+)
+```
+
+------------------------------------------------------------------------
+
+#### 课程要点复习
+
+-   [Chap03 \# 数据框（data frame）](https://psychbruce.github.io/RCourse/Chap03#%E6%95%B0%E6%8D%AE%E6%A1%86data-frame){.uri}
+-   [Chap03 \# “一站式”数据导入导出](https://psychbruce.github.io/RCourse/Chap03#%E5%A4%96%E9%83%A8%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA){.uri}
+
+```{r, message=FALSE, warning=FALSE}
+## 本章所需R包
+library(bruceR)
+library(stringr)  # 字符串处理（bruceR已默认加载）
+library(rvest)  # 网络爬虫
+```
+
+# 正则表达式基础
+
+#### 【知识点】正则表达式 / 规律表达式（regular/pattern expression，RegEx）
+
+-   含义：描述字符串规律（模式）的表达式
+-   作用：根据模式，匹配字符（自动处理文本）
+    -   词频统计
+    -   数据清洗
+    -   文本提取
+    -   ……
+
+## （1）字符匹配
+
+![](images/clipboard-4086576583.png)
+
+#### 【实践1】字符匹配
+
+![](images/clipboard-1576391182.png)
+
+```{r}
+text = "笔记本上安装SPSS22或20，授权码复制不上，导致安装失败。已经试了多次了，都安装不上SpSS，请问有遇到这种情况的吗？电脑是64位的，Spss是32位的，是这个原因吗？之前SpsS在其他笔记本和台式电脑上都安装成功了。"
+cat(text)
+
+str_extract_all(text, "SPSS")  # 完整字符串
+str_extract_all(text, "SPSS|Spss")  # "|"表示或者
+str_extract_all(text, "[SPSS|spss]")  # 思考：为什么？
+str_extract_all(text, "[SsPp]")
+str_extract_all(text, "[Ss][Pp][Ss][Ss]")
+
+str_extract_all(text, "\\d")
+str_extract_all(text, "\\d\\d")
+str_extract_all(text, "\\d\\d位")
+```
+
+## （2）条件匹配
+
+![](images/clipboard-3021287080.png)
+
+#### 【实践2】条件匹配
+
+```{r}
+text = "笔记本上安装SPSS22或20，授权码复制不上，导致安装失败。已经试了多次了，都安装不上SpSS，请问有遇到这种情况的吗？电脑是64位的，Spss是32位的，是这个原因吗？之前SpsS在其他笔记本和台式电脑上都安装成功了。"
+cat(text)
+
+str_extract_all(text, "\\d{2}位")
+str_extract_all(text, "[SsPp]{4}")
+str_extract_all(text, "[SP]{4}")
+str_extract_all(text, "[Sps]+")
+str_extract_all(text, "(Sps)+")
+str_extract_all(text, "Sps+")
+```
+
+## （3）预查匹配
+
+![](images/clipboard-4184428545.png)
+
+#### 【实践3】预查匹配
+
+```{r}
+text = "笔记本上安装SPSS22或20，授权码复制不上，导致安装失败。已经试了多次了，都安装不上SpSS，请问有遇到这种情况的吗？电脑是64位的，Spss是32位的，是这个原因吗？之前SpsS在其他笔记本和台式电脑上都安装成功了。"
+cat(text)
+
+str_extract_all(text, "\\d{2}位")
+str_extract_all(text, "\\d{2}(?=位)")  # 后向肯定预查
+str_extract_all(text, "\\d{2}(?!位)")  # 后向否定预查
+str_extract_all(text, "(?<=SPSS)\\d{2}")  # 前向肯定预查
+str_extract_all(text, "(?<!SPSS)\\d{2}")  # 前向否定预查
+```
+
+# 字符串处理实战
+
+`stringr`包
+
+-   共同参数
+    -   `string`：字符串输入
+    -   `pattern`：正则表达式
+-   常用函数
+    -   判断：`str_detect()`
+    -   计数：`str_count()`
+    -   提取：`str_extract()`、`str_extract_all()`
+    -   替换：`str_replace()`、`str_replace_all()`
+    -   删除：`str_remove()`、`str_remove_all()`
+    -   分割：`str_split()`
+    -   向量取匹配子集：`str_subset()`
+
+#### 【实践4】字符串综合处理
+
+-   课程回顾：[Chap03 \# 静态网页解析](https://psychbruce.github.io/RCourse/Chap03#%E5%AE%9E%E8%B7%B55%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5%E8%A7%A3%E6%9E%90){.uri}
+-   网页素材：[华东师范大学心理与认知科学学院“师资队伍”](https://psy.ecnu.edu.cn/17437/list.htm){.uri}
+
+```{r}
+## 数据采集
+## 已加载rvest包：library(rvest)
+url = "https://psy.ecnu.edu.cn/17437/list.htm"  # 学院师资队伍页面
+xml = url %>% read_html()  # 读取网页所有信息
+xml
+
+## 字符串处理（1）：院系名称
+menu = xml %>% html_elements(".column-item-link .column-name") %>% html_text2()
+menu
+
+str_subset(menu, "系")
+str_subset(menu, "系$")
+str_subset(menu, ".*系$")
+str_subset(menu, ".*(?=系$)")  # 只是取子集，并不能预查提取
+str_extract(menu, ".*(?=系$)")  # 真正的预查提取
+str_extract(menu, ".*(?=系$)") %>% na.omit()  # 移除缺失值NA
+
+## 字符串处理（2）：人才计划
+title = xml %>% html_elements(".subcolumn-name") %>% html_text2()
+title
+str_subset(title, "人才")
+str_subset(title, "人才$")
+str_subset(title, "上海市.*")
+str_subset(title, "^上海市")
+str_extract(title, "(?<=^上海市).*(?=学者$|计划$)") %>% na.omit()
+
+## 字符串处理（3）：教师姓名
+name = xml %>% html_elements(".column-news-title") %>% html_text2()
+name
+
+table(name)
+unique(name)
+
+name %>% unique() %>% sort()
+name %>% unique() %>% sort() %>% str_remove_all("博士|\\s")
+
+name %>%
+  unique() %>%
+  sort() %>%
+  str_remove_all("博士|\\s") %>%
+  str_subset("宁")
+
+name %>%
+  unique() %>%
+  sort() %>%
+  str_remove_all("博士|\\s") %>%
+  str_subset("^赵|^钱|^孙|^李")  # 赵钱孙李，周吴郑王
+
+name %>%
+  unique() %>%
+  sort() %>%
+  str_remove_all("博士|\\s") %>%
+  str_subset("^[周吴郑王]")  # 赵钱孙李，周吴郑王
+```
+
+#### 【探索发现】stringr包的函数功能
+
+-   检测匹配
+
+![](images/clipboard-1808834098.png)
+
+-   子集提取
+
+![](images/clipboard-900802402.png)
+
+-   长度控制
+
+![](images/clipboard-4200662411.png)
+
+-   替换修改
+
+![](images/clipboard-3104311135.png)
+
+-   拼接分割
+
+![](images/clipboard-3333466972.png)
+
+# 【作业5】字符向量处理
+
+作业要求：
+
+-   围绕`stringr`包提供的字符串示例数据`fruit`（80个水果名称），运用`str_detect()`、`str_subset()`、`str_extract_all()`、`str_replace_all()`等`stringr`包函数中的至少2个，任意完成至少2种字符串处理任务，并对代码和结果进行简单的注释和解读
+-   使用R Markdown完成
+
+平台提交：
+
+-   运行得到的HTML网页，及其关键部分截图
+
+```{r}
+## 附：作业需要用到的数据集（字符向量）
+stringr::fruit
+```

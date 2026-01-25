@@ -9,7 +9,7 @@
 
 -   [第1章：基础入门（4学时）](https://psychbruce.github.io/RCourse/Chap01)（随堂作业1、2）
 -   [第2章：函数对象（2学时）](https://psychbruce.github.io/RCourse/Chap02)（随堂作业3）
--   [第3章：数据结构（2学时）](https://psychbruce.github.io/RCourse/Chap03) - 待上传
+-   [第3章：数据结构（2学时）](https://psychbruce.github.io/RCourse/Chap03)（随堂作业4）
 
 ### 第二模块：处理与操作（共4周，8学时）
 
@@ -60,7 +60,7 @@
 -   本课程代码文档R Markdown配置
     -   网页CSS样式：<https://psychbruce.github.io/RCourse/RmdCSS.css>
         -   另存为文件，放于Rmd文档同级别目录，并在下方代码中配置
-    -   Rmd文档属性配置模板（见Rmd文档开头位置）
+    -   Rmd文档属性配置模板（用于Rmd文档开头位置）
 
 ```         
 ---

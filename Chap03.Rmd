@@ -282,7 +282,7 @@ xml %>% html_elements(".subcolumn-name") %>% html_text2()
 xml %>% html_elements(".column-news-title") %>% html_text2()
 ```
 
-# 【作业4】任选数据导入
+# 【作业4】任选公开数据导入
 
 请开始准备个人期末大作业，自主选择任意一个感兴趣的公开数据，写出数据导入代码：
 

@@ -105,20 +105,20 @@ knitr::opts_chunk$set(
 
 #### 【实践2】设置RStudio界面
 
--   RStudio最上排“Tools”菜单 → “Global Options”菜单
-    -   “Code”—“Display”—“Syntax”
+-   **RStudio最上排“Tools”菜单 → “Global Options”菜单**
+    -   **“Code”—“Display”—“Syntax”**
         -   勾选所有（语法高亮显示）
-    -   “Console”—“Display”
+    -   **“Console”—“Display”**
         -   勾选“Show syntax highlighting in console input”（语法高亮显示）
-    -   “Appearance”
+    -   **“Appearance”**
         -   Editor font：选择字体“Consolas”（内置）或“Maple Mono SC NF”（需额外安装）
         -   Editor theme：选择主题配色“Tomorrow Night Bright”（对比醒目，深色护眼）
-    -   “Pane Layout”
+    -   **“Pane Layout”**
         -   左上角：Source（代码/脚本文件）
         -   左下角：Console（控制台/命令行/运行结果/临时代码）
         -   右上角：Environment（运行环境与变量）、Files（文件夹）、Plots（作图结果）、Packages（R包管理）、Help（帮助文档）、Viewer（浏览器）
         -   右下角：Build（R包开发）、VCS（Git版本控制）
-    -   “R Markdown”
+    -   **“R Markdown”**
         -   取消勾选“Show output inline for all R Markdown documents”（所有结果均输出到Console）
 
 ![](img/RStudio-Pane-Layout.png)
@@ -247,7 +247,13 @@ a  # 如果还没有赋值，就会找不到对象
 
 #### 【探索发现】为什么R语言`cat()`函数名称叫“cat”？
 
--   可以问问AI
+-   AI回答：R语言中的`cat()`函数之所以叫这个名字，是因为它源自Unix/Linux系统中的一个经典命令，其含义是**“concatenate and print”（连接并打印）**
+    -   词源和历史
+        -   Unix命令`cat`：在操作系统中，cat命令最初的核心功能是读取一个或多个文件，将它们连接（concatenate）起来，然后输出（打印）到标准输出（通常是终端屏幕），例如`cat file1.txt file2.txt`会将两个文件的内容连续显示出来
+        -   R的继承：R语言诞生于Unix环境（贝尔实验室），其设计深受Unix哲学和已有工具的影响，许多R的基础函数名都直接借鉴了Unix命令或C语言函数，`cat()`就是其中之一
+    -   R中`cat()`的核心功能
+        -   **连接（concatenate）**：将多个对象（字符串、数字、变量值）连接成一个连续的输出流
+        -   **打印（print）**：将这个连接后的结果直接输出到控制台或指定文件，不加任何额外的装饰（比如索引号`[1]`或引号）
 
 ```{r}
 ## 比较print()和cat()有什么不同
@@ -390,7 +396,7 @@ set.wd()
 
 ![](images/clipboard-1173882494.png)
 
-##### eval 运行代码
+##### **eval 运行代码**
 
 `{r, eval=TRUE}` 运行代码
 
@@ -404,7 +410,7 @@ print(123)  # 运行代码
 print(123)  # 不运行代码
 ```
 
-##### echo 显示代码
+##### **echo 显示代码**
 
 `{r, echo=TRUE}` 显示代码
 
@@ -418,7 +424,7 @@ print(123)  # 显示代码
 print(123)  # 不显示代码（但运行）
 ```
 
-##### results 显示结果
+##### **results 显示结果**
 
 `{r, results=TRUE}` 显示结果
 
@@ -432,7 +438,7 @@ print(123)  # 显示结果
 print(123)  # 不显示结果（但运行）
 ```
 
-##### include 显示代码+显示结果
+##### **include 显示代码+显示结果**
 
 `{r, include=TRUE}` 显示代码+显示结果
 

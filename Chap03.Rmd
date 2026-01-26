@@ -101,8 +101,15 @@ length(d)  # 变量个数
 ncol(d)  # 列数（变量个数）
 nrow(d)  # 行数（观测个数）
 str(d)  # 查看数据结构与变量类型
-View(d)  # 查看对象
+```
 
+```{r, eval=FALSE}
+View(d)  # 查看对象
+```
+
+![](images/clipboard-3928055958.png)
+
+```{r}
 d$x  # 取变量
 d$y  # 取变量
 d[["y"]]  # 取变量

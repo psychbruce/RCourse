@@ -81,3 +81,7 @@ output:
     css: RmdCSS.css
 ---
 ```
+
+-   网络爬虫基础工具：网页CSS元素选择器
+    -   [SelectorGadget](javascript:(function()%7Bvar%20s=document.createElement('div');s.innerHTML='Loading...';s.style.color='black';s.style.padding='20px';s.style.position='fixed';s.style.zIndex='9999';s.style.fontSize='3.0em';s.style.border='2px%20solid%20black';s.style.right='40px';s.style.top='40px';s.setAttribute('class','selector_gadget_loading');s.style.background='white';document.body.appendChild(s);s=document.createElement('script');s.setAttribute('type','text/javascript');s.setAttribute('src','https://dv0akt2986vzh.cloudfront.net/unstable/lib/selectorgadget.js');document.body.appendChild(s);%7D)();)（将这个超链接拖拽到你的浏览器书签栏，即可使用）
+        -   [使用教程](https://selectorgadget.com/)

@@ -35,6 +35,8 @@ knitr::opts_chunk$set(
 
 ------------------------------------------------------------------------
 
+# Chap04：字符处理
+
 #### 课程要点复习
 
 -   [Chap03 \# 数据框（data frame）](https://psychbruce.github.io/RCourse/Chap03#%E6%95%B0%E6%8D%AE%E6%A1%86data-frame){.uri}
@@ -43,7 +45,7 @@ knitr::opts_chunk$set(
 ```{r, message=FALSE, warning=FALSE}
 ## 本章所需R包
 library(bruceR)
-library(stringr)  # 字符串处理（bruceR已默认加载）
+library(stringr)  # 字符串处理（加载bruceR时已默认加载stringr）
 library(rvest)  # 网络爬虫
 ```
 

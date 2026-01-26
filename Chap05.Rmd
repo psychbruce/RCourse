@@ -35,6 +35,8 @@ knitr::opts_chunk$set(
 
 ------------------------------------------------------------------------
 
+# Chap05：变量计算
+
 #### 课程要点复习
 
 -   [Chap03 \# 数据框（data frame）](https://psychbruce.github.io/RCourse/Chap03#%E6%95%B0%E6%8D%AE%E6%A1%86data-frame){.uri}
@@ -43,8 +45,8 @@ knitr::opts_chunk$set(
 ```{r, message=FALSE, warning=FALSE}
 ## 本章所需R包
 library(bruceR)
-library(dplyr)  # bruceR已默认加载
-library(data.table)  # bruceR已默认加载
+# library(dplyr)       # 加载bruceR时已默认加载dplyr
+# library(data.table)  # 加载bruceR时已默认加载data.table
 ```
 
 # 变量计算的总体介绍
@@ -53,19 +55,19 @@ library(data.table)  # bruceR已默认加载
 
 -   `$`操作符：直接赋值⭐️
 -   `dplyr`包：`mutate()`函数
--   `data.table`包：`:=`象牙操作符 / `let()`函数⭐️
+-   `data.table`包：`:=`象牙运算符 / `let()`函数⭐️
 -   `bruceR`包：`add()`与`added()`函数⭐️
 
 ```{r}
 d = data.frame(Var = c("可乐", "雪碧", "咖啡", "茶"))
 d
 
-## 方式(1)：$ 操作符
+## 方式 1：$ 操作符
 d$NewVar1 = as.factor(d$Var)
 d
 str(d)
 
-## 方式(2)：mutate() 函数【dplyr包】
+## 方式 2：mutate() 函数【dplyr包】
 d = d %>% mutate(
   NewVar2 = as.factor(Var),
   NewVar3 = as.numeric(NewVar2),
@@ -74,7 +76,7 @@ d = d %>% mutate(
 d
 str(d)
 
-## 方式(3)：`:=` 象牙操作符 / let() 函数【data.table包】
+## 方式 3：`:=` 象牙运算符 / let() 函数【data.table包】
 d = data.table(Var = c("可乐", "雪碧", "咖啡", "茶"))
 d
 d[, NewVar1 := as.factor(Var)]       # 一次只能计算一个变量
@@ -128,6 +130,8 @@ d2  # add()不改变原数据
 ```
 
 #### 【知识点】data.table的“浅复制”与“深复制”问题
+
+![](images/clipboard-2049485222.png)
 
 ```{r}
 ## 浅复制（=）
@@ -256,7 +260,7 @@ add(d, {
 
 # 反向计分与重新编码
 
-#### 【实践6】大五人格量表BFI各维度平均分计算
+#### 【实践6】大五人格问卷BFI各维度平均分计算
 
 -   大五人格维度
     -   Extraversion（外倾性）

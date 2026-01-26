@@ -15,19 +15,19 @@
 
 -   [第4章：字符处理（2学时）](https://psychbruce.github.io/RCourse/Chap04)（随堂作业5）
 -   [第5章：变量计算（2学时）](https://psychbruce.github.io/RCourse/Chap05)（随堂作业6）
--   [第6章：数据操作（4学时）](https://psychbruce.github.io/RCourse/Chap06) - 待上传
+-   [第6章：数据操作（4学时）](https://psychbruce.github.io/RCourse/Chap06)（个人阶段作业①）
 
 ### 第三模块：统计与分析（共4周，8学时）
 
--   [第7章：基础统计（2学时）](https://psychbruce.github.io/RCourse/Chap07) - 待上传
--   [第8章：方差分析（2学时）](https://psychbruce.github.io/RCourse/Chap08) - 待上传
--   [第9章：回归分析（4学时）](https://psychbruce.github.io/RCourse/Chap09) - 待上传
+-   [第7章：基础统计（2学时）](https://psychbruce.github.io/RCourse/Chap07)（随堂作业7）
+-   [第8章：方差分析（2学时）](https://psychbruce.github.io/RCourse/Chap08)（随堂作业8）
+-   [第9章：回归分析（4学时）](https://psychbruce.github.io/RCourse/Chap09)（个人阶段作业②）
 
 ### 第四模块：数据可视化（共4周，8学时）
 
--   [第10章：绘图初阶（4学时）](https://psychbruce.github.io/RCourse/Chap10) - 待上传
--   [第11章：绘图中阶（2学时）](https://psychbruce.github.io/RCourse/Chap11) - 待上传
--   [第12章：绘图高阶（2学时）](https://psychbruce.github.io/RCourse/Chap12) - 待上传
+-   [第10章：绘图初阶（4学时）](https://psychbruce.github.io/RCourse/Chap10)（随堂作业9）
+-   [第11章：绘图中阶（2学时）](https://psychbruce.github.io/RCourse/Chap11)（随堂作业10）
+-   [第12章：绘图高阶（2学时）](https://psychbruce.github.io/RCourse/Chap12)（个人期末大作业）
 
 注：每章对应一个代码文档（R Markdown运行导出的HTML网页），点击章节进入浏览，然后可从右上角“Code” → “Download Rmd”下载原始代码文件。
 

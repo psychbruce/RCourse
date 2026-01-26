@@ -35,6 +35,8 @@ knitr::opts_chunk$set(
 
 ------------------------------------------------------------------------
 
+# Chap02：函数对象
+
 #### 课程要点复习
 
 -   [Chap01 \# R包安装与管理](https://psychbruce.github.io/RCourse/Chap01#r%E5%8C%85%E5%AE%89%E8%A3%85%E4%B8%8E%E7%AE%A1%E7%90%86){.uri}

@@ -7,7 +7,7 @@
 
 ### 第一模块：入门与筑基（共4周，8学时）
 
--   [第1章：基础入门（4学时）](https://psychbruce.github.io/RCourse/Chap01)（随堂作业1、2）
+-   [第1章：基础入门（4学时）](https://psychbruce.github.io/RCourse/Chap01)（随堂作业1 & 2）
 -   [第2章：函数对象（2学时）](https://psychbruce.github.io/RCourse/Chap02)（随堂作业3）
 -   [第3章：数据结构（2学时）](https://psychbruce.github.io/RCourse/Chap03)（随堂作业4）
 

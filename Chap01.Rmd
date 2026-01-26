@@ -118,6 +118,8 @@ knitr::opts_chunk$set(
         -   左下角：Console（控制台/命令行/运行结果/临时代码）
         -   右上角：Environment（运行环境与变量）、Files（文件夹）、Plots（作图结果）、Packages（R包管理）、Help（帮助文档）、Viewer（浏览器）
         -   右下角：Build（R包开发）、VCS（Git版本控制）
+    -   “R Markdown”
+        -   取消勾选“Show output inline for all R Markdown documents”（所有结果均输出到Console）
 
 ![](img/RStudio-Pane-Layout.png)
 

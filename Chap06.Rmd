@@ -595,7 +595,7 @@ d.wide.3
 
 作业要求：
 
--   基于[【作业4】](https://psychbruce.github.io/RCourse/Chap03#%E4%BD%9C%E4%B8%9A4%E6%9C%9F%E6%9C%AB%E8%87%AA%E9%80%89%E5%85%AC%E5%BC%80%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5)和[【作业6】](https://psychbruce.github.io/RCourse/Chap05#%E4%BD%9C%E4%B8%9A6%E6%9C%9F%E6%9C%AB%E4%BD%9C%E4%B8%9A%E6%95%B0%E6%8D%AE%E5%8F%98%E9%87%8F%E8%AE%A1%E7%AE%97){.uri}的期末自选数据和代码积累，综合运用本章所学的各种数据操作方法和代码，对数据进行增删查改、行列筛选、排序去重、分组汇总、匹配拼接、长宽转换等操作，体现对目前所学全部内容的掌握和迁移应用
+-   基于[【作业4】](https://psychbruce.github.io/RCourse/Chap03#%E4%BD%9C%E4%B8%9A4%E6%9C%9F%E6%9C%AB%E8%87%AA%E9%80%89%E5%85%AC%E5%BC%80%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5)和[【作业6】](https://psychbruce.github.io/RCourse/Chap05#%E4%BD%9C%E4%B8%9A6%E6%9C%9F%E6%9C%AB%E4%BD%9C%E4%B8%9A%E6%95%B0%E6%8D%AE%E5%8F%98%E9%87%8F%E8%AE%A1%E7%AE%97){.uri}的期末自选数据和代码积累，综合运用本章所学的各种数据操作方法和代码，对数据进行**增删查改、行列筛选、排序去重、分组汇总、匹配拼接、长宽转换**等操作，体现对目前所学全部内容的掌握和迁移应用
 -   使用R Markdown完成，对关键代码及结果要有注释说明
 
 平台提交：

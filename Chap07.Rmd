@@ -37,10 +37,25 @@ knitr::opts_chunk$set(
 
 # Chap07：基础统计
 
-#### 课程要点复习
+#### 往期要点回顾
 
 -   [Chap05 \# 变量计算](https://psychbruce.github.io/RCourse/Chap05){.uri}
 -   [Chap06 \# 数据操作](https://psychbruce.github.io/RCourse/Chap06){.uri}
+
+#### 本章要点目录
+
+-   [【实践1】频次统计](#实践1频次统计)
+-   [【实践2】描述统计](#实践2描述统计)
+-   [【知识点】正态分布与正负偏态](#知识点正态分布与正负偏态)
+-   [【实践3】相关分析](#实践3相关分析)（重点）
+-   [【知识点】相关系数（r）的效应量大小](#知识点相关系数r的效应量大小)
+-   [【实践4】单样本t检验](#实践4单样本t检验)
+-   [【知识点】标准化均值差异（d）的效应量大小](#知识点标准化均值差异d的效应量大小)
+-   [【实践5】独立样本t检验](#实践5独立样本t检验)（重点）
+-   [【实践6】配对样本t检验](#实践6配对样本t检验)
+-   [【实践7】大五人格量表信度分析](#实践7大五人格量表信度分析)（重点）
+-   [【实践8】大五人格量表探索性因素分析（EFA）](#实践8大五人格量表探索性因素分析efa)
+-   [【实践9】大五人格量表验证性因素分析（CFA）](#实践9大五人格量表验证性因素分析cfa)
 
 ```{r, message=FALSE, warning=FALSE}
 ## 本章所需R包
@@ -67,7 +82,7 @@ str(data)
 
 ## 频次统计
 
-#### 【实践1】频次统计
+#### 【实践1】频次统计 {#实践1频次统计}
 
 -   [`Freq()`函数帮助文档](https://psychbruce.github.io/bruceR/reference/Freq.html){.uri}
 
@@ -93,7 +108,7 @@ Freq(data$Age)  # 查看可能的异常值
 
 ## 描述统计
 
-#### 【实践2】描述统计
+#### 【实践2】描述统计 {#实践2描述统计}
 
 -   [`Describe()`函数帮助文档](https://psychbruce.github.io/bruceR/reference/Describe.html){.uri}
 
@@ -116,13 +131,13 @@ Describe(data[, Gender:O], file="Desc.doc")  # 保存结果表到Word文档
 
 ![](images/clipboard-3985494570.png)
 
-#### 【知识点】正态分布与正负偏态
+#### 【知识点】正态分布与正负偏态 {#知识点正态分布与正负偏态}
 
 ![](images/clipboard-406999052.png)
 
 ## 相关分析
 
-#### 【实践3】相关分析
+#### 【实践3】相关分析 {#实践3相关分析}
 
 -   [`Corr()`函数帮助文档](https://psychbruce.github.io/bruceR/reference/Corr.html){.uri}
 
@@ -142,7 +157,7 @@ Corr(data[, Gender:O], plot=FALSE, file="Corr.doc")
 
 最新学术规范：大于.001的需要**报告精确*p*值**（如*p* = .035、*p* = .006、*p* \< .001），不能只报告范围（如*p* \< .05）！***p*****值不能等于0**（不能写*p* = .000，要写*p* \< .001）！
 
-#### 【知识点】相关系数 *r* 的效应量大小
+#### 【知识点】相关系数（r）的效应量大小 {#知识点相关系数r的效应量大小}
 
 -   相关系数 \|*r*\|（请参阅`effectsize::interpret_r()`函数帮助文档）
     -   经典参考（Cohen, 1988）
@@ -171,7 +186,7 @@ effectsize::interpret_r(0.4)
 
 ## 单样本t检验
 
-#### 【实践4】单样本t检验
+#### 【实践4】单样本t检验 {#实践4单样本t检验}
 
 -   [`TTEST()`函数帮助文档](https://psychbruce.github.io/bruceR/reference/TTEST.html){.uri}
 
@@ -181,7 +196,7 @@ TTEST(data, y="Age", test.value=20)
 TTEST(data, y="Age", test.value=28)  # 统计显著不等于大效应！
 ```
 
-#### 【知识点】标准化均值差异 Cohen's *d* 的效应量大小
+#### 【知识点】标准化均值差异（d）的效应量大小 {#知识点标准化均值差异d的效应量大小}
 
 -   Cohen's *d*（请参阅`effectsize::interpret_cohens_d()`函数帮助文档）
     -   经典参考（Cohen, 1988）
@@ -192,7 +207,7 @@ TTEST(data, y="Age", test.value=28)  # 统计显著不等于大效应！
 
 ## 独立样本t检验
 
-#### 【实践5】独立样本t检验
+#### 【实践5】独立样本t检验 {#实践5独立样本t检验}
 
 -   [`TTEST()`函数帮助文档](https://psychbruce.github.io/bruceR/reference/TTEST.html){.uri}
 
@@ -216,7 +231,7 @@ TTEST(data,
 
 ## 配对样本t检验
 
-#### 【实践6】配对样本t检验
+#### 【实践6】配对样本t检验 {#实践6配对样本t检验}
 
 -   [`TTEST()`函数帮助文档](https://psychbruce.github.io/bruceR/reference/TTEST.html){.uri}
 
@@ -273,7 +288,7 @@ p(chi2=3.84, df=1)
 
 ## 内部一致性信度
 
-#### 【实践7】大五人格量表信度分析
+#### 【实践7】大五人格量表信度分析 {#实践7大五人格量表信度分析}
 
 -   Cronbach's α
     -   [`Alpha()`函数帮助文档](https://psychbruce.github.io/bruceR/reference/Alpha.html){.uri}
@@ -296,7 +311,7 @@ Alpha(data, "O", 1:5, rev=c(2, 5))  # 开放性
 
 # \* 拓展：探索性因素分析（EFA）
 
-#### 【实践8】大五人格量表探索性因素分析
+#### 【实践8】大五人格量表探索性因素分析（EFA） {#实践8大五人格量表探索性因素分析efa}
 
 -   [`EFA()`函数帮助文档](https://psychbruce.github.io/bruceR/reference/EFA.html){.uri}
 
@@ -313,7 +328,7 @@ EFA(data = psych::bfi,
 
 # \* 拓展：验证性因素分析（CFA）
 
-#### 【实践9】大五人格量表验证性因素分析
+#### 【实践9】大五人格量表验证性因素分析（CFA） {#实践9大五人格量表验证性因素分析cfa}
 
 -   [`CFA()`函数帮助文档](https://psychbruce.github.io/bruceR/reference/CFA.html){.uri}
 

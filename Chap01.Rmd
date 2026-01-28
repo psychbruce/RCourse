@@ -37,6 +37,28 @@ knitr::opts_chunk$set(
 
 # Chap01：基础入门
 
+#### 本章要点目录
+
+-   [【实践1】下载安装R软件和RStudio编辑器](#实践1下载安装r软件和rstudio编辑器)
+-   [【实践2】设置RStudio界面](#实践2设置rstudio界面)
+-   [【探索发现】官方平台（CRAN）现在一共发布了多少个R程序包？](#探索发现官方平台cran现在一共发布了多少个r程序包)
+-   [【探索发现】现有R包能覆盖哪些学科领域和统计方法？](#探索发现现有r包能覆盖哪些学科领域和统计方法)
+-   [【实践3】下载安装R程序包](#实践3下载安装r程序包)（重点）
+-   [【探索发现】安装遇到报错怎么办？](#探索发现安装遇到报错怎么办)
+-   [【实践4】加载本地R包](#实践4加载本地r包)
+-   [【实践5】为《R语言》课程学习建立一个独立的项目环境](#实践5为r语言课程学习建立一个独立的项目环境)
+-   [【探索发现】R语言赋值符号问题：一定要用箭头，不能用等号吗？](#探索发现r语言赋值符号问题一定要用箭头不能用等号吗)
+-   [【实践6】逐行运行代码，体会写法差异](#实践6逐行运行代码体会写法差异)
+-   [【探索发现】为什么R语言cat()函数名称叫“cat”？](#探索发现为什么r语言cat函数名称叫cat)
+-   [【知识点】R包与R函数的调用方式](#知识点r包与r函数的调用方式)
+-   [【实践7】调用R包函数](#实践7调用r包函数)
+-   [【实践8】查询函数的帮助文档](#实践8查询函数的帮助文档)（重点）
+-   [【知识点】RStudio常用快捷键](#知识点rstudio常用快捷键)（重点）
+-   [【探索发现】为什么要使用R Markdown？](#探索发现为什么要使用r-markdown)
+-   [【知识点】Markdown语法基础](#知识点markdown语法基础)
+-   [【知识点】R Markdown代码块设置](#知识点r-markdown代码块设置)
+-   [【实践9】设置Rmd文档属性](#实践9设置rmd文档属性)（重点）
+
 # R语言总体介绍
 
 ![](img/Programming.jpg)
@@ -87,7 +109,7 @@ knitr::opts_chunk$set(
 
 # R软件和RStudio编辑器下载安装
 
-#### 【实践1】下载安装R软件、RStudio编辑器
+#### 【实践1】下载安装R软件和RStudio编辑器 {#实践1下载安装r软件和rstudio编辑器}
 
 -   R最新版（<https://cran.r-project.org/>）
     -   [Download R for Windows](https://cran.r-project.org/bin/windows/) → [install R for the first time](https://cran.r-project.org/bin/windows/base/){.uri} → Download R-x.x.x for Windows
@@ -103,7 +125,7 @@ knitr::opts_chunk$set(
 
 # RStudio编辑器设置
 
-#### 【实践2】设置RStudio界面
+#### 【实践2】设置RStudio界面 {#实践2设置rstudio界面}
 
 -   **RStudio最上排“Tools”菜单 → “Global Options”菜单**
     -   **“Code”—“Display”—“Syntax”**
@@ -125,15 +147,15 @@ knitr::opts_chunk$set(
 
 # R包安装与管理
 
-#### 【探索发现】官方平台（CRAN）现在一共发布了多少个R程序包？
+#### 【探索发现】官方平台（CRAN）现在一共发布了多少个R程序包？ {#探索发现官方平台cran现在一共发布了多少个r程序包}
 
 -   点击看看实时统计：<https://cran.r-project.org/web/packages/index.html>
 
-#### 【探索发现】现有R包能覆盖哪些学科领域和统计方法？
+#### 【探索发现】现有R包能覆盖哪些学科领域和统计方法？ {#探索发现现有r包能覆盖哪些学科领域和统计方法}
 
 -   点击看看主题目录：<https://cran.r-project.org/web/views/>
 
-#### 【实践3】下载安装R程序包
+#### 【实践3】下载安装R程序包 {#实践3下载安装r程序包}
 
 安装/更新R包的两种方式：
 
@@ -151,24 +173,24 @@ install.packages("bruceR", dep=TRUE)
 # 参数 dependencies=TRUE 安装所有依赖包
 ```
 
-#### 【探索发现】安装遇到报错怎么办？
+#### 【探索发现】安装遇到报错怎么办？ {#探索发现安装遇到报错怎么办}
 
--   仔细阅读报错信息
+-   阅读报错信息
     -   `package ‘XXX’ is not available for this version of R`
         -   这个包可能只存在于GitHub平台？
-        -   拼错了？
--   检查网络连接，换一个镜像
-    -   “Tools”菜单 → “Global Options”菜单 → “Packages” → “Change” → 选一个国内镜像
+        -   是不是拼写错了？
 -   重启RStudio
     -   重启软件“包治百病”
--   手动卸载、重装这个R包
+-   手动卸载重装R包
     -   能确保解除当前R包占用
 -   更新R软件和所有R包
     -   及时更新是一种好习惯
+-   检查网络连接，换一个镜像
+    -   “Tools”菜单 → “Global Options”菜单 → “Packages” → “Change” → 选一个国内镜像
+-   实在不行，等一两天再安装
+    -   R包在CRAN平台更新后，最初一两天安装时都需要暂时本地编译，等官方编译完成、发布编译版本后，用户才能快捷安装，所以你可能恰好遇到了刚刚更新的R包，不要心急，慢慢解决
 
-![](images/clipboard-3875994862.png)
-
-#### 【实践4】加载本地R包
+#### 【实践4】加载本地R包 {#实践4加载本地r包}
 
 注：`tidyverse`和`bruceR`是两个常用的综合R包，国内多所高校（包括北大）在本科及研究生R语言教学中均有使用。
 
@@ -199,19 +221,19 @@ library(bruceR)
 
 ## （1）R Project（项目）
 
-#### 【实践5】为《R语言》课程学习建立一个独立的项目环境
+#### 【实践5】为《R语言》课程学习建立一个独立的项目环境 {#实践5为r语言课程学习建立一个独立的项目环境}
 
 -   RStudio最上排“File”菜单 → “New Project”菜单
     -   “New Directory” → “New Project” → 起一个项目名称 (如“Project_R_Course”) → “Browse”选择存储该项目的上级目录 → “Create Project”
 
 ## （2）R Console（命令行）
 
-#### 【探索发现】R语言的赋值符号问题：赋值一定要用`<-`，不能用`=`吗？
+#### 【探索发现】R语言赋值符号问题：一定要用箭头，不能用等号吗？ {#探索发现r语言赋值符号问题一定要用箭头不能用等号吗}
 
 -   可以只用`=`赋值，完全没问题！
 -   好习惯：`=`、`<`等符号前后加空格！
 
-#### 【实践6】逐行运行代码，体会写法差异
+#### 【实践6】逐行运行代码，体会写法差异 {#实践6逐行运行代码体会写法差异}
 
 小贴士：逐行运行代码的快捷键是Ctrl + Enter哦\~！
 
@@ -245,7 +267,7 @@ a  # 如果还没有赋值，就会找不到对象
 错误: 找不到对象'a'
 ```
 
-#### 【探索发现】为什么R语言`cat()`函数名称叫“cat”？
+#### 【探索发现】为什么R语言cat()函数名称叫“cat”？ {#探索发现为什么r语言cat函数名称叫cat}
 
 -   AI回答：R语言中的`cat()`函数之所以叫这个名字，是因为它源自Unix/Linux系统中的一个经典命令，其含义是**“concatenate and print”（连接并打印）**
     -   词源和历史
@@ -267,11 +289,11 @@ cat("Hello", "World", "\n")  # 拼接字符串（\n表示换行）
     -   “File” → “New File” → “R Script”（也有快捷键：Ctrl + Shift + N）
     -   保存（快捷键：Ctrl + S）并取一个文档名
 
-#### 【知识点】R包与R函数的调用方式
+#### 【知识点】R包与R函数的调用方式 {#知识点r包与r函数的调用方式}
 
 ![](images/clipboard-245149326.png)
 
-#### 【实践7】调用R包函数
+#### 【实践7】调用R包函数 {#实践7调用r包函数}
 
 ```{r, eval=FALSE}
 set.wd()  # 如果不加载R包，就无法直接使用里面的函数
@@ -293,7 +315,7 @@ bruceR::set.wd()  # 明确调用R包函数（函数重名才用到）
 bruceR:::p.trans(0)  # 调用R包隐藏函数（一般情况用不到）
 ```
 
-也试试这些代码：
+试试这些代码：
 
 ```{r, eval=FALSE}
 set.wd()  # set working directory to the path of the currently opened file
@@ -302,7 +324,7 @@ set.wd("../")  # set working directory to the parent path
 set.wd(ask=TRUE)  # select a folder with the prompt of a dialog
 ```
 
-#### 【实践8】查询函数的帮助文档
+#### 【实践8】查询函数的帮助文档 {#实践8查询函数的帮助文档}
 
 ```{r, eval=FALSE}
 ## 1. help(函数名)
@@ -318,9 +340,24 @@ help(set.wd)
 set.wd()
 ```
 
-#### 【知识点】RStudio实用快捷键（拓展了解，慢慢尝试）
+#### 【知识点】RStudio常用快捷键 {#知识点rstudio常用快捷键}
 
-![](images/clipboard-3715683662.png)
+| 功能                        | Windows & Linux   | Mac                    |
+|-----------------------------|-------------------|------------------------|
+| 自动**补全**代码            | Tab               | Tab                    |
+| **运行**当前代码行(Run)     | Ctrl + Enter      | Command + Return       |
+| **注释**当前代码行(Comment) | Ctrl + Shift + C  | Shift + Command + C    |
+| **移动**当前代码行(上/下)   | Alt + ↑/↓         | Option + ↑/↓           |
+| **复制**当前代码行(上/下)   | Alt + Shift + ↑/↓ | Option + Command + ↑/↓ |
+| **缩进**当前代码行(Indent)  | Ctrl + I          | Command + I            |
+| **删除**当前代码行(Delete)  | Ctrl + D          | Command + D            |
+| 快捷输入**管道操作符**`%>%` | Ctrl + Shift + M  | Shift + Command + M    |
+| 撤销(Undo)                  | Ctrl + Z          | Command + Z            |
+| 重做(Redo)                  | Ctrl + Shift + Z  | Shift + Command + Z    |
+| 保存文件(Save)              | Ctrl + S          | Command + S            |
+| 清空Console                 | Ctrl + L          | Ctrl + L               |
+
+: RStudio常用快捷键
 
 ## （4）R Markdown（综合文档）
 
@@ -329,7 +366,7 @@ set.wd()
 
 ![](images/clipboard-2325467990.png)
 
-#### 【探索发现】为什么要使用R Markdown？
+#### 【探索发现】为什么要使用R Markdown？ {#探索发现为什么要使用r-markdown}
 
 -   融合文字、代码、结果、图表，适用于研究论文补充材料（HTML文档）
     -   Markdown语法
@@ -346,7 +383,7 @@ set.wd()
 
 ![](images/clipboard-2896875714.png)
 
-#### 【知识点】Markdown语法基础
+#### 【知识点】Markdown语法基础 {#知识点markdown语法基础}
 
 ```         
 # 一级标题
@@ -392,7 +429,7 @@ set.wd()
 
 > 以上都可以通过RStudio编辑器的“Visual”所见即所得模式快捷设置
 
-#### 【知识点】R Markdown代码块设置 {.tabset .tabset-fade .table-pill}
+#### 【知识点】R Markdown代码块设置 {#知识点r-markdown代码块设置 .tabset .tabset-fade .table-pill}
 
 ![](images/clipboard-1173882494.png)
 
@@ -452,7 +489,7 @@ print(123)  # 显示代码+显示结果
 print(123)  # 不显示代码+不显示结果（但运行）
 ```
 
-#### 【实践9】设置Rmd文档属性
+#### 【实践9】设置Rmd文档属性 {#实践9设置rmd文档属性}
 
 请在自己新建的R Markdown文档开头，替换修改以下属性信息，并删掉注释。
 

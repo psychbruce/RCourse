@@ -37,11 +37,23 @@ knitr::opts_chunk$set(
 
 # Chap08：方差分析
 
-#### 课程要点复习
+#### 往期要点回顾
 
 -   [Chap07 \# 描述统计与相关分析](https://psychbruce.github.io/RCourse/Chap07#%E6%8F%8F%E8%BF%B0%E7%BB%9F%E8%AE%A1%E4%B8%8E%E7%9B%B8%E5%85%B3%E5%88%86%E6%9E%90){.uri}
-
 -   [Chap07 \# t检验](https://psychbruce.github.io/RCourse/Chap07#t%E6%A3%80%E9%AA%8C){.uri}
+
+#### 本章要点目录
+
+-   [【知识点】方差分析（ANOVA）统计术语](#知识点方差分析anova统计术语)
+-   [【实践1】组间设计ANOVA](#实践1组间设计anova)（重点）
+-   [【实践2】组内设计ANOVA](#实践2组内设计anova)
+-   [【实践3】混合设计ANOVA](#实践3混合设计anova)
+-   [【实践4】组间设计ANOVA的多重比较](#实践4组间设计anova的多重比较)（重点）
+-   [【探索发现】多重比较的p值校正方法](#探索发现多重比较的p值校正方法)
+-   [【实践5】组间设计ANOVA的简单效应检验](#实践5组间设计anova的简单效应检验)（重点）
+-   [【探索发现】对于两因素方差分析（A × B），以下情况都有可能发生吗？](#探索发现对于两因素方差分析a-b以下情况都有可能发生吗)
+-   [【实践6】交互作用显著，但A的两个简单效应都不显著](#实践6交互作用显著但a的两个简单效应都不显著)
+-   [【实践7】交互作用不显著，但A的简单效应一个显著、一个不显著](#实践7交互作用不显著但a的简单效应一个显著一个不显著)
 
 ```{r, message=FALSE, warning=FALSE}
 ## 本章所需R包
@@ -50,7 +62,7 @@ library(bruceR)
 
 # 方差分析的统计知识回顾
 
-#### 【知识点】方差分析（ANOVA）统计术语
+#### 【知识点】方差分析（ANOVA）统计术语 {#知识点方差分析anova统计术语}
 
 ![↑ 图源：<https://www.nature.com/articles/s41598-023-47057-0>](images/clipboard-2342090980.png)
 
@@ -81,7 +93,7 @@ library(bruceR)
 
 ## 完全随机/组间设计ANOVA
 
-#### 【实践1】组间设计ANOVA
+#### 【实践1】组间设计ANOVA {#实践1组间设计anova}
 
 -   [`MANOVA()`函数帮助文档](https://psychbruce.github.io/bruceR/reference/MANOVA.html){.uri}
 
@@ -110,7 +122,7 @@ MANOVA(between.3, dv="SCORE", between=c("A", "B", "C"))
 
 ## 重复测量/组内设计ANOVA
 
-#### 【实践2】组内设计ANOVA
+#### 【实践2】组内设计ANOVA {#实践2组内设计anova}
 
 -   [`MANOVA()`函数帮助文档](https://psychbruce.github.io/bruceR/reference/MANOVA.html){.uri}
 
@@ -150,7 +162,7 @@ MANOVA(within.3,
 
 ## 混合设计ANOVA
 
-#### 【实践3】混合设计ANOVA
+#### 【实践3】混合设计ANOVA {#实践3混合设计anova}
 
 -   [`MANOVA()`函数帮助文档](https://psychbruce.github.io/bruceR/reference/MANOVA.html){.uri}
 
@@ -191,7 +203,7 @@ MANOVA(mixed.3_2b1w,
 
 ## 多重比较
 
-#### 【实践4】组间设计ANOVA的多重比较
+#### 【实践4】组间设计ANOVA的多重比较 {#实践4组间设计anova的多重比较}
 
 -   [`EMMEANS()`函数帮助文档](https://psychbruce.github.io/bruceR/reference/EMMEANS.html){.uri}（**E**stimated **M**arginal **Means**，估计边际均值）
 
@@ -205,13 +217,27 @@ EMMEANS(m, "A", contrast="seq")
 EMMEANS(m, "A", contrast="poly")
 ```
 
-#### 【探索发现】多重比较的*p*值校正方法 & 效应量的联合标准差计算方法
+#### 【探索发现】多重比较的p值校正方法 {#探索发现多重比较的p值校正方法}
 
-![](images/clipboard-4241599848.png)
+`p.adjust`参数
+
+-   `"none"`（无校正）
+-   `"fdr"`
+-   `"hochberg"`
+-   `"hommel"`
+-   `"holm"`
+-   `"tukey"`
+-   `"mvt"`
+-   `"dunnettx"`
+-   `"sidak"`
+-   `"scheffe"`
+-   `"bonferroni"`（默认，最严格）
+    -   Bonferroni校正：直接将原始*p*值与多重比较次数*n*相乘，得到校正后的*p*值
+        -   比如，3个条件之间的两两比较组合有C(3, 2) = 3次，某效应的原始*p* = .04，校正后*p* = .04 × 3 = .12，不再显著
 
 ## 简单效应检验
 
-#### 【实践5】组间设计ANOVA的简单效应检验
+#### 【实践5】组间设计ANOVA的简单效应检验 {#实践5组间设计anova的简单效应检验}
 
 -   [`EMMEANS()`函数帮助文档](https://psychbruce.github.io/bruceR/reference/EMMEANS.html){.uri}（**E**stimated **M**arginal **Means**，估计边际均值）
 
@@ -235,7 +261,7 @@ MANOVA(between.3, dv="SCORE", between=c("A", "B", "C")) %>%
 
 # \* 拓展：特殊情况
 
-#### 【探索发现】对于两因素方差分析（A × B），以下情况都有可能发生吗？
+#### 【探索发现】对于两因素方差分析（A × B），以下情况都有可能发生吗？ {#探索发现对于两因素方差分析a-b以下情况都有可能发生吗}
 
 **交互作用 & 主效应：**
 
@@ -262,7 +288,7 @@ MANOVA(between.3, dv="SCORE", between=c("A", "B", "C")) %>%
 
 > “Seeing is believing.”（眼见为实）
 
-#### 【实践6】交互作用显著，但A的两个简单效应都不显著
+#### 【实践6】交互作用显著，但A的两个简单效应都不显著 {#实践6交互作用显著但a的两个简单效应都不显著}
 
 ```{r}
 data1 = data.frame(
@@ -277,7 +303,7 @@ EMMEANS(m, "A", by="B")
 
 ![](images/clipboard-2805730961.png)
 
-#### 【实践7】交互作用不显著，但A的简单效应一个显著、一个不显著
+#### 【实践7】交互作用不显著，但A的简单效应一个显著、一个不显著 {#实践7交互作用不显著但a的简单效应一个显著一个不显著}
 
 ```{r}
 data2 = data.frame(

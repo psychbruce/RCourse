@@ -37,9 +37,26 @@ knitr::opts_chunk$set(
 
 # Chap06：数据操作
 
-#### 课程要点复习
+#### 往期要点回顾
 
 -   [Chap05 \# 变量计算的多种方式](https://psychbruce.github.io/RCourse/Chap05#%E5%8F%98%E9%87%8F%E8%AE%A1%E7%AE%97%E7%9A%84%E6%80%BB%E4%BD%93%E4%BB%8B%E7%BB%8D){.uri}
+
+#### 本章要点目录
+
+-   [【知识点】data.table核心要素](#知识点data.table核心要素)
+-   [【探索发现】data.table vs. dplyr (tidyverse) 数据操作代码风格比较](#探索发现data.table-vs.-dplyr-tidyverse-数据操作代码风格比较)
+-   [【探索发现】性能大PK：data.table (R) vs. dplyr (R) vs. pandas (Python)](#探索发现性能大pkdata.table-r-vs.-dplyr-r-vs.-pandas-python)
+-   [【实践1】增删查改](#实践1增删查改)（重点）
+-   [【实践2】行列筛选](#实践2行列筛选)（重点）
+-   [【实践3】排序去重](#实践3排序去重)
+-   [【自由练习】数据基本操作](#自由练习数据基本操作)
+-   [【实践4】分组汇总](#实践4分组汇总)（重点）
+-   [【知识点】data.table核心知识点总结](#知识点data.table核心知识点总结)
+-   [【知识点】dplyr包：join系列函数](#知识点dplyr包join系列函数)
+-   [【实践5】匹配拼接](#实践5匹配拼接)（重点）
+-   [【知识点】宽数据 vs. 长数据](#知识点宽数据-vs.-长数据)
+-   [【知识点】tidyr包：pivot系列函数](#知识点tidyr包pivot系列函数)
+-   [【实践6】长宽转换](#实践6长宽转换)
 
 ```{r, message=FALSE, warning=FALSE}
 ## 本章所需R包
@@ -51,7 +68,7 @@ library(bruceR)
 
 # 数据操作类R包概述与比较
 
-#### 【知识点】data.table的设计理念
+#### 【知识点】data.table核心要素 {#知识点data.table核心要素}
 
 -   [一图学会data.table包（官方速查表）](https://psychbruce.github.io/RCourse/cheatsheet/data.table.pdf)
 -   极简代码风格：`data[i, j, by]` —— 只需要一对中括号，就能完成所有操作！
@@ -61,7 +78,7 @@ library(bruceR)
 
 ![](images/clipboard-809273248.png)
 
-#### 【探索发现】data.table vs. dplyr (tidyverse) 数据操作代码风格比较
+#### 【探索发现】data.table vs. dplyr (tidyverse) 数据操作代码风格比较 {#探索发现data.table-vs.-dplyr-tidyverse-数据操作代码风格比较}
 
 -   [A data.table and dplyr tour (Atrebas, 2019)](https://atrebas.github.io/post/2019-03-03-datatable-dplyr/){.uri}
 
@@ -69,7 +86,7 @@ library(bruceR)
 
 ![](images/clipboard-3176903319.png)
 
-#### 【探索发现】性能大PK：data.table (R) vs. dplyr (R) vs. pandas (Python) {.tabset .tabset-fade .table-pill}
+#### 【探索发现】性能大PK：data.table (R) vs. dplyr (R) vs. pandas (Python) {#探索发现性能大pkdata.table-r-vs.-dplyr-r-vs.-pandas-python .tabset .tabset-fade .table-pill}
 
 -   <https://h2oai.github.io/db-benchmark/>
 
@@ -93,7 +110,7 @@ library(bruceR)
 
 # 增删查改（data.table）
 
-#### 【实践1】增删查改 {.tabset .tabset-fade .table-pill}
+#### 【实践1】增删查改 {#实践1增删查改 .tabset .tabset-fade .table-pill}
 
 ```{r}
 ## 数据准备：大五人格问卷BFI（部分数据）
@@ -181,7 +198,7 @@ d
 
 # 行列筛选（data.table）
 
-#### 【实践2】行列筛选 {.tabset .tabset-fade .table-pill}
+#### 【实践2】行列筛选 {#实践2行列筛选 .tabset .tabset-fade .table-pill}
 
 ```{r}
 ## 数据准备：大五人格问卷BFI（部分数据）
@@ -272,7 +289,7 @@ data %>% select(num_range("A", 1:5))
 
 # 排序去重（data.table）
 
-#### 【实践3】排序去重 {.tabset .tabset-fade .table-pill}
+#### 【实践3】排序去重 {#实践3排序去重 .tabset .tabset-fade .table-pill}
 
 ```{r}
 ## 数据准备：大五人格问卷BFI（部分数据）
@@ -313,7 +330,7 @@ unique(d[order(-Gender, -Age, -Edu)], by=c("Gender", "Edu"))
 
 （本小节进度：2/2）
 
-# 【自由练习】数据基本操作
+# 【自由练习】数据基本操作 {#自由练习数据基本操作}
 
 参考前三小节代码（增删查改、行列筛选、排序去重），基于`psych::bfi`或期末自选数据，在自己电脑上自由练习数据基本操作，为【阶段作业①】做准备。
 
@@ -322,7 +339,7 @@ unique(d[order(-Gender, -Age, -Edu)], by=c("Gender", "Edu"))
 
 # 分组汇总（data.table）
 
-#### 【实践4】分组汇总 {.tabset .tabset-fade .table-pill}
+#### 【实践4】分组汇总 {#实践4分组汇总 .tabset .tabset-fade .table-pill}
 
 ```{r}
 ## 数据准备：大五人格问卷BFI（部分数据）
@@ -403,7 +420,7 @@ d[, Age.Group.C := Age - mean(Age), keyby=Gender]
 d[, .(Gender, Age, Mean.Age, Mean.Age.G, Age.Group.C)]
 ```
 
-#### 【知识点】data.table核心知识点总结
+#### 【知识点】data.table核心知识点总结 {#知识点data.table核心知识点总结}
 
 ![](images/clipboard-2006248056.png)
 
@@ -411,7 +428,7 @@ d[, .(Gender, Age, Mean.Age, Mean.Age.G, Age.Group.C)]
 
 # 匹配拼接（dplyr）
 
-#### 【知识点】dplyr包：join系列函数
+#### 【知识点】dplyr包：join系列函数 {#知识点dplyr包join系列函数}
 
 两个数据`d1`和`d2`具有相同变量`"var"`：
 
@@ -426,7 +443,7 @@ d[, .(Gender, Age, Mean.Age, Mean.Age.G, Age.Group.C)]
 
 ![](images/clipboard-1531735304.png)
 
-#### 【实践5】匹配拼接 {.tabset .tabset-fade .table-pill}
+#### 【实践5】匹配拼接 {#实践5匹配拼接 .tabset .tabset-fade .table-pill}
 
 ##### **1. 匹配拼接-例1**
 
@@ -478,7 +495,7 @@ d.merge
 
 # 长宽转换（tidyr）
 
-#### 【知识点】宽数据 vs. 长数据
+#### 【知识点】宽数据 vs. 长数据 {#知识点宽数据-vs.-长数据}
 
 -   **宽数据（wide-format data）**—— “汇总表”或“透视表”
     -   每个被观测的对象只占一行，而该对象的多个属性或随时间变化的观测值作为不同的列横向展开
@@ -498,13 +515,13 @@ d.merge
 
 ![↑ 长数据示例](images/clipboard-2872093314.png)
 
-#### 【知识点】tidyr包：pivot系列函数
+#### 【知识点】tidyr包：pivot系列函数 {#知识点tidyr包pivot系列函数}
 
 （data.table也能完成长宽转换操作，但比tidyr难用）
 
 ![](images/clipboard-3630598939.png)
 
-#### 【实践6】长宽转换 {.tabset .tabset-fade .table-pill}
+#### 【实践6】长宽转换 {#实践6长宽转换 .tabset .tabset-fade .table-pill}
 
 ##### **1. 宽变长**
 

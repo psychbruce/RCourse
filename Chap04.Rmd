@@ -37,10 +37,19 @@ knitr::opts_chunk$set(
 
 # Chap04：字符处理
 
-#### 课程要点复习
+#### 往期要点回顾
 
 -   [Chap03 \# 数据框（data frame）](https://psychbruce.github.io/RCourse/Chap03#%E6%95%B0%E6%8D%AE%E6%A1%86data-frame){.uri}
 -   [Chap03 \# “一站式”数据导入导出](https://psychbruce.github.io/RCourse/Chap03#%E5%A4%96%E9%83%A8%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA){.uri}
+
+#### 本章要点目录
+
+-   [【知识点】正则表达式](#知识点正则表达式)（重点）
+-   [【实践1】字符匹配](#实践1字符匹配)
+-   [【实践2】条件匹配](#实践2条件匹配)
+-   [【实践3】预查匹配](#实践3预查匹配)
+-   [【实践4】字符串综合处理](#实践4字符串综合处理)（重点）
+-   [【探索发现】stringr包的函数功能](#探索发现stringr包的函数功能)
 
 ```{r, message=FALSE, warning=FALSE}
 ## 本章所需R包
@@ -51,7 +60,9 @@ library(rvest)  # 网络爬虫
 
 # 正则表达式基础
 
-#### 【知识点】正则表达式 / 规律表达式（regular/pattern expression，RegEx）
+#### 【知识点】正则表达式 {#知识点正则表达式}
+
+**正则表达式 / 规律表达式（regular/pattern expression，RegEx）**
 
 -   含义：描述字符串规律（模式）的表达式
 -   作用：根据模式，匹配字符（自动处理文本）
@@ -64,7 +75,7 @@ library(rvest)  # 网络爬虫
 
 ![](images/clipboard-4086576583.png)
 
-#### 【实践1】字符匹配
+#### 【实践1】字符匹配 {#实践1字符匹配}
 
 ![](images/clipboard-1576391182.png)
 
@@ -87,7 +98,7 @@ str_extract_all(text, "\\d\\d位")
 
 ![](images/clipboard-3021287080.png)
 
-#### 【实践2】条件匹配
+#### 【实践2】条件匹配 {#实践2条件匹配}
 
 ```{r}
 text = "笔记本上安装SPSS22或20，授权码复制不上，导致安装失败。已经试了多次了，都安装不上SpSS，请问有遇到这种情况的吗？电脑是64位的，Spss是32位的，是这个原因吗？之前SpsS在其他笔记本和台式电脑上都安装成功了。"
@@ -105,7 +116,7 @@ str_extract_all(text, "Sps+")
 
 ![](images/clipboard-4184428545.png)
 
-#### 【实践3】预查匹配
+#### 【实践3】预查匹配 {#实践3预查匹配}
 
 ```{r}
 text = "笔记本上安装SPSS22或20，授权码复制不上，导致安装失败。已经试了多次了，都安装不上SpSS，请问有遇到这种情况的吗？电脑是64位的，Spss是32位的，是这个原因吗？之前SpsS在其他笔记本和台式电脑上都安装成功了。"
@@ -134,7 +145,7 @@ str_extract_all(text, "(?<!SPSS)\\d{2}")  # 前向否定预查
     -   分割：`str_split()`
     -   向量取匹配子集：`str_subset()`
 
-#### 【实践4】字符串综合处理
+#### 【实践4】字符串综合处理 {#实践4字符串综合处理}
 
 -   课程回顾：[Chap03 \# 静态网页解析](https://psychbruce.github.io/RCourse/Chap03#%E5%AE%9E%E8%B7%B55%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5%E8%A7%A3%E6%9E%90){.uri}
 -   网页素材：[华东师范大学心理与认知科学学院“师资队伍”](https://psy.ecnu.edu.cn/17437/list.htm){.uri}
@@ -200,7 +211,7 @@ str_sub("Psychology", 1, 1)  # 提取第1个字母
 str_sub("Psychology", 1, 5)  # 提取第1~5个字母
 ```
 
-#### 【探索发现】stringr包的函数功能
+#### 【探索发现】stringr包的函数功能 {#探索发现stringr包的函数功能}
 
 -   检测匹配
 

@@ -41,6 +41,7 @@ knitr::opts_chunk$set(
 
 -   [【实践1】下载安装R软件和RStudio编辑器](#实践1下载安装r软件和rstudio编辑器)
 -   [【实践2】设置RStudio界面](#实践2设置rstudio界面)
+-   [【探索发现】试试看这些代码](#探索发现试试看这些代码)
 -   [【探索发现】官方平台（CRAN）现在一共发布了多少个R程序包？](#探索发现官方平台cran现在一共发布了多少个r程序包)
 -   [【探索发现】现有R包能覆盖哪些学科领域和统计方法？](#探索发现现有r包能覆盖哪些学科领域和统计方法)
 -   [【实践3】下载安装R程序包](#实践3下载安装r程序包)（重点）
@@ -63,6 +64,13 @@ knitr::opts_chunk$set(
 # R语言总体介绍
 
 ![](img/Programming.jpg)
+
+#### R语言在编程语言中的定位
+
+-   数据处理
+-   统计分析
+-   图表绘制
+-   结果报告
 
 ![](img/R-Python.png)
 
@@ -112,13 +120,16 @@ knitr::opts_chunk$set(
 
 #### 【实践1】下载安装R软件和RStudio编辑器 {#实践1下载安装r软件和rstudio编辑器}
 
+> “R是笔记本🗒️，RStudio是笔记本💻。”
+
 -   R最新版（<https://cran.r-project.org/>）
     -   [Download R for Windows](https://cran.r-project.org/bin/windows/) → [install R for the first time](https://cran.r-project.org/bin/windows/base/){.uri} → Download R-x.x.x for Windows
     -   [Download R for macOS](https://cran.r-project.org/bin/macosx/) → 选择最新版本下载安装
     -   我们并不直接使用R自带软件界面“RGui”，因为实在太简陋了……
 -   RStudio最新版（<https://posit.co/download/rstudio-desktop/>）
-    -   所有代码编辑和运行，都将在RStudio编辑器中完成\~！⭐️
-    -   简介：“RStudio is an **Integrated Development Environment (IDE)** for R and Python. It includes a console, syntax-highlighting editor that supports direct code execution, and tools for plotting, history, debugging, and workspace management. RStudio is available in open source and commercial editions and runs on the desktop (Windows, Mac, and Linux).”
+    -   选择适配版本，一路安装即可
+    -   所有代码的编写和运行，都将在RStudio里完成\~！⭐️
+    -   简介：“RStudio is an **Integrated Development Environment (IDE)** [集成开发环境] for R and Python. It includes a console, syntax-highlighting editor that supports direct code execution, and tools for plotting, history, debugging, and workspace management. RStudio is available in open source and commercial editions and runs on the desktop (Windows, Mac, and Linux).”
     -   特色：“RStudio具有非常强大的功能，能够极大地提升数据分析和可视化的工作效率。它支持语法高亮、自动补齐、多标签视图、文件管理、图形窗口、扩展包管理、集成帮助查看器、代码格式化、版本控制、交互式调试以及其他功能。”
 -   Rtools本地编译工具（<https://cran.r-project.org/bin/windows/Rtools/>）
     -   用于从源代码本地编译R包
@@ -145,6 +156,21 @@ knitr::opts_chunk$set(
         -   取消勾选“Show output inline for all R Markdown documents”（所有结果均输出到Console）
 
 ![](img/RStudio-Pane-Layout.png)
+
+-   Environment（环境窗口）可以帮助你查看：
+    -   变量是否成功创建？
+    -   数据是否成功导入？
+    -   环境变量类型大小？
+
+#### 【探索发现】试试看这些代码 {#探索发现试试看这些代码}
+
+```{r}
+## R可以当计算器
+1 + 1
+pi  # 圆周率
+sqrt(2)
+(sqrt(5) - 1) / 2  # 黄金分割率
+```
 
 # R包安装与管理
 
@@ -231,8 +257,21 @@ library(bruceR)
 
 #### 【探索发现】R语言赋值符号问题：一定要用箭头，不能用等号吗？ {#探索发现r语言赋值符号问题一定要用箭头不能用等号吗}
 
--   可以只用`=`赋值，完全没问题！
--   好习惯：`=`、`<`等符号前后加空格！
+```{r}
+## R的两种赋值符号
+x <- 1
+x = 1
+```
+
+很多人推荐用`<-`而不建议用`=`，理由是所谓“容易引起歧义”、“以后就知道好处了”……
+
+是真的吗？有逻辑吗？No！
+
+-   可以永远只用`=`赋值，完全没问题！
+    -   与其他编程语言保持一致
+-   好习惯：`=`、`<`等符号前后加空格，逗号`,`后也加空格
+    -   可读性低：`x=c(1.2,2.3,3.4)`
+    -   可读性高：`x = c(1.2, 2.3, 3.4)`
 
 #### 【实践6】逐行运行代码，体会写法差异 {#实践6逐行运行代码体会写法差异}
 
@@ -262,8 +301,13 @@ cat(x)    # 连接并打印对象里的字符（文本输出）
 
 #### 【知识点】为什么会“找不到对象”？ {#知识点为什么会找不到对象}
 
--   **如果找不到对象/函数，后面所有相关代码都会报错！**
-    -   **遇到报错，不要心慌，仔细阅读，逐一排查，追本溯源！**
+> “万物皆对象，万事皆函数。” —— John Chambers（R语言创始人之一）
+
+-   **R里的一切，都是对象！**
+    -   只要你把一个东西“存起来”，它就变成了一个对象
+    -   你在R里做的所有事情，本质上都是在操作“对象”
+-   “找不到对象”，是因为对象还没“出生”，后面所有相关代码都无法运行
+    -   遇到报错，不要心慌，仔细阅读，逐一排查，追本溯源！
 
 ```{r, eval=FALSE}
 ## 如果对象还没有赋值，不在运行环境中，就会找不到对象！
@@ -279,6 +323,10 @@ Error: object 'ecnu' not found
 ecnu = "华东师范大学"
 ecnu
 ```
+
+-   `ecnu`是一个对象
+-   `"ecnu"`是对象名
+-   `"华东师范大学"`是对象的值
 
 ```{r, eval=FALSE}
 ## 如果函数所在的R包还没有加载，就会提示没有这个函数！

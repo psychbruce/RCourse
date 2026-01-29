@@ -3,7 +3,7 @@
 ## 课程大纲与代码文档索引
 
 [课程大纲 Syllabus 2026](https://psychbruce.github.io/RCourse/Syllabus_R-Programming_BaoHWS_2026Spring.pdf) \| [云盘资料](https://share.weiyun.com/o0kwn42K)\
-（本课程不依赖PPT，以每章代码文档的实践学习为主）
+（本课程不依赖PPT，基于代码文档实践学习，建议用电脑或平板浏览）
 
 ### 第一模块：入门与筑基（共4周，8学时）
 

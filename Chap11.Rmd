@@ -48,8 +48,8 @@ knitr::opts_chunk$set(
 
 -   [【实践1】facet_wrap()：拆解分面小图](#实践1facet_wrap拆解分面小图)
 -   [【实践2】facet_grid()：两个分类变量的交叉组合分面](#实践2facet_grid两个分类变量的交叉组合分面)
--   [【实践3】cowplot::plot_grid()：多图组合](#实践3cowplotplot_grid多图组合)
--   [【实践4】ggsave()：图形文件保存](#实践4ggsave图形文件保存)
+-   [【实践3】cowplot::plot_grid()：多图组合](#实践3cowplotplot_grid多图组合)（重点）
+-   [【实践4】ggsave()：图形文件保存](#实践4ggsave图形文件保存)（重点）
 
 ```{r, message=FALSE, warning=FALSE}
 ## 本章所需R包

@@ -195,12 +195,12 @@ sqrt(2)
 
 [![](https://img.shields.io/badge/R_package-tidyverse-purple)](https://tidyverse.org/) [![CRAN-Version](https://www.r-pkg.org/badges/version/tidyverse?color=blue)](https://CRAN.R-project.org/package=tidyverse) [![CRAN-Downloads](https://cranlogs.r-pkg.org/badges/grand-total/tidyverse)](https://CRAN.R-project.org/package=tidyverse)
 
--   `tidyverse`开发者：Hadley Wickham（首发于2016）
+-   `tidyverse`开发者：Hadley Wickham（首发于2016年）
     -   综合工具箱：**数据处理与可视化**功能集合
 
 [![](https://img.shields.io/badge/R_package-bruceR-purple)](https://psychbruce.github.io/bruceR/) [![CRAN-Version](https://www.r-pkg.org/badges/version/bruceR?color=blue)](https://CRAN.R-project.org/package=bruceR) [![CRAN-Downloads](https://cranlogs.r-pkg.org/badges/grand-total/bruceR)](https://CRAN.R-project.org/package=bruceR)
 
--   `bruceR`开发者：Han Wu Shuang Bao（首发于2021）
+-   `bruceR`开发者：Han Wu Shuang Bao（首发于2021年）
     -   综合工具箱：**统计分析与结果汇报**功能集合（面向心理学与社会科学）
 
 ```{r, eval=FALSE}

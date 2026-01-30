@@ -1,5 +1,5 @@
 ---
-title: "《R语言》第10章：绘图初阶"
+title: "《R语言》第10章：基础绘图"
 subtitle: "https://psychbruce.github.io/RCourse/"
 author: "授课教师：包寒吴霜"
 # date: "`r Sys.Date()`"
@@ -35,7 +35,7 @@ knitr::opts_chunk$set(
 
 ------------------------------------------------------------------------
 
-# Chap10：绘图初阶
+# Chap10：基础绘图
 
 #### 往期要点回顾
 
@@ -100,8 +100,6 @@ library(bruceR)
 ![](images/clipboard-1867561972.png)
 
 ![](images/clipboard-1605038849.png)
-
-![](images/clipboard-3418804234.png)
 
 ![](images/clipboard-2213744828.png)
 
@@ -400,12 +398,34 @@ ggplot(data, aes(x=Wind, y=Temp.C)) +
 
 ggplot(data, aes(x=Wind, y=Temp.C)) +
   geom_point(color="grey") +
-  geom_smooth()
+  geom_smooth()  # 后画的geom图层在最上面！
+
+ggplot(data, aes(x=Wind, y=Temp.C)) +
+  geom_smooth() +
+  geom_point(color="grey")  # 后画的geom图层在最上面！
 
 ggplot(data, aes(x=Wind, y=Temp.C)) +
   geom_point(color="grey") +
-  geom_smooth(method="lm",
-              color="black")
+  geom_smooth(method="lm", color="black")
+
+ggplot(data, aes(x=Wind, y=Temp.C)) +
+  geom_point(color="grey") +
+  geom_smooth(method="lm", color="black") +
+  geom_hline(yintercept=22, linetype="dashed", color="red")
+
+ggplot(data, aes(x=Wind, y=Temp.C)) +
+  geom_hline(yintercept=22, linetype="dashed", color="red") +
+  geom_point(color="grey") +
+  geom_smooth(method="lm", color="black")
+
+ggplot(data, aes(x=Wind, y=Temp.C)) +
+  geom_hline(yintercept=22, linetype="dashed", color="red") +
+  geom_vline(xintercept=9, linetype="dashed", color="blue") +
+  geom_point(color="grey") +
+  geom_smooth(method="lm", color="black")
+
+ggplot(data, aes(x=Wind, y=Temp.C, color=Month)) +
+  geom_point()
 
 ggplot(data, aes(x=Wind, y=Temp.C, color=Month)) +
   geom_point() +

@@ -227,9 +227,9 @@ d = data.table(
   x2 = c(4,4,NA,2,5),
   x5 = c(5,4,1,4,5)
 )
-d
+d  # d是数据框对象，也是数据框名称，之后需要频繁使用
 
-## 大写函数：SUM()、MEAN()
+## 大写函数（需要提供数据框名称）：SUM()、MEAN()
 d1 = add(d, {
   sum = SUM(d, "x", 1:5)    # SUM(data=d, var="x", items=1:5)
   mean = MEAN(d, "x", 1:5)  # MEAN(data=d, var="x", items=1:5)
@@ -239,7 +239,7 @@ d1 = add(d, {
 })
 d1
 
-## 小写函数（必须配合add或added使用）：.sum()、.mean()
+## 小写函数（必须搭配add或added使用）：.sum()、.mean()
 d2 = add(d, {
   sum = .sum("x", 1:5)
   mean = .mean("x", 1:5)

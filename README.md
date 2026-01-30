@@ -3,7 +3,7 @@
 ## 课程大纲与代码文档索引
 
 [课程大纲 Syllabus 2026](https://psychbruce.github.io/RCourse/Syllabus_R-Programming_BaoHWS_2026Spring.pdf) \| [云盘资料](https://share.weiyun.com/o0kwn42K)\
-（本课程不依赖PPT，基于代码文档实践学习，建议用电脑或平板浏览）
+（本课程不依赖PPT，利用代码文档实践学习，建议在电脑或平板浏览）
 
 ### 第一模块：入门与筑基（共4周，8学时）
 
@@ -25,11 +25,13 @@
 
 ### 第四模块：数据可视化（共4周，8学时）
 
--   [第10章：绘图初阶（4学时）](https://psychbruce.github.io/RCourse/Chap10)（随堂作业9）
--   [第11章：绘图中阶（2学时）](https://psychbruce.github.io/RCourse/Chap11)（随堂作业10）
--   [第12章：绘图高阶（2学时）](https://psychbruce.github.io/RCourse/Chap12)（个人期末大作业）
+-   [第10章：基础绘图（4学时）](https://psychbruce.github.io/RCourse/Chap10)（随堂作业9）
+-   [第11章：多图组合（2学时）](https://psychbruce.github.io/RCourse/Chap11)（随堂作业10）
+-   [第12章：主题配色（2学时）](https://psychbruce.github.io/RCourse/Chap12)（个人期末大作业）
 
-注：每章对应一个代码文档（R Markdown运行导出的HTML网页），点击章节进入浏览，然后可从右上角“Code” → “Download Rmd”下载原始代码文件。
+注：每章对应一个代码文档（R Markdown运行得到的HTML网页），点击章节进入浏览，然后可从右上角“Code” → “Download Rmd”下载原始代码文件。
+
+关于作业提交：大部分情况下需要在“学习通”平台提交R Markdown运行得到的HTML网页及关键部分截图，提交时每个文件分开上传或粘贴，不用压缩。所有随堂作业和阶段作业的提交时限为布置后一周，期末大作业的提交时限另外通知。
 
 ## 课程目标
 

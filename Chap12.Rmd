@@ -208,7 +208,7 @@ p1 + theme_bruce()  # bruceR主题
 
 ## 课程期末总复习
 
--   课程大纲与学习目标回顾
+-   [课程大纲与学习目标回顾](https://psychbruce.github.io/RCourse/Syllabus_R-Programming_BaoHWS.pdf)
 
 ## 个性化答疑辅导
 

@@ -27,9 +27,9 @@ options(
 )
 knitr::opts_chunk$set(
   comment = "",
-  fig.width = 8,
-  fig.height = 6,
-  dpi = 500
+  fig.width = 6,
+  fig.height = 4,
+  dpi = 300
 )
 ```
 
@@ -72,9 +72,7 @@ knitr::opts_chunk$set(
 -   图表绘制
 -   结果报告
 
-![](img/R-Python.png)
-
-![](images/clipboard-1295974631.png)
+![](images/clipboard-244017441.png)
 
 **发展中国家的全球R包开发贡献（截至2023年10月）**
 
@@ -193,6 +191,18 @@ sqrt(2)
     -   CRAN正式版R包：`install.packages("pkgname")`
     -   GitHub开发版R包：`devtools::install_github("username/pkgname")`
 
+`tidyverse`和`bruceR`是两个综合R包，国内多所高校（包括北大）在本科及研究生R语言教学中均有使用。
+
+[![](https://img.shields.io/badge/R_package-tidyverse-purple)](https://tidyverse.org/) [![CRAN-Version](https://www.r-pkg.org/badges/version/tidyverse?color=blue)](https://CRAN.R-project.org/package=tidyverse) [![CRAN-Downloads](https://cranlogs.r-pkg.org/badges/grand-total/tidyverse)](https://CRAN.R-project.org/package=tidyverse)
+
+-   `tidyverse`开发者：Hadley Wickham（首发于2016）
+    -   综合工具箱：**数据处理与可视化**功能集合
+
+[![](https://img.shields.io/badge/R_package-bruceR-purple)](https://psychbruce.github.io/bruceR/) [![CRAN-Version](https://www.r-pkg.org/badges/version/bruceR?color=blue)](https://CRAN.R-project.org/package=bruceR) [![CRAN-Downloads](https://cranlogs.r-pkg.org/badges/grand-total/bruceR)](https://CRAN.R-project.org/package=bruceR)
+
+-   `bruceR`开发者：Han Wu Shuang Bao（首发于2021）
+    -   综合工具箱：**统计分析与结果汇报**功能集合（面向心理学与社会科学）
+
 ```{r, eval=FALSE}
 ## 复制下面的代码，粘贴到RStudio的Console中，运行
 install.packages("tidyverse")
@@ -218,8 +228,6 @@ install.packages("bruceR", dep=TRUE)
     -   R包在CRAN平台更新后，最初一两天安装时都需要暂时本地编译，等官方编译完成、发布编译版本后，用户才能快捷安装，所以你可能恰好遇到了刚刚更新的R包，不要心急，慢慢解决
 
 #### 【实践4】加载本地R包 {#实践4加载本地r包}
-
-注：`tidyverse`和`bruceR`是两个常用的综合R包，国内多所高校（包括北大）在本科及研究生R语言教学中均有使用。
 
 ```{r, warning=FALSE}
 ## Load R packages
@@ -269,9 +277,13 @@ x = 1
 
 -   可以永远只用`=`赋值，完全没问题！
     -   与其他编程语言保持一致
--   好习惯：`=`、`<`等符号前后加空格，逗号`,`后也加空格
-    -   可读性低：`x=c(1.2,2.3,3.4)`
-    -   可读性高：`x = c(1.2, 2.3, 3.4)`
+-   提高可读性：等号`=`前后加空格，逗号`,`后加空格
+    -   可读性低：
+        -   `x=c(1,2,3,4,5,6)`
+        -   `x=c(1.2,3.4,5.6)`
+    -   可读性高：
+        -   `x = c(1, 2, 3, 4, 5, 6)`
+        -   `x = c(1.2, 3.4, 5.6)`
 
 #### 【实践6】逐行运行代码，体会写法差异 {#实践6逐行运行代码体会写法差异}
 
@@ -282,7 +294,7 @@ x = 1
 x=123
 x = 123   # 推荐写法（与其他编程语言保持一致）
 x<-123
-x <- 123  # 官方写法（也是AI味儿的写法）
+x <- 123  # 教科书式写法（也是AI味儿的写法）
 
 print(x)  # 查看对象
 cat(x)    # 连接并打印对象里的字符（文本输出）
@@ -293,7 +305,7 @@ cat(x)    # 连接并打印对象里的字符（文本输出）
 x=-1
 x = -1   # 推荐写法（与其他编程语言保持一致）
 x<--1
-x <- -1  # 官方写法（也是AI味儿的写法）
+x <- -1  # 教科书式写法（也是AI味儿的写法）
 
 print(x)  # 查看对象
 cat(x)    # 连接并打印对象里的字符（文本输出）
@@ -461,6 +473,14 @@ set.wd()
 
 ![](images/clipboard-2896875714.png)
 
+![](images/clipboard-2982934046.png)
+
+![](images/clipboard-664276758.png)
+
+![](images/clipboard-1230185901.png)
+
+![](images/clipboard-1351549972.png)
+
 #### 【知识点】Markdown语法基础 {#知识点markdown语法基础}
 
 ```         
@@ -608,4 +628,4 @@ output:
 
 -   运行得到的HTML网页，及其关键部分截图
 
-![Knit按钮（运行所有代码并渲染得到HTML网页，比如你现在正在看的这个网页就是这样来的）](images/clipboard-70125348.png)
+![Knit按钮（运行所有代码并渲染得到HTML网页，比如你现在正在看的这个网页就是这样来的）](images/clipboard-1135604087.png)

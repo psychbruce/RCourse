@@ -27,9 +27,9 @@ options(
 )
 knitr::opts_chunk$set(
   comment = "",
-  fig.width = 8,
-  fig.height = 6,
-  dpi = 500
+  fig.width = 6,
+  fig.height = 4,
+  dpi = 300
 )
 ```
 
@@ -211,7 +211,7 @@ tab_model(m5, digits=3, show.ci=FALSE,
 | **A0条件** | 0, 1, 2 | 3, 4, 5 |
 | **A1条件** | 0, 1, 2 | 6, 7, 8 |
 
-: 原始数据
+: 表1. 原始数据
 
 | 均值           | B0条件均值 | B1条件均值 | 边际均值 |
 |----------------|------------|------------|----------|
@@ -219,7 +219,7 @@ tab_model(m5, digits=3, show.ci=FALSE,
 | **A1条件均值** | **1.00**   | **7.00**   | 4.00     |
 | **边际均值**   | 1.00       | 5.50       | 3.25     |
 
-: A和B的条件均值与边际均值
+: 表2. A和B的条件均值与边际均值
 
 ```{r}
 ## 注意，这不是A和B的主效应！（这是固定效应、简单效应、条件效应！）
@@ -281,8 +281,8 @@ model_summary(list(m1, m2, m3, m4, m5, m6),
 
 ```{r}
 tab_model(m1, m2, m3, m4, m5, m6,
-          digits=2, show.ci=FALSE,
-          show.se=TRUE, collapse.se=TRUE)
+          digits=2, string.est="b (SE)",
+          show.ci=FALSE, show.se=TRUE, collapse.se=TRUE)
 ```
 
 #### 【实践7】空气质量数据回归分析实例 {#实践7空气质量数据回归分析实例}
@@ -329,8 +329,8 @@ model_summary(list(m1, m2, m3, m4, model), file="Models.doc")
 ## sjPlot系列函数
 tab_model(model)
 tab_model(m1, m2, m3, m4, model,
-          digits=3, show.ci=FALSE,
-          show.se=TRUE, collapse.se=TRUE)
+          digits=3, string.est="b (SE)",
+          show.ci=FALSE, show.se=TRUE, collapse.se=TRUE)
 ```
 
 # 简单斜率检验与多重比较
@@ -390,7 +390,7 @@ P$results[[1]]$jn[[1]]$plot
 
 -   使用`performance`包的`check_*()`系列函数（`bruceR`包已加载`performance`包）
 
-```{r, fig.height=12}
+```{r, fig.width=8, fig.height=12}
 model = lm(Ozone ~ ., data=airquality)
 
 check_model(model)  # 一次性检查所有假定
@@ -400,17 +400,6 @@ check_normality(model)  # 非正态问题
 check_heteroscedasticity(model)  # 异方差问题
 check_autocorrelation(model)  # 自相关问题
 check_collinearity(model)  # 共线性问题
-```
-
-```{r}
-Describe(anscombe)
-m1 = lm(y1 ~ x1, data=anscombe)
-m2 = lm(y2 ~ x2, data=anscombe)
-m3 = lm(y3 ~ x3, data=anscombe)
-m4 = lm(y4 ~ x4, data=anscombe)
-tab_model(m1, m2, m3, m4,
-          digits=2, show.ci=FALSE,
-          show.se=TRUE, collapse.se=TRUE)
 ```
 
 # \* 拓展：其他回归模型

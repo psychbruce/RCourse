@@ -29,7 +29,7 @@ knitr::opts_chunk$set(
   comment = "",
   fig.width = 8,
   fig.height = 6,
-  dpi = 500
+  dpi = 300
 )
 ```
 

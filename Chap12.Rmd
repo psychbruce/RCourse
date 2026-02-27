@@ -224,7 +224,7 @@ p1 + theme_bruce()  # bruceR主题
 
 平台提交：
 
--   R Markdown原始代码文档（.Rmd）和运行得到的HTML网页文档（.html）
+-   R Markdown原始代码文件（.Rmd）和运行得到的HTML网页文件（.html）
     -   提交文件命名格式
         -   `学号-姓名-R期末作业.Rmd`
         -   `学号-姓名-R期末作业.html`

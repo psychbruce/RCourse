@@ -437,7 +437,7 @@ check_collinearity(model)  # 共线性问题
 
 平台提交：
 
--   运行得到的HTML网页
+-   运行得到的HTML网页文件（本地的“.html”后缀格式文件）
     -   提交文件命名格式：`学号-姓名-R阶段作业2.html`
 
 ```{r, include=FALSE}

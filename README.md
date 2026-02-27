@@ -2,8 +2,9 @@
 
 ## 课程大纲与代码文档索引
 
-[课程大纲 Syllabus](https://psychbruce.github.io/RCourse/Syllabus_R-Programming_BaoHWS.pdf) \| [云盘资料](https://share.weiyun.com/o0kwn42K)\
-（本课程实行“无PPT化”，全部利用代码文档实践学习，建议在电脑或平板浏览）
+[课程大纲 Syllabus](https://psychbruce.github.io/RCourse/Syllabus_R-Programming_BaoHWS.pdf) \| [云盘资料](https://share.weiyun.com/o0kwn42K) \| [公开数据可选列表](https://docs.qq.com/sheet/DTXNCUWtzWWNuU05Y){.uri} \| [豆瓣电影示例数据](https://psychbruce.github.io/RCourse/data/douban_movies.RData)\
+（本课程实行“无PPT化”，全部利用代码文档进行实践学习，建议在电脑端浏览）\
+（如果网页无法显示或加载较慢，可以多刷新几次）
 
 ### 第一模块：入门与筑基（共4周，8学时）
 
@@ -31,7 +32,7 @@
 
 注：每章对应一个代码文档（R Markdown运行得到的HTML网页），点击章节进入浏览，然后可从右上角“Code” → “Download Rmd”下载原始代码文件。
 
-关于作业提交：大部分情况下需要在“学习通”平台提交由R Markdown运行得到的HTML网页及关键部分截图，提交时将每个文件分开上传或粘贴，不需要压缩。随堂作业和阶段作业布置后一周内提交，期末大作业提交时限将另外通知。
+关于作业提交：大部分情况下需要在“学习通”平台提交由R Markdown运行得到的本地HTML网页文件及关键部分截图，提交时将文件分开上传/粘贴，不用压缩。随堂作业和阶段作业布置后一周内提交，期末大作业提交时限将另外通知。
 
 ## 课程目标
 

@@ -118,7 +118,7 @@ knitr::opts_chunk$set(
 
 #### 【实践1】下载安装R软件和RStudio编辑器 {#实践1下载安装r软件和rstudio编辑器}
 
-> “R是笔记本🗒️，RStudio是笔记本💻。”
+> “R只是笔记本🗒️，而RStudio是笔记本💻。”
 
 -   R最新版（<https://cran.r-project.org/>）
     -   [Download R for Windows](https://cran.r-project.org/bin/windows/) → [install R for the first time](https://cran.r-project.org/bin/windows/base/){.uri} → Download R-x.x.x for Windows
@@ -143,7 +143,7 @@ knitr::opts_chunk$set(
     -   **“Console”—“Display”**
         -   勾选“Show syntax highlighting in console input”（语法高亮显示）
     -   **“Appearance”**
-        -   Editor font：选择字体“Consolas”（内置）或“Maple Mono SC NF”（需额外安装）
+        -   Editor font：推荐选择字体“Consolas”（内置）或“[Maple Mono SC NF](https://github.com/subframe7536/maple-font)”（需额外安装）
         -   Editor theme：选择主题配色“Tomorrow Night Bright”（对比醒目，深色护眼）
     -   **“Pane Layout”**
         -   左上角：Source（代码/脚本文件）
@@ -159,6 +159,8 @@ knitr::opts_chunk$set(
     -   变量是否成功创建？
     -   数据是否成功导入？
     -   环境变量类型大小？
+
+[![Maple Mono SC NF 等宽字体效果（适合中英文代码混排）](images/clipboard-3688189296.png)](https://github.com/subframe7536/maple-font)
 
 #### 【探索发现】试试看这些代码 {#探索发现试试看这些代码}
 
@@ -315,7 +317,7 @@ cat(x)    # 连接并打印对象里的字符（文本输出）
 
 > “万物皆对象，万事皆函数。” —— John Chambers（R语言创始人之一）
 
--   **R里的一切，都是对象！**
+-   **R里的一切，都是对象（函数其实也是对象）！**
     -   只要你把一个东西“存起来”，它就变成了一个对象
     -   你在R里做的所有事情，本质上都是在操作“对象”
 -   “找不到对象”，是因为对象还没“出生”，后面所有相关代码都无法运行
@@ -381,7 +383,22 @@ cat("Hello", "World", "\n")  # 拼接字符串（\n表示换行）
 
 #### 【知识点】R包与R函数的调用方式 {#知识点r包与r函数的调用方式}
 
-![](images/clipboard-245149326.png)
+![R函数调用方式（抽象示意图）](images/clipboard-245149326.png)
+
+注：
+
+-   `package`：某个具体的R包名称（比如`bruceR`）
+-   `func_xxx`：某个具体的R函数名称（比如`set.wd`、`set_wd`——设置工作目录路径）
+    -   函数（以及任何R对象）的名称可以包含下划线（`_`）、点（`.`）等特殊字符，但不能有横线（`-`）、空格（）等其他字符
+        -   `set.wd()`：可以这样命名
+        -   `set_wd()`：可以这样命名
+        -   `set-wd()`：不可以这样命名
+        -   `set wd()`：不可以这样命名
+-   `package::function()`调用方式（较常使用，建议掌握）
+    -   在不加载（`library`）R包的情况下，临时使用其中的某个函数（当然R包需要已经安装在你的电脑里）
+    -   如果来自不同R包的两个函数“撞名”了，就需要这样明确调用“哪个包的哪个函数”
+-   `package:::function()`调用方式（极少使用，拓展了解即可）
+    -   R包除了输出给用户的公开函数，还有一些是开发过程中仅供开发者自己使用的内部函数，如果用户想调用，可以用三冒号（`:::`）提取出来
 
 #### 【实践7】调用R包函数 {#实践7调用r包函数}
 
@@ -408,10 +425,10 @@ bruceR:::p.trans(0)  # 调用R包隐藏函数（一般情况用不到）
 试试这些代码：
 
 ```{r, eval=FALSE}
-set.wd()  # set working directory to the path of the currently opened file
-set.wd("~/")  # set working directory to the home path
-set.wd("../")  # set working directory to the parent path
-set.wd(ask=TRUE)  # select a folder with the prompt of a dialog
+set.wd()          # 将工作目录设置为【当前打开文件的路径】
+set.wd("~/")      # 将工作目录设置为用户电脑的【主目录路径】
+set.wd("../")     # 将工作目录设置为当前位置的【上一级路径】
+set.wd(ask=TRUE)  # 通过弹出的对话框提示，手动选择一个文件夹
 ```
 
 #### 【实践8】查询函数的帮助文档 {#实践8查询函数的帮助文档}
@@ -622,10 +639,10 @@ output:
 
 -   将Rmd文档属性设置为你的信息（标题、副标题、姓名、学号、日期等），自选任意一种你喜欢的主题方案
 -   修改Rmd新建文档中自带的R代码块例子，体现代码块参数`eval`、`echo`、`results`、`include`的不同设定分别会得到什么结果，并用多级标题分块整理这4个参数对应的效果
--   Knit运行渲染（快捷键：Ctrl + Shift + K）得到HTML网页结果
+-   Knit运行渲染（快捷键：Ctrl + Shift + K）得到HTML网页文件
 
 平台提交：
 
--   运行得到的HTML网页，及其关键部分截图
+-   运行得到的HTML网页文件（本地的“.html”后缀格式文件），及其关键部分截图
 
 ![Knit按钮（运行所有代码并渲染得到HTML网页，比如你现在正在看的这个网页就是这样来的）](images/clipboard-1135604087.png)

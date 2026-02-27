@@ -354,7 +354,7 @@ CFA(data = na.omit(psych::bfi),
 
 平台提交：
 
--   运行得到的HTML网页，及其关键部分截图
+-   运行得到的HTML网页文件（本地的“.html”后缀格式文件），及其关键部分截图
 
 ```{r, include=FALSE}
 unlink(c("Freq.doc", "Desc.doc", "Corr.doc",

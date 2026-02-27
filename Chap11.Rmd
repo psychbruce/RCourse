@@ -236,7 +236,7 @@ ggsave(p1234, file="Fig4.png", width=24, height=18, dpi=100)
 
 平台提交：
 
--   运行得到的HTML网页，及保存的PNG图形文件（直接上传/粘贴，不用压缩）
+-   运行得到的HTML网页文件（本地的“.html”后缀格式文件），及保存的PNG图形文件（直接上传/粘贴，不用压缩）
 
 ```{r, include=FALSE}
 unlink(c("Fig1.png", "Fig2.png", "Fig3.png", "Fig4.png"))

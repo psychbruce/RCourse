@@ -201,22 +201,25 @@ between.2  # 将要导出的示例数据
 ```
 
 ```{r, eval=FALSE}
-export(between.2)  # 导出到剪切板，可粘贴（Ctrl + V）到其他地方
+## 导出到剪切板，可粘贴（Ctrl + V）到其他地方
+export(between.2)
 ```
 
 ```{r}
-export(between.2, file="data.csv")  # 导出到CSV逗号分隔值纯文本文件
-export(between.2, file="data.sav")  # 导出到SPSS数据文件
+## 导出到CSV逗号分隔值纯文本文件
+export(between.2, file="data.csv")
+## 导出到SPSS数据文件
+export(between.2, file="data.sav")
 
+## 导出到Excel文件（Sheet1、Sheet2、Sheet3）
 export(list(between.1, between.2, between.3), file="data.xlsx") 
-# 导出到Excel文件（Sheet1、Sheet2、Sheet3）
 
+## 导出到Excel文件（Sheet名称：d1、d2、d3）
 export(
   list(between.1, between.2, between.3),
   sheet = c("d1", "d2", "d3"),  # 设定每个数据导出的Sheet名称
   file = "data_named.xlsx"
 )
-# 导出到Excel文件（Sheet名称：d1、d2、d3）
 ```
 
 ## “一站式”数据导入
@@ -252,16 +255,19 @@ str(dt)  # 数据结构
 ![](images/clipboard-3528983083.png)
 
 ```{r}
-save(d1, d2, d3, file="datasets1.RData")  # 保存为RData
+## 保存为RData
+save(d1, d2, d3, file="datasets1.RData")
 
 save(d1, d2, d3,
      file = "datasets2.RData",
      compress = "xz",        # "gzip", "bzip2", "xz"
      compression_level = 9)  # 压缩程度：1~9
 
-rm(d1, d2, d3)  # 移除环境中的数据对象
+## 移除环境中的数据对象
+rm(d1, d2, d3)
 
-load("datasets1.RData")  # 载入RData中压缩存储的数据对象
+## 载入RData中压缩存储的数据对象
+load("datasets1.RData")
 str(d1)  # 已载入到环境
 str(d2)  # 已载入到环境
 str(d3)  # 已载入到环境
@@ -271,6 +277,14 @@ str(d3)  # 已载入到环境
 unlink(c("data.csv", "data.sav", "data.xlsx", "data_named.xlsx",
          "datasets1.RData", "datasets2.RData"))
 ```
+
+```{r, warning=FALSE}
+## 导入在线数据（douban_movies.RData）
+data = import("https://psychbruce.github.io/RCourse/data/douban_movies.RData")
+# View(data)
+```
+
+![](images/clipboard-426724489.png)
 
 ## \* 拓展：网络爬虫自动数据采集
 

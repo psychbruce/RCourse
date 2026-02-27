@@ -301,7 +301,10 @@ x = 1
 
 #### 【实践6】逐行运行代码，体会写法差异 {#实践6逐行运行代码体会写法差异}
 
-小贴士：逐行运行代码的快捷键是Ctrl + Enter（Command + Return）哦\~！
+小贴士：
+
+-   逐行运行代码的快捷键是Ctrl + Enter（Command + Return）哦\~！
+-   在Console中的光标位置，使用上/下键（↑/↓）可以翻找历史代码运行记录\~！
 
 ```{r}
 ## 把123赋值给x
@@ -407,10 +410,10 @@ cat("Hello", "World", "\n")  # 拼接字符串（\n表示换行）
 -   `func_xxx`：某个具体的R函数名称（比如`set.wd`、`set_wd`——设置工作目录路径）
     -   函数（以及任何R对象）名称中可以包含的特殊字符只有下划线（`_`）和点（`.`）
     -   如果你要自定义一个函数或其他对象：
-        -   `set.wd()`：可以这样命名✅️
-        -   `set_wd()`：可以这样命名✅️
-        -   `set-wd()`：不可以这样命名❌️
-        -   `set wd()`：不可以这样命名❌️
+        -   `my.function`：可以这样命名✅️
+        -   `my_function`：可以这样命名✅️
+        -   `my-function`：不可以这样命名❌️
+        -   `my function`：不可以这样命名❌️
 -   **`package::function()`调用方式（较常使用，建议掌握）**⭐️
     -   在不加载（`library`）R包的情况下，临时使用其中的某个函数
         -   当然R包需要已经下载安装在你的电脑里，只是不完全加载里面的所有内容
@@ -419,6 +422,7 @@ cat("Hello", "World", "\n")  # 拼接字符串（\n表示换行）
         -   后加载函数，走遍天下都不怕！（后加载的同名函数具有更高的调用优先级！）
 
 ```{r}
+library(bruceR)
 library(tidyverse)
 tidyverse_conflicts()  # 查看当前运行环境中存在重名情况的函数们
 ```
@@ -479,16 +483,17 @@ set.wd()
 |-----------------------------|-------------------|------------------------|
 | 自动**补全**代码            | Tab               | Tab                    |
 | **运行**当前代码行(Run)     | Ctrl + Enter      | Command + Return       |
-| **注释**当前代码行(Comment) | Ctrl + Shift + C  | Shift + Command + C    |
+| **注释**当前代码行(Comment) | Ctrl + Shift + C  | Command + Shift + C    |
 | **移动**当前代码行(上/下)   | Alt + ↑/↓         | Option + ↑/↓           |
 | **复制**当前代码行(上/下)   | Alt + Shift + ↑/↓ | Option + Command + ↑/↓ |
 | **缩进**当前代码行(Indent)  | Ctrl + I          | Command + I            |
 | **删除**当前代码行(Delete)  | Ctrl + D          | Command + D            |
-| 快捷输入**管道操作符**`%>%` | Ctrl + Shift + M  | Shift + Command + M    |
+| 快捷输入**管道操作符**`%>%` | Ctrl + Shift + M  | Command + Shift + M    |
 | 撤销(Undo)                  | Ctrl + Z          | Command + Z            |
-| 重做(Redo)                  | Ctrl + Shift + Z  | Shift + Command + Z    |
+| 重做(Redo)                  | Ctrl + Shift + Z  | Command + Shift + Z    |
 | 保存文件(Save)              | Ctrl + S          | Command + S            |
 | 清空Console                 | Ctrl + L          | Ctrl + L               |
+| Console中翻找历史记录       | ↑/↓               | ↑/↓                    |
 
 : RStudio常用快捷键
 

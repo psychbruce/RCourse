@@ -88,37 +88,48 @@ knitr::opts_chunk$set(
 
 ![](images/clipboard-4189727267.png)
 
-**为什么要「编程」（而不是菜单操作）？**
+#### 为什么要「编程」（而不是菜单操作）？
 
 -   可再用（reusable）
 -   可复现（reproducible）
 -   可定制（modifiable）
 -   可拓展（extendable）
 
-**「函数式 + 向量化 + 管道流」编程理念⭐️**
+#### 「函数式 + 向量化 + 管道流」编程理念⭐️
 
--   一套复杂流程，应集成为一个函数（function），避免复制粘贴很多遍
+-   一套复杂流程，应集成为一个[函数（function）](https://psychbruce.github.io/RCourse/Chap02#r%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8%E4%B8%8E%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE)，避免复制粘贴很多遍
     -   函数 = 一组程序的标准化流程 + 灵活的参数设置
 -   一个问题的解决方法不是唯一的，需要考虑简洁性和易读性
     -   向量化批处理 \> for循环
-    -   管道操作符步步拆解 \> 多个函数层层嵌套
+    -   [管道操作符](https://psychbruce.github.io/RCourse/Chap02#%E7%9F%A5%E8%AF%86%E7%82%B9%E7%AE%A1%E9%81%93%E6%93%8D%E4%BD%9C%E7%AC%A6)步步拆解 \> 多个函数层层嵌套
 
-**牢固掌握基础编程语法**
-
--   赋值、判断、循环、对象类型与转换、函数与参数
-
-**全面了解选择最优R包**
+#### 全面了解选择最优R包
 
 -   R包使用：站在巨人肩膀上，避免“重复造轮子”
 -   R包开发：你也可以批判创新，开发自己的R包
 
 ![](images/clipboard-1047366451.png)
 
+> R绝不只是一门编程语言，R及海量R扩展包为各学科领域提供了“航母级”数据分析工具箱和活跃的交流社群，是当代社会科学与心理学研究的主流工具！
+
+#### AI时代还需要学习R编程吗？
+
+-   AI编程（vibe coding）的“七宗罪”
+    -   AI可能会隐藏错误，一本正经地胡说八道
+    -   AI可能会画蛇添足，把简单的问题复杂化
+    -   AI幻觉容易让初学者误入歧途、信以为真
+    -   AI只知道常用R包与函数，没学过所有函数
+    -   AI未必能给出最优解决方案，不懂得灵活变通
+    -   AI未必能完全理解你的实际意图和需求
+    -   过度依赖AI信息茧房，难以突破创新
+
 # R软件和RStudio编辑器下载安装
 
 #### 【实践1】下载安装R软件和RStudio编辑器 {#实践1下载安装r软件和rstudio编辑器}
 
 > “R只是笔记本🗒️，而RStudio是笔记本💻。”
+
+[![](images/clipboard-1895594991.png)](https://posit.co/download/rstudio-desktop/)
 
 -   R最新版（<https://cran.r-project.org/>）
     -   [Download R for Windows](https://cran.r-project.org/bin/windows/) → [install R for the first time](https://cran.r-project.org/bin/windows/base/){.uri} → Download R-x.x.x for Windows
@@ -160,7 +171,7 @@ knitr::opts_chunk$set(
     -   数据是否成功导入？
     -   环境变量类型大小？
 
-[![Maple Mono SC NF 等宽字体效果（适合中英文代码混排）](images/clipboard-3688189296.png)](https://github.com/subframe7536/maple-font)
+![Maple Mono SC NF 等宽字体效果（适合中英文代码混排）<https://github.com/subframe7536/maple-font>](images/clipboard-3688189296.png)
 
 #### 【探索发现】试试看这些代码 {#探索发现试试看这些代码}
 
@@ -168,6 +179,7 @@ knitr::opts_chunk$set(
 ## R可以当计算器
 1 + 1
 pi  # 圆周率
+as.character(pi)  # 把数字变成文本
 sqrt(2)
 (sqrt(5) - 1) / 2  # 黄金分割率
 ```
@@ -219,7 +231,7 @@ install.packages("bruceR", dep=TRUE)
         -   这个包可能只存在于GitHub平台？
         -   是不是拼写错了？
 -   重启RStudio
-    -   重启软件“包治百病”
+    -   重启软件“包治百病”\~！
 -   手动卸载重装R包
     -   能确保解除当前R包占用
 -   更新R软件和所有R包
@@ -227,7 +239,7 @@ install.packages("bruceR", dep=TRUE)
 -   检查网络连接，换一个镜像
     -   “Tools”菜单 → “Global Options”菜单 → “Packages” → “Change” → 选一个国内镜像
 -   实在不行，等一两天再安装
-    -   R包在CRAN平台更新后，最初一两天安装时都需要暂时本地编译，等官方编译完成、发布编译版本后，用户才能快捷安装，所以你可能恰好遇到了刚刚更新的R包，不要心急，慢慢解决
+    -   R包在CRAN平台更新后，最初一两天安装时都需要暂时本地编译，等官方编译完成、发布编译版本后，用户才能快捷安装，所以你可能恰好遇到了刚刚更新的R包，不要心急，慢慢解决\~！
 
 #### 【实践4】加载本地R包 {#实践4加载本地r包}
 
@@ -357,11 +369,15 @@ ecnu = function() { cat("华东师范大学") }
 ecnu()
 ```
 
+![](images/clipboard-4224887719.jpeg)
+
+![](images/clipboard-3006853075.jpeg)
+
 #### 【探索发现】为什么R语言cat()函数名称叫“cat”？ {#探索发现为什么r语言cat函数名称叫cat}
 
 为什么R语言`cat()`函数名称叫“cat”？🐱🐈😸🐈‍⬛
 
--   AI回答：R语言中的`cat()`函数之所以叫这个名字，是因为它源自Unix/Linux系统中的一个经典命令，其含义是**“concatenate and print”（连接并打印）**
+-   R语言中的`cat()`函数之所以叫这个名字，是因为它源自Unix/Linux系统中的一个经典命令，其含义是**“concatenate and print”（连接并打印）**
     -   词源和历史
         -   Unix命令`cat`：在操作系统中，cat命令最初的核心功能是读取一个或多个文件，将它们连接（concatenate）起来，然后输出（打印）到标准输出（通常是终端屏幕），例如`cat file1.txt file2.txt`会将两个文件的内容连续显示出来
         -   R的继承：R语言诞生于Unix环境（贝尔实验室），其设计深受Unix哲学和已有工具的影响，许多R的基础函数名都直接借鉴了Unix命令或C语言函数，`cat()`就是其中之一
@@ -389,15 +405,25 @@ cat("Hello", "World", "\n")  # 拼接字符串（\n表示换行）
 
 -   `package`：某个具体的R包名称（比如`bruceR`）
 -   `func_xxx`：某个具体的R函数名称（比如`set.wd`、`set_wd`——设置工作目录路径）
-    -   函数（以及任何R对象）的名称可以包含下划线（`_`）、点（`.`）等特殊字符，但不能有横线（`-`）、空格（）等其他字符
-        -   `set.wd()`：可以这样命名
-        -   `set_wd()`：可以这样命名
-        -   `set-wd()`：不可以这样命名
-        -   `set wd()`：不可以这样命名
--   `package::function()`调用方式（较常使用，建议掌握）
-    -   在不加载（`library`）R包的情况下，临时使用其中的某个函数（当然R包需要已经安装在你的电脑里）
+    -   函数（以及任何R对象）名称中可以包含的特殊字符只有下划线（`_`）和点（`.`）
+    -   如果你要自定义一个函数或其他对象：
+        -   `set.wd()`：可以这样命名✅️
+        -   `set_wd()`：可以这样命名✅️
+        -   `set-wd()`：不可以这样命名❌️
+        -   `set wd()`：不可以这样命名❌️
+-   **`package::function()`调用方式（较常使用，建议掌握）**⭐️
+    -   在不加载（`library`）R包的情况下，临时使用其中的某个函数
+        -   当然R包需要已经下载安装在你的电脑里，只是不完全加载里面的所有内容
     -   如果来自不同R包的两个函数“撞名”了，就需要这样明确调用“哪个包的哪个函数”
--   `package:::function()`调用方式（极少使用，拓展了解即可）
+        -   撞名不可怕，谁先加载谁尴尬！（先加载的同名函数会被后加载的函数屏蔽！）
+        -   后加载函数，走遍天下都不怕！（后加载的同名函数具有更高的调用优先级！）
+
+```{r}
+library(tidyverse)
+tidyverse_conflicts()  # 查看当前运行环境中存在重名情况的函数们
+```
+
+-   `package:::function()`调用方式（极少使用，简单知道一下就行）
     -   R包除了输出给用户的公开函数，还有一些是开发过程中仅供开发者自己使用的内部函数，如果用户想调用，可以用三冒号（`:::`）提取出来
 
 #### 【实践7】调用R包函数 {#实践7调用r包函数}
@@ -646,3 +672,9 @@ output:
 -   运行得到的HTML网页文件（本地的“.html”后缀格式文件），及其关键部分截图
 
 ![Knit按钮（运行所有代码并渲染得到HTML网页，比如你现在正在看的这个网页就是这样来的）](images/clipboard-1135604087.png)
+
+------------------------------------------------------------------------
+
+[返回课程主页](https://psychbruce.github.io/RCourse/)
+
+© 包寒吴霜

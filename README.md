@@ -2,7 +2,7 @@
 
 ## 课程大纲与代码文档索引
 
-[课程大纲 Syllabus](https://psychbruce.github.io/RCourse/Syllabus_R-Programming_BaoHWS.pdf) \| [云盘资料](https://share.weiyun.com/o0kwn42K) \| [公开数据可选列表](https://docs.qq.com/sheet/DTXNCUWtzWWNuU05Y) \| [豆瓣电影示例数据](https://psychbruce.github.io/RCourse/data/douban_movies.RData)\
+[课程大纲 Syllabus](https://psychbruce.github.io/RCourse/Syllabus_R-Programming_BaoHWS.pdf) \| [公开数据可选列表](https://docs.qq.com/sheet/DTXNCUWtzWWNuU05Y) \| [豆瓣电影示例数据(.RData)下载](https://psychbruce.github.io/RCourse/data/douban_movies.RData)\
 本课程实行“无PPT化”，全部利用代码文档实践学习，建议在电脑端浏览\
 （如果网页无法显示或加载较慢，可以多刷新几次）
 

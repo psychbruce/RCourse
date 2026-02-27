@@ -241,3 +241,9 @@ ggsave(p1234, file="Fig4.png", width=24, height=18, dpi=100)
 ```{r, include=FALSE}
 unlink(c("Fig1.png", "Fig2.png", "Fig3.png", "Fig4.png"))
 ```
+
+------------------------------------------------------------------------
+
+[返回课程主页](https://psychbruce.github.io/RCourse/)
+
+© 包寒吴霜

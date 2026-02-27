@@ -135,6 +135,8 @@ Describe(data[, Gender:O], file="Desc.doc")  # 保存结果表到Word文档
 
 ![](images/clipboard-406999052.png)
 
+![95%置信区间（Confidence Interval, CI）与区间外的“难以置信”](images/clipboard-2851431092.jpeg)
+
 ## 相关分析
 
 #### 【实践3】相关分析 {#实践3相关分析}
@@ -360,3 +362,9 @@ CFA(data = na.omit(psych::bfi),
 unlink(c("Freq.doc", "Desc.doc", "Corr.doc",
          "T-test1.doc"))
 ```
+
+------------------------------------------------------------------------
+
+[返回课程主页](https://psychbruce.github.io/RCourse/)
+
+© 包寒吴霜

@@ -252,6 +252,8 @@ tab_model(m6, digits=3, show.ci=FALSE,
           show.se=TRUE, collapse.se=TRUE)
 ```
 
+------------------------------------------------------------------------
+
 # 多个模型汇总与表格输出
 
 #### 【实践6】多元回归模型的结果表输出 {#实践6多元回归模型的结果表输出}
@@ -443,3 +445,9 @@ check_collinearity(model)  # 共线性问题
 ```{r, include=FALSE}
 unlink("Models.doc")
 ```
+
+------------------------------------------------------------------------
+
+[返回课程主页](https://psychbruce.github.io/RCourse/)
+
+© 包寒吴霜

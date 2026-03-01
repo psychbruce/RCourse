@@ -2,7 +2,7 @@
 
 ## 课程大纲与代码文档索引
 
-[课程大纲 Syllabus](https://psychbruce.github.io/RCourse/Syllabus_R-Programming_BaoHWS.pdf) \| [公开数据可选列表](https://docs.qq.com/sheet/DTXNCUWtzWWNuU05Y) \| [豆瓣电影示例数据(.RData)下载](https://psychbruce.github.io/RCourse/data/douban_movies.RData)\
+💻 [课程大纲 Syllabus](https://psychbruce.github.io/RCourse/Syllabus_R-Programming_BaoHWS.pdf) \| [公开数据可选列表](https://docs.qq.com/sheet/DTXNCUWtzWWNuU05Y) \| [豆瓣电影示例数据(.RData)下载](https://psychbruce.github.io/RCourse/data/douban_movies.RData)\
 本课程实行“无PPT化”，全部利用代码文档实践学习，建议在电脑端浏览\
 （如果网页无法显示或加载较慢，可以多刷新几次）
 
@@ -30,9 +30,11 @@
 -   [第11章：多图组合（2学时）](https://psychbruce.github.io/RCourse/Chap11)（随堂作业10）
 -   [第12章：主题配色（2学时）](https://psychbruce.github.io/RCourse/Chap12)（个人期末大作业）
 
-注：每章对应一个代码文档（R Markdown运行得到的HTML网页），点击章节进入浏览，然后可从右上角“Code” → “Download Rmd”下载原始代码文件。
+📖 每章对应一个代码文档（R Markdown运行得到的HTML网页），点击章节进入浏览，然后可从右上角“Code” → “Download Rmd”下载原始代码文件。
 
-关于作业提交：大部分情况下需要在“学习通”平台提交由R Markdown运行得到的本地HTML网页文件及关键部分截图，提交时将文件分开上传/粘贴，不用压缩。随堂作业和阶段作业布置后一周内提交，期末大作业提交时限将另外通知。
+📤 关于作业提交：大部分情况需要在[“学习通”平台](https://i.mooc.chaoxing.com/)提交由R Markdown运行得到的本地HTML网页文件及关键部分截图，提交时将文件分开上传/粘贴，不用压缩。随堂作业和阶段作业布置后一周内提交，期末大作业提交时限将另外通知。
+
+❤️ 课程反馈问卷：<https://v.wjx.cn/vm/Pvjfj4I.aspx>
 
 ## 课程目标
 

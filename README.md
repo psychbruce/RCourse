@@ -32,7 +32,9 @@
 
 📖 每章对应一个代码文档（R Markdown运行得到的HTML网页），点击章节进入浏览，然后可从右上角“Code” → “Download Rmd”下载原始代码文件。
 
-📤 关于作业提交：大部分情况需要在[“超星泛雅”平台](https://ecnu.fanya.chaoxing.com/portal)提交R Markdown运行得到的本地HTML网页文件及关键部分截图，提交时将文件分开上传/粘贴，不用压缩。随堂作业和阶段作业布置后一周内提交，期末大作业提交时限将另外通知。
+📤 随堂作业提交：大部分情况需要在[“超星泛雅”平台](https://ecnu.fanya.chaoxing.com/portal)提交R Markdown运行得到的本地HTML网页文件的**关键部分截图（只需上传截图）**，布置后一周内提交。
+
+📤 阶段/期末作业提交：在[“超星泛雅”平台](https://ecnu.fanya.chaoxing.com/portal)提交，将Rmd和HTML文件分开上传。
 
 ❤️ 课程反馈问卷：<https://v.wjx.cn/vm/Pvjfj4I.aspx>
 

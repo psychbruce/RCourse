@@ -271,11 +271,11 @@ str_sub("Psychology", 1, 5)  # 提取第1~5个字母
 作业要求：
 
 -   围绕`stringr`包提供的字符串示例数据`fruit`（80个水果名称），运用`str_detect()`、`str_subset()`、`str_extract_all()`、`str_replace_all()`等`stringr`包函数中的至少2个，任意完成至少2种字符串处理任务，并对代码和结果进行简单的注释和解读
--   使用R Markdown完成
+-   使用R Markdown完成，运行渲染得到本地HTML网页文件
 
 平台提交：
 
--   运行得到的HTML网页文件（本地的“.html”后缀格式文件），及其关键部分截图
+-   运行得到HTML网页文件的**关键部分截图（只需上传截图）**
 
 ```{r}
 ## 附：作业需要用到的数据集（字符向量）

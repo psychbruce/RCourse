@@ -430,6 +430,10 @@ check_collinearity(model)  # 共线性问题
 
 （多水平模型/线性混合模型的原理与方法，将在研究生阶段系统学习）
 
+```{r, include=FALSE}
+unlink("Models.doc")
+```
+
 # 【阶段作业②】统计分析综合
 
 作业要求：
@@ -441,10 +445,6 @@ check_collinearity(model)  # 共线性问题
 
 -   运行得到的HTML网页文件（本地的“.html”后缀格式文件）
     -   提交文件命名格式：`学号-姓名-R阶段作业2.html`
-
-```{r, include=FALSE}
-unlink("Models.doc")
-```
 
 ------------------------------------------------------------------------
 

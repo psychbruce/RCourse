@@ -228,6 +228,22 @@ str_sub("Psychology", 1, 1)  # 提取第1个字母
 str_sub("Psychology", 1, 5)  # 提取第1~5个字母
 ```
 
+-   [豆瓣电影示例数据(.RData)](https://psychbruce.github.io/RCourse/data/douban_movies.RData)
+
+```{r, eval=FALSE, warning=FALSE}
+## 导入在线数据（douban_movies.RData）
+data = import("https://psychbruce.github.io/RCourse/data/douban_movies.RData")
+dt = as.data.table(data)
+```
+
+**课堂实战练习（问题解决导向的学习）：**
+
+-   从电影标题变量（`title`）提取电影的上映年份
+-   选取带有0\~9数字的电影标题
+-   选取带有年份数字的电影标题
+-   选取模式为“高考1977”的电影标题
+-   ……
+
 #### 【探索发现】stringr包的函数功能 {#探索发现stringr包的函数功能}
 
 -   检测匹配

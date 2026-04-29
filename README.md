@@ -3,9 +3,9 @@
 ## 课程大纲与代码文档索引
 
 💻 [课程大纲 Syllabus](https://psychbruce.github.io/RCourse/Syllabus_R-Programming_BaoHWS.pdf) \| [公开数据可选列表](https://docs.qq.com/sheet/DTXNCUWtzWWNuU05Y) \| [豆瓣电影示例数据(.RData)下载](https://psychbruce.github.io/RCourse/data/douban_movies.RData)\
-🙋‍♀️ [R语言答疑 Q&A](https://psychbruce.notion.site/R-Q-A-34e013131cd9807d9fd9df5280601338){.uri}\
+🙋‍♀️ [R语言答疑 Q&A](https://psychbruce.notion.site/R-Q-A-34e013131cd9807d9fd9df5280601338)\
 本课程实行“无PPT化”，全部利用代码文档实践学习，建议在电脑端浏览\
-（如果网页无法显示或加载较慢，可以多刷新几次）
+（如果网页加载较慢，建议连接ECNU校园网或[下载GitHub原始文件](https://github.com/psychbruce/RCourse)）
 
 ### 第一模块：入门与筑基（共4周，8学时）
 

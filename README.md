@@ -2,8 +2,8 @@
 
 ## 课程大纲与代码文档索引
 
-💻 [课程大纲 Syllabus](https://psychbruce.github.io/RCourse/Syllabus_R-Programming_BaoHWS.pdf) \| [公开数据可选列表](https://docs.qq.com/sheet/DTXNCUWtzWWNuU05Y) \| [豆瓣电影示例数据(.RData)下载](https://psychbruce.github.io/RCourse/data/douban_movies.RData)\
-🙋‍♀️ [R语言答疑 Q&A](https://psychbruce.notion.site/R-Q-A-34e013131cd9807d9fd9df5280601338)\
+💻 [课程大纲 Syllabus](https://psychbruce.github.io/RCourse/Syllabus_R-Programming_BaoHWS.pdf) \| 🌍 [公开数据可选列表](https://docs.qq.com/sheet/DTXNCUWtzWWNuU05Y)\
+🙋‍♀️ [R语言答疑 Q&A](https://psychbruce.notion.site/R-Q-A-34e013131cd9807d9fd9df5280601338) \| ❤️ [课程反馈问卷](https://v.wjx.cn/vm/Pvjfj4I.aspx)\
 本课程实行“无PPT化”，全部利用代码文档实践学习，建议在电脑端浏览\
 （如果网页加载较慢，建议连接ECNU校园网或[下载GitHub原始文件](https://github.com/psychbruce/RCourse)）
 
@@ -37,7 +37,7 @@
 
 📤 阶段/期末作业提交：在[“超星泛雅”平台](https://ecnu.fanya.chaoxing.com/portal)提交，将Rmd和HTML文件分开上传。
 
-❤️ 课程反馈问卷：<https://v.wjx.cn/vm/Pvjfj4I.aspx>
+附：[豆瓣电影示例数据(.RData)下载](https://psychbruce.github.io/RCourse/data/douban_movies.RData)
 
 ## 课程目标
 

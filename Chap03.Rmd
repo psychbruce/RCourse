@@ -39,20 +39,20 @@ knitr::opts_chunk$set(
 
 #### 往期要点回顾
 
--   [Chap02 \# R对象类型（向量、列表）](https://psychbruce.github.io/RCourse/Chap02#%E7%9F%A5%E8%AF%86%E7%82%B9r%E5%AF%B9%E8%B1%A1%E4%B8%8E%E5%87%BD%E6%95%B0){.uri}
+- [Chap02 \# R对象类型（向量、列表）](https://psychbruce.github.io/RCourse/Chap02#%E7%9F%A5%E8%AF%86%E7%82%B9r%E5%AF%B9%E8%B1%A1%E4%B8%8E%E5%87%BD%E6%95%B0){.uri}
 
 #### 本章要点目录
 
--   [【实践1】矩阵操作](#实践1矩阵操作)
--   [【实践2】数据变量操作](#实践2数据变量操作)（重点）
--   [【知识点】数据框的变量名要求](#知识点数据框的变量名要求)
--   [【探索发现】数据框（data.frame）和数据表（data.table）对比](#探索发现数据框data.frame和数据表data.table对比)
--   [【知识点】“一站式”数据导入导出函数](#知识点一站式数据导入导出函数)
--   [【实践3】数据导出练习](#实践3数据导出练习)（重点）
--   [【实践4】数据导入练习](#实践4数据导入练习)（重点）
--   [【知识点】RData数据压缩存储格式](#知识点rdata数据压缩存储格式)
--   [【知识点】Web前端数据结构](#知识点web前端数据结构)
--   [【实践5】静态网页解析](#实践5静态网页解析)
+- [【实践1】矩阵操作](#实践1矩阵操作)
+- [【实践2】数据变量操作](#实践2数据变量操作)（重点）
+- [【知识点】数据框的变量名要求](#知识点数据框的变量名要求)
+- [【探索发现】数据框（data.frame）和数据表（data.table）对比](#探索发现数据框data.frame和数据表data.table对比)
+- [【知识点】“一站式”数据导入导出函数](#知识点一站式数据导入导出函数)
+- [【实践3】数据导出练习](#实践3数据导出练习)（重点）
+- [【实践4】数据导入练习](#实践4数据导入练习)（重点）
+- [【知识点】RData数据压缩存储格式](#知识点rdata数据压缩存储格式)
+- [【知识点】Web前端数据结构](#知识点web前端数据结构)
+- [【实践5】静态网页解析](#实践5静态网页解析)
 
 ```{r, message=FALSE, warning=FALSE}
 ## 本章所需R包
@@ -66,7 +66,7 @@ library(rvest)  # 网络爬虫
 
 ## 矩阵（matrix）
 
--   二维、单类型数据
+- 二维、单类型数据
 
 #### 【实践1】矩阵操作 {#实践1矩阵操作}
 
@@ -99,10 +99,10 @@ m["a", "C"]
 
 ## 数据框（data frame）
 
--   二维、多类型数据⭐️（最常用的数据类型！）
-    -   相当于Excel表格在R里的样子
-        -   每一列是一个变量
-        -   每一行是一个观测值
+- 二维、多类型数据⭐️（最常用的数据类型！）
+  - 相当于Excel表格在R里的样子
+    - 每一列是一个变量
+    - 每一行是一个观测值
 
 #### 【实践2】数据变量操作 {#实践2数据变量操作}
 
@@ -162,15 +162,15 @@ d.d2  # 变量名已修改
 
 #### 【知识点】数据框的变量名要求 {#知识点数据框的变量名要求}
 
--   建议使用英文（区分大小写）、数字、点（`.`）、下划线（`_`）命名变量
-    -   一般以英文开头，如`Item1`、`Item.1`、`Item_1`
--   变量名不建议出现中文、横线、空格
+- 建议使用英文（区分大小写）、数字、点（`.`）、下划线（`_`）命名变量
+  - 一般以英文开头，如`Item1`、`Item.1`、`Item_1`
+- 变量名不建议出现中文、横线、空格
 
 ![](images/clipboard-350647912.png)
 
 #### 【探索发现】数据框（data.frame）和数据表（data.table）对比 {#探索发现数据框data.frame和数据表data.table对比}
 
--   [第6章](https://psychbruce.github.io/RCourse/Chap06)将会系统学习一种**先进、高效、简约**的数据表类型（data.table）
+- [第6章](https://psychbruce.github.io/RCourse/Chap06)将会系统学习一种**先进、高效、简约**的数据表类型（data.table）
 
 ![](images/clipboard-1700157780.png)
 
@@ -178,16 +178,16 @@ d.d2  # 变量名已修改
 
 #### 【知识点】“一站式”数据导入导出函数 {#知识点一站式数据导入导出函数}
 
--   `bruceR`包的`import()`和`export()`函数提供了“一站式”数据导入导出功能
-    -   根据文件后缀名，全自动选择最优导入导出方式，不再需要记住大量的`read_xxx()`函数，节省时间，提升效率！
-        -   细节可查阅帮助文档
--   `import()`帮助文档
-    -   <https://psychbruce.github.io/bruceR/reference/import.html>
+- `bruceR`包的`import()`和`export()`函数提供了“一站式”数据导入导出功能
+  - 根据文件后缀名，全自动选择最优导入导出方式，不再需要记住大量的`read_xxx()`函数，节省时间，提升效率！
+    - 细节可查阅帮助文档
+- `import()`帮助文档
+  - <https://psychbruce.github.io/bruceR/reference/import.html>
 
 ![](images/clipboard-1176802563.png)
 
--   `export()`帮助文档
-    -   <https://psychbruce.github.io/bruceR/reference/export.html>
+- `export()`帮助文档
+  - <https://psychbruce.github.io/bruceR/reference/export.html>
 
 ![](images/clipboard-1921287260.png)
 
@@ -247,10 +247,10 @@ str(dt)  # 数据结构
 
 #### 【知识点】RData数据压缩存储格式 {#知识点rdata数据压缩存储格式}
 
--   .RData（也可写为.rdata、.rda）：特殊文件格式，可压缩存储多个R对象、数据集
-    -   `"gzip"`：快速压缩（最快，默认）
-    -   `"bzip2"`：中度压缩（较快）
-    -   `"xz"`：极限压缩（较慢）
+- .RData（也可写为.rdata、.rda）：特殊文件格式，可压缩存储多个R对象、数据集
+  - `"gzip"`：快速压缩（最快，默认）
+  - `"bzip2"`：中度压缩（较快）
+  - `"xz"`：极限压缩（较慢）
 
 ![](images/clipboard-3528983083.png)
 
@@ -290,10 +290,10 @@ data = import("https://psychbruce.github.io/RCourse/data/douban_movies.RData")
 
 #### 【知识点】Web前端数据结构 {#知识点web前端数据结构}
 
--   网页组成三大元素
-    -   HTML（结构）：超文本标记语言
-    -   CSS（样式）：层叠样式表
-    -   JavaScript（动作）：网页动作脚本
+- 网页组成三大元素
+  - HTML（结构）：超文本标记语言
+  - CSS（样式）：层叠样式表
+  - JavaScript（动作）：网页动作脚本
 
 ![](images/clipboard-568191817.png)
 
@@ -303,12 +303,12 @@ data = import("https://psychbruce.github.io/RCourse/data/douban_movies.RData")
 
 #### 【实践5】静态网页解析 {#实践5静态网页解析}
 
--   静态网页示例：华东师范大学心理与认知科学学院“师资队伍”页面
-    -   点击查看网页内容：<https://psy.ecnu.edu.cn/17437/list.htm>
--   网页元素提取：CSS选择代码
-    -   CSS选择代码定义了用于精准定位HTML元素的基本模式，可简洁描述想要提取的元素
-    -   [**SelectorGadget**](javascript:(function()%7Bvar%20s=document.createElement('div');s.innerHTML='Loading...';s.style.color='black';s.style.padding='20px';s.style.position='fixed';s.style.zIndex='9999';s.style.fontSize='3.0em';s.style.border='2px%20solid%20black';s.style.right='40px';s.style.top='40px';s.setAttribute('class','selector_gadget_loading');s.style.background='white';document.body.appendChild(s);s=document.createElement('script');s.setAttribute('type','text/javascript');s.setAttribute('src','https://dv0akt2986vzh.cloudfront.net/unstable/lib/selectorgadget.js');document.body.appendChild(s);%7D)();)**（将这个超链接拖拽到你的浏览器书签栏，即可使用）**
-        -   [使用教程](https://selectorgadget.com/)
+- 静态网页示例：华东师范大学心理与认知科学学院“师资队伍”页面
+  - 点击查看网页内容：<https://psy.ecnu.edu.cn/17437/list.htm>
+- 网页元素提取：CSS选择代码
+  - CSS选择代码定义了用于精准定位HTML元素的基本模式，可简洁描述想要提取的元素
+  - [**SelectorGadget**](javascript:(function()%7Bvar%20s=document.createElement('div');s.innerHTML='Loading...';s.style.color='black';s.style.padding='20px';s.style.position='fixed';s.style.zIndex='9999';s.style.fontSize='3.0em';s.style.border='2px%20solid%20black';s.style.right='40px';s.style.top='40px';s.setAttribute('class','selector_gadget_loading');s.style.background='white';document.body.appendChild(s);s=document.createElement('script');s.setAttribute('type','text/javascript');s.setAttribute('src','https://dv0akt2986vzh.cloudfront.net/unstable/lib/selectorgadget.js');document.body.appendChild(s);%7D)();)**（将这个超链接拖拽到你的浏览器书签栏，即可使用）**
+    - [使用教程](https://selectorgadget.com/)
 
 ```{r}
 library(rvest)
@@ -325,15 +325,15 @@ xml %>% html_elements(".column-news-title") %>% html_text2()
 
 作业要求：
 
--   开始准备个人期末大作业，自主选择任意一个感兴趣的公开数据，写出数据导入代码
-    -   数据选择：可以从本课程提供的“[公开数据可选列表](https://docs.qq.com/sheet/DTXNCUWtzWWNuU05Y)”中，选择一篇感兴趣的研究，下载其公开数据中的一个数据文件（只选择一个有代表性的数据文件即可，无需使用研究中的全部数据文件）
-    -   数据导入：参考【实践4】代码，使用`bruceR`包的`import()`函数，将该数据导入为`data.table`对象
+- 开始准备个人期末大作业，自主选择任意一个感兴趣的公开数据，写出数据导入代码
+  - 数据选择：可以从本课程提供的“[公开数据可选列表](https://docs.qq.com/sheet/DTXNCUWtzWWNuU05Y)”中，选择一篇感兴趣的研究，下载其公开数据中的一个数据文件（只选择一个有代表性的数据文件即可，无需使用研究中的全部数据文件）
+  - 数据导入：参考【实践4】代码，使用`bruceR`包的`import()`函数，将该数据导入为`data.table`对象
 
 平台提交：
 
--   自选论文的DOI链接和公开数据链接
--   原数据打开后的前几行、前几列截图
--   数据导入代码（使用`import()`函数）及导入后的数据结构（使用`str()`函数）截图
+- 自选论文的DOI链接和公开数据链接
+- 原数据打开后的前几行、前几列截图
+- 数据导入代码（使用`import()`函数）及导入后的数据结构（使用`str()`函数）截图
 
 ------------------------------------------------------------------------
 

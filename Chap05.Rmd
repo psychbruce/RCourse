@@ -39,19 +39,19 @@ knitr::opts_chunk$set(
 
 #### 往期要点回顾
 
--   [Chap03 \# 数据框（data frame）](https://psychbruce.github.io/RCourse/Chap03#%E6%95%B0%E6%8D%AE%E6%A1%86data-frame){.uri}
--   [Chap04 \# 字符串处理实战](https://psychbruce.github.io/RCourse/Chap04#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86%E5%AE%9E%E6%88%98){.uri}
+- [Chap03 \# 数据框（data frame）](https://psychbruce.github.io/RCourse/Chap03#%E6%95%B0%E6%8D%AE%E6%A1%86data-frame){.uri}
+- [Chap04 \# 字符串处理实战](https://psychbruce.github.io/RCourse/Chap04#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86%E5%AE%9E%E6%88%98){.uri}
 
 #### 本章要点目录
 
--   [【实践1】数据框变量的多种计算方式](#实践1数据框变量的多种计算方式)
--   [【实践2】基于data.table的字符串处理和变量计算](#实践2基于data.table的字符串处理和变量计算)（重点）
--   [【知识点】data.table的“浅复制”与“深复制”问题](#知识点data.table的浅复制与深复制问题)
--   [【知识点】变量中心化与标准化](#知识点变量中心化与标准化)
--   [【实践3】基于data.table的变量中心化与标准化](#实践3基于data.table的变量中心化与标准化)
--   [【实践4】计算多变量的总分与平均分](#实践4计算多变量的总分与平均分)（重点）
--   [【实践5】题目序号在变量名中间的特殊情况](#实践5题目序号在变量名中间的特殊情况)
--   [【实践6】大五人格问卷BFI各维度平均分计算](#实践6大五人格问卷bfi各维度平均分计算)（重点）
+- [【实践1】数据框变量的多种计算方式](#实践1数据框变量的多种计算方式)
+- [【实践2】基于data.table的字符串处理和变量计算](#实践2基于data.table的字符串处理和变量计算)（重点）
+- [【知识点】data.table的“浅复制”与“深复制”问题](#知识点data.table的浅复制与深复制问题)
+- [【知识点】变量中心化与标准化](#知识点变量中心化与标准化)
+- [【实践3】基于data.table的变量中心化与标准化](#实践3基于data.table的变量中心化与标准化)
+- [【实践4】计算多变量的总分与平均分](#实践4计算多变量的总分与平均分)（重点）
+- [【实践5】题目序号在变量名中间的特殊情况](#实践5题目序号在变量名中间的特殊情况)
+- [【实践6】大五人格问卷BFI各维度平均分计算](#实践6大五人格问卷bfi各维度平均分计算)（重点）
 
 ```{r, message=FALSE, warning=FALSE}
 ## 本章所需R包
@@ -64,10 +64,10 @@ library(bruceR)
 
 #### 【实践1】数据框变量的多种计算方式 {#实践1数据框变量的多种计算方式}
 
--   `$`操作符：直接赋值⭐️
--   `dplyr`包：`mutate()`函数
--   `data.table`包：`:=`象牙运算符 / `let()`函数⭐️
--   `bruceR`包：`add()`与`added()`函数⭐️
+- `$`操作符：直接赋值⭐️
+- `dplyr`包：`mutate()`函数
+- `data.table`包：`:=`象牙运算符 / `let()`函数⭐️
+- `bruceR`包：`add()`与`added()`函数⭐️
 
 ```{r}
 d = data.frame(Var = c("可乐", "雪碧", "咖啡", "茶"))
@@ -163,8 +163,8 @@ d2  # d2不会跟着d1一起变
 
 #### 【知识点】变量中心化与标准化 {#知识点变量中心化与标准化}
 
--   中心化：变量减去均值（mean）
--   标准化：变量减去均值（mean），再除以标准差（sd）
+- 中心化：变量减去均值（mean）
+- 标准化：变量减去均值（mean），再除以标准差（sd）
 
 #### 【实践3】基于data.table的变量中心化与标准化 {#实践3基于data.table的变量中心化与标准化}
 
@@ -249,7 +249,7 @@ d2
 
 #### 【实践5】题目序号在变量名中间的特殊情况 {#实践5题目序号在变量名中间的特殊情况}
 
--   在`var`变量名共同部分中，以大括号`{i}`占位题目序号
+- 在`var`变量名共同部分中，以大括号`{i}`占位题目序号
 
 ```{r}
 d = data.table(
@@ -273,12 +273,12 @@ add(d, {
 
 #### 【实践6】大五人格问卷BFI各维度平均分计算 {#实践6大五人格问卷bfi各维度平均分计算}
 
--   大五人格维度
-    -   Extraversion（外倾性）
-    -   Agreeableness（宜人性）
-    -   Conscientiousness（尽责性）
-    -   Neuroticism（神经质/情绪性）
-    -   Openness（开放性）
+- 大五人格维度
+  - Extraversion（外倾性）
+  - Agreeableness（宜人性）
+  - Conscientiousness（尽责性）
+  - Neuroticism（神经质/情绪性）
+  - Openness（开放性）
 
 ```{r}
 d.bfi = as.data.table(psych::bfi)
@@ -302,14 +302,14 @@ str(d.bfi)
 
 作业要求：
 
--   基于[【作业4】](https://psychbruce.github.io/RCourse/Chap03#%E4%BD%9C%E4%B8%9A4%E6%9C%9F%E6%9C%AB%E8%87%AA%E9%80%89%E5%85%AC%E5%BC%80%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5)的期末自选公开数据，运用本章所学的变量计算方法，对数据变量进行计算和预处理
-    -   请使用`data.table`数据对象类型（而不是`data.frame`）
-    -   可选用`data.table`包的`let()`函数或`bruceR`包的`add()`、`added()`函数计算变量
--   使用R Markdown完成，运行渲染得到本地HTML网页文件
+- 基于[【作业4】](https://psychbruce.github.io/RCourse/Chap03#%E4%BD%9C%E4%B8%9A4%E6%9C%9F%E6%9C%AB%E8%87%AA%E9%80%89%E5%85%AC%E5%BC%80%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5)的期末自选公开数据，运用本章所学的变量计算方法，对数据变量进行计算和预处理
+  - 请使用`data.table`数据对象类型（而不是`data.frame`）
+  - 可选用`data.table`包的`let()`函数或`bruceR`包的`add()`、`added()`函数计算变量
+- 使用R Markdown完成，运行渲染得到本地HTML网页文件
 
 平台提交：
 
--   运行得到HTML网页文件的**关键部分截图（只需上传截图）**
+- 运行得到HTML网页文件的**关键部分截图（只需上传截图）**
 
 ------------------------------------------------------------------------
 

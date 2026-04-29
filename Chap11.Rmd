@@ -39,17 +39,17 @@ knitr::opts_chunk$set(
 
 #### 往期要点回顾
 
--   [Chap10 \# 绘制变量分布](https://psychbruce.github.io/RCourse/Chap10#%E7%BB%98%E5%88%B6%E5%8F%98%E9%87%8F%E5%88%86%E5%B8%83){.uri}（直方图）
--   [Chap10 \# 绘制变量大小](https://psychbruce.github.io/RCourse/Chap10#%E7%BB%98%E5%88%B6%E5%8F%98%E9%87%8F%E5%A4%A7%E5%B0%8F){.uri}（柱形图）
--   [Chap10 \# 绘制变量关系](https://psychbruce.github.io/RCourse/Chap10#%E7%BB%98%E5%88%B6%E5%8F%98%E9%87%8F%E5%85%B3%E7%B3%BB){.uri}（散点图）
--   [Chap10 \# 绘制变量趋势](https://psychbruce.github.io/RCourse/Chap10#%E7%BB%98%E5%88%B6%E5%8F%98%E9%87%8F%E8%B6%8B%E5%8A%BF){.uri}（折线图）
+- [Chap10 \# 绘制变量分布](https://psychbruce.github.io/RCourse/Chap10#%E7%BB%98%E5%88%B6%E5%8F%98%E9%87%8F%E5%88%86%E5%B8%83){.uri}（直方图）
+- [Chap10 \# 绘制变量大小](https://psychbruce.github.io/RCourse/Chap10#%E7%BB%98%E5%88%B6%E5%8F%98%E9%87%8F%E5%A4%A7%E5%B0%8F){.uri}（柱形图）
+- [Chap10 \# 绘制变量关系](https://psychbruce.github.io/RCourse/Chap10#%E7%BB%98%E5%88%B6%E5%8F%98%E9%87%8F%E5%85%B3%E7%B3%BB){.uri}（散点图）
+- [Chap10 \# 绘制变量趋势](https://psychbruce.github.io/RCourse/Chap10#%E7%BB%98%E5%88%B6%E5%8F%98%E9%87%8F%E8%B6%8B%E5%8A%BF){.uri}（折线图）
 
 #### 本章要点目录
 
--   [【实践1】facet_wrap()：拆解分面小图](#实践1facet_wrap拆解分面小图)
--   [【实践2】facet_grid()：两个分类变量的交叉组合分面](#实践2facet_grid两个分类变量的交叉组合分面)
--   [【实践3】cowplot::plot_grid()：多图组合](#实践3cowplotplot_grid多图组合)（重点）
--   [【实践4】ggsave()：图形文件保存](#实践4ggsave图形文件保存)（重点）
+- [【实践1】facet_wrap()：拆解分面小图](#实践1facet_wrap拆解分面小图)
+- [【实践2】facet_grid()：两个分类变量的交叉组合分面](#实践2facet_grid两个分类变量的交叉组合分面)
+- [【实践3】cowplot::plot_grid()：多图组合](#实践3cowplotplot_grid多图组合)（重点）
+- [【实践4】ggsave()：图形文件保存](#实践4ggsave图形文件保存)（重点）
 
 ```{r, message=FALSE, warning=FALSE}
 ## 本章所需R包
@@ -112,10 +112,10 @@ ggplot(data, aes(x=Wind, y=Temp.C, color=Months)) +
 
 #### 【实践2】facet_grid()：两个分类变量的交叉组合分面 {#实践2facet_grid两个分类变量的交叉组合分面}
 
--   `facet_wrap()`：线性排列（卷饼🌯）
-    -   `~ 分组变量`
--   `facet_grid()`：两因素交叉组合排列（华夫饼🧇）
-    -   `行分组变量 ~ 列分组变量`
+- `facet_wrap()`：线性排列（卷饼🌯）
+  - `~ 分组变量`
+- `facet_grid()`：两因素交叉组合排列（华夫饼🧇）
+  - `行分组变量 ~ 列分组变量`
 
 ![](images/clipboard-1505372315.png)
 
@@ -193,11 +193,11 @@ p1234
 
 `ggsave()`：保存`ggplot`对象到文件
 
--   `file`：可以是`.png`、`.jpg`、`.pdf`等文件格式
-    -   PDF格式是矢量图，无限放大依然清晰
--   `width`：宽度（英寸inch）
--   `height`：高度（英寸inch）
--   `dpi`（dots per inch）：每英寸像素点数
+- `file`：可以是`.png`、`.jpg`、`.pdf`等文件格式
+  - PDF格式是矢量图，无限放大依然清晰
+- `width`：宽度（英寸inch）
+- `height`：高度（英寸inch）
+- `dpi`（dots per inch）：每英寸像素点数
 
 ```{r}
 ggsave(p1234, file="Fig1.png", width=8, height=6, dpi=300)
@@ -235,12 +235,12 @@ unlink(c("Fig1.png", "Fig2.png", "Fig3.png", "Fig4.png"))
 
 作业要求：
 
--   使用`cowplot::plot_grid()`函数，把[【作业9】](https://psychbruce.github.io/RCourse/Chap10#%E4%BD%9C%E4%B8%9A9%E5%9F%BA%E7%A1%80%E7%BB%98%E5%9B%BE%E7%BB%83%E4%B9%A0){.uri}完成的4张图拼合在一起，添加A\~D标签，最后保存为合适尺寸的高清晰度图形文件（`.png`格式，清晰度`dpi`至少为300）
--   使用R Markdown完成，对关键代码及结果要有注释说明
+- 使用`cowplot::plot_grid()`函数，把[【作业9】](https://psychbruce.github.io/RCourse/Chap10#%E4%BD%9C%E4%B8%9A9%E5%9F%BA%E7%A1%80%E7%BB%98%E5%9B%BE%E7%BB%83%E4%B9%A0){.uri}完成的4张图拼合在一起，添加A\~D标签，最后保存为合适尺寸的高清晰度图形文件（`.png`格式，清晰度`dpi`至少为300）
+- 使用R Markdown完成，对关键代码及结果要有注释说明
 
 平台提交：
 
--   关键代码截图及保存的PNG图形
+- 关键代码截图及保存的PNG图形
 
 ------------------------------------------------------------------------
 

@@ -39,23 +39,23 @@ knitr::opts_chunk$set(
 
 #### 往期要点回顾
 
--   [Chap05 \# 变量计算](https://psychbruce.github.io/RCourse/Chap05){.uri}
--   [Chap06 \# 数据操作](https://psychbruce.github.io/RCourse/Chap06){.uri}
+- [Chap05 \# 变量计算](https://psychbruce.github.io/RCourse/Chap05){.uri}
+- [Chap06 \# 数据操作](https://psychbruce.github.io/RCourse/Chap06){.uri}
 
 #### 本章要点目录
 
--   [【实践1】频次统计](#实践1频次统计)
--   [【实践2】描述统计](#实践2描述统计)
--   [【知识点】正态分布与正负偏态](#知识点正态分布与正负偏态)
--   [【实践3】相关分析](#实践3相关分析)（重点）
--   [【知识点】相关系数（r）的效应量大小](#知识点相关系数r的效应量大小)
--   [【实践4】单样本t检验](#实践4单样本t检验)
--   [【知识点】标准化均值差异（d）的效应量大小](#知识点标准化均值差异d的效应量大小)
--   [【实践5】独立样本t检验](#实践5独立样本t检验)（重点）
--   [【实践6】配对样本t检验](#实践6配对样本t检验)
--   [【实践7】大五人格量表信度分析](#实践7大五人格量表信度分析)（重点）
--   [【实践8】大五人格量表探索性因素分析（EFA）](#实践8大五人格量表探索性因素分析efa)
--   [【实践9】大五人格量表验证性因素分析（CFA）](#实践9大五人格量表验证性因素分析cfa)
+- [【实践1】频次统计](#实践1频次统计)
+- [【实践2】描述统计](#实践2描述统计)
+- [【知识点】正态分布与正负偏态](#知识点正态分布与正负偏态)
+- [【实践3】相关分析](#实践3相关分析)（重点）
+- [【知识点】相关系数（r）的效应量大小](#知识点相关系数r的效应量大小)
+- [【实践4】单样本t检验](#实践4单样本t检验)
+- [【知识点】标准化均值差异（d）的效应量大小](#知识点标准化均值差异d的效应量大小)
+- [【实践5】独立样本t检验](#实践5独立样本t检验)（重点）
+- [【实践6】配对样本t检验](#实践6配对样本t检验)
+- [【实践7】大五人格量表信度分析](#实践7大五人格量表信度分析)（重点）
+- [【实践8】大五人格量表探索性因素分析（EFA）](#实践8大五人格量表探索性因素分析efa)
+- [【实践9】大五人格量表验证性因素分析（CFA）](#实践9大五人格量表验证性因素分析cfa)
 
 ```{r, message=FALSE, warning=FALSE}
 ## 本章所需R包
@@ -84,7 +84,7 @@ str(data)
 
 #### 【实践1】频次统计 {#实践1频次统计}
 
--   [`Freq()`函数帮助文档](https://psychbruce.github.io/bruceR/reference/Freq.html){.uri}
+- [`Freq()`函数帮助文档](https://psychbruce.github.io/bruceR/reference/Freq.html){.uri}
 
 ```{r}
 ## Freq(x, varname, labels, sort, digits, file)
@@ -110,7 +110,7 @@ Freq(data$Age)  # 查看可能的异常值
 
 #### 【实践2】描述统计 {#实践2描述统计}
 
--   [`Describe()`函数帮助文档](https://psychbruce.github.io/bruceR/reference/Describe.html){.uri}
+- [`Describe()`函数帮助文档](https://psychbruce.github.io/bruceR/reference/Describe.html){.uri}
 
 ```{r}
 ## Describe(data, ..., digits, file, plot, plot.file, ...)
@@ -141,7 +141,7 @@ Describe(data[, Gender:O], file="Desc.doc")  # 保存结果表到Word文档
 
 #### 【实践3】相关分析 {#实践3相关分析}
 
--   [`Corr()`函数帮助文档](https://psychbruce.github.io/bruceR/reference/Corr.html){.uri}
+- [`Corr()`函数帮助文档](https://psychbruce.github.io/bruceR/reference/Corr.html){.uri}
 
 ```{r}
 ## Corr(data, method, ..., digits, file, plot, plot.file, ...)
@@ -161,19 +161,19 @@ Corr(data[, Gender:O], plot=FALSE, file="Corr.doc")
 
 #### 【知识点】相关系数（r）的效应量大小 {#知识点相关系数r的效应量大小}
 
--   相关系数 \|*r*\|（请参阅`effectsize::interpret_r()`函数帮助文档）
-    -   经典参考（Cohen, 1988）
-        -   极小效应：0\~0.1
-        -   小效应：0.1\~0.3
-        -   中效应：0.3\~0.5
-        -   大效应：0.5\~1
-    -   现代参考（Funder & Ozer, 2019）
-        -   微小效应：0\~0.05
-        -   极小效应：0.05\~0.1
-        -   小效应：0.1\~0.2
-        -   中效应：0.2\~0.3
-        -   大效应：0.3\~0.4
-        -   极大效应：0.4\~1
+- 相关系数 \|*r*\|（请参阅`effectsize::interpret_r()`函数帮助文档）
+  - 经典参考（Cohen, 1988）
+    - 极小效应：0\~0.1
+    - 小效应：0.1\~0.3
+    - 中效应：0.3\~0.5
+    - 大效应：0.5\~1
+  - 现代参考（Funder & Ozer, 2019）
+    - 微小效应：0\~0.05
+    - 极小效应：0.05\~0.1
+    - 小效应：0.1\~0.2
+    - 中效应：0.2\~0.3
+    - 大效应：0.3\~0.4
+    - 极大效应：0.4\~1
 
 ```{r}
 effectsize::interpret_r(0.01)
@@ -190,7 +190,7 @@ effectsize::interpret_r(0.4)
 
 #### 【实践4】单样本t检验 {#实践4单样本t检验}
 
--   [`TTEST()`函数帮助文档](https://psychbruce.github.io/bruceR/reference/TTEST.html){.uri}
+- [`TTEST()`函数帮助文档](https://psychbruce.github.io/bruceR/reference/TTEST.html){.uri}
 
 ```{r}
 TTEST(data, y="Age")
@@ -200,18 +200,18 @@ TTEST(data, y="Age", test.value=28)  # 统计显著不等于大效应！
 
 #### 【知识点】标准化均值差异（d）的效应量大小 {#知识点标准化均值差异d的效应量大小}
 
--   Cohen's *d*（请参阅`effectsize::interpret_cohens_d()`函数帮助文档）
-    -   经典参考（Cohen, 1988）
-        -   极小效应：0\~0.2
-        -   小效应：0.2\~0.5
-        -   中效应：0.5\~0.8
-        -   大效应：0.8及以上（至无穷大）
+- Cohen's *d*（请参阅`effectsize::interpret_cohens_d()`函数帮助文档）
+  - 经典参考（Cohen, 1988）
+    - 极小效应：0\~0.2
+    - 小效应：0.2\~0.5
+    - 中效应：0.5\~0.8
+    - 大效应：0.8及以上（至无穷大）
 
 ## 独立样本t检验
 
 #### 【实践5】独立样本t检验 {#实践5独立样本t检验}
 
--   [`TTEST()`函数帮助文档](https://psychbruce.github.io/bruceR/reference/TTEST.html){.uri}
+- [`TTEST()`函数帮助文档](https://psychbruce.github.io/bruceR/reference/TTEST.html){.uri}
 
 ```{r}
 TTEST(data, y="E", x="gender")
@@ -235,7 +235,7 @@ TTEST(data,
 
 #### 【实践6】配对样本t检验 {#实践6配对样本t检验}
 
--   [`TTEST()`函数帮助文档](https://psychbruce.github.io/bruceR/reference/TTEST.html){.uri}
+- [`TTEST()`函数帮助文档](https://psychbruce.github.io/bruceR/reference/TTEST.html){.uri}
 
 ```{r}
 bruceR::within.1  # 宽数据
@@ -292,12 +292,12 @@ p(chi2=3.84, df=1)
 
 #### 【实践7】大五人格量表信度分析 {#实践7大五人格量表信度分析}
 
--   Cronbach's α
-    -   [`Alpha()`函数帮助文档](https://psychbruce.github.io/bruceR/reference/Alpha.html){.uri}
--   设定变量范围的三种方式
-    -   **`var` + `items`**: common and unique parts of variable names
-    -   **`vars`**: a character vector of variable names
-    -   **`varrange`**: starting and stopping positions of variables
+- Cronbach's α
+  - [`Alpha()`函数帮助文档](https://psychbruce.github.io/bruceR/reference/Alpha.html){.uri}
+- 设定变量范围的三种方式
+  - **`var` + `items`**: common and unique parts of variable names
+  - **`vars`**: a character vector of variable names
+  - **`varrange`**: starting and stopping positions of variables
 
 ```{r}
 ## Alpha(data, var, items, ..., rev, digits)
@@ -315,7 +315,7 @@ Alpha(data, "O", 1:5, rev=c(2, 5))  # 开放性
 
 #### 【实践8】大五人格量表探索性因素分析（EFA） {#实践8大五人格量表探索性因素分析efa}
 
--   [`EFA()`函数帮助文档](https://psychbruce.github.io/bruceR/reference/EFA.html){.uri}
+- [`EFA()`函数帮助文档](https://psychbruce.github.io/bruceR/reference/EFA.html){.uri}
 
 ![](images/clipboard-1780694703.png)
 
@@ -332,7 +332,7 @@ EFA(data = psych::bfi,
 
 #### 【实践9】大五人格量表验证性因素分析（CFA） {#实践9大五人格量表验证性因素分析cfa}
 
--   [`CFA()`函数帮助文档](https://psychbruce.github.io/bruceR/reference/CFA.html){.uri}
+- [`CFA()`函数帮助文档](https://psychbruce.github.io/bruceR/reference/CFA.html){.uri}
 
 ![](images/clipboard-1960897724.png)
 
@@ -356,12 +356,12 @@ unlink(c("Freq.doc", "Desc.doc", "Corr.doc",
 
 作业要求：
 
--   基于[【作业4】](https://psychbruce.github.io/RCourse/Chap03#%E4%BD%9C%E4%B8%9A4%E6%9C%9F%E6%9C%AB%E8%87%AA%E9%80%89%E5%85%AC%E5%BC%80%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5)和[【作业6】](https://psychbruce.github.io/RCourse/Chap05#%E4%BD%9C%E4%B8%9A6%E6%9C%9F%E6%9C%AB%E4%BD%9C%E4%B8%9A%E6%95%B0%E6%8D%AE%E5%8F%98%E9%87%8F%E8%AE%A1%E7%AE%97){.uri}的期末自选数据和代码积累，运用本章所学的基础统计方法和代码，练习**描述统计、相关分析、t检验**（根据自己的数据情况选择最合适的一种t检验方法）
--   使用R Markdown完成，对关键代码及结果要有注释说明
+- 基于[【作业4】](https://psychbruce.github.io/RCourse/Chap03#%E4%BD%9C%E4%B8%9A4%E6%9C%9F%E6%9C%AB%E8%87%AA%E9%80%89%E5%85%AC%E5%BC%80%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5)和[【作业6】](https://psychbruce.github.io/RCourse/Chap05#%E4%BD%9C%E4%B8%9A6%E6%9C%9F%E6%9C%AB%E4%BD%9C%E4%B8%9A%E6%95%B0%E6%8D%AE%E5%8F%98%E9%87%8F%E8%AE%A1%E7%AE%97){.uri}的期末自选数据和代码积累，运用本章所学的基础统计方法和代码，练习**描述统计、相关分析、t检验**（根据自己的数据情况选择最合适的一种t检验方法）
+- 使用R Markdown完成，对关键代码及结果要有注释说明
 
 平台提交：
 
--   运行得到HTML网页文件的**关键部分截图（只需上传截图）**
+- 运行得到HTML网页文件的**关键部分截图（只需上传截图）**
 
 ------------------------------------------------------------------------
 

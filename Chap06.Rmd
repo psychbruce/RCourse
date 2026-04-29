@@ -39,24 +39,24 @@ knitr::opts_chunk$set(
 
 #### 往期要点回顾
 
--   [Chap05 \# 变量计算的多种方式](https://psychbruce.github.io/RCourse/Chap05#%E5%8F%98%E9%87%8F%E8%AE%A1%E7%AE%97%E7%9A%84%E6%80%BB%E4%BD%93%E4%BB%8B%E7%BB%8D){.uri}
+- [Chap05 \# 变量计算的多种方式](https://psychbruce.github.io/RCourse/Chap05#%E5%8F%98%E9%87%8F%E8%AE%A1%E7%AE%97%E7%9A%84%E6%80%BB%E4%BD%93%E4%BB%8B%E7%BB%8D){.uri}
 
 #### 本章要点目录
 
--   [【知识点】data.table核心要素](#知识点data.table核心要素)
--   [【探索发现】data.table vs. dplyr (tidyverse) 数据操作代码风格比较](#探索发现data.table-vs.-dplyr-tidyverse-数据操作代码风格比较)
--   [【探索发现】性能大PK：data.table (R) vs. dplyr (R) vs. pandas (Python)](#探索发现性能大pkdata.table-r-vs.-dplyr-r-vs.-pandas-python)
--   [【实践1】增删查改](#实践1增删查改)（重点）
--   [【实践2】行列筛选](#实践2行列筛选)（重点）
--   [【实践3】排序去重](#实践3排序去重)
--   [【自由练习】数据基本操作](#自由练习数据基本操作)
--   [【实践4】分组汇总](#实践4分组汇总)（重点）
--   [【知识点】data.table核心知识点总结](#知识点data.table核心知识点总结)
--   [【知识点】dplyr包：join系列函数](#知识点dplyr包join系列函数)
--   [【实践5】匹配拼接](#实践5匹配拼接)（重点）
--   [【知识点】宽数据 vs. 长数据](#知识点宽数据-vs.-长数据)
--   [【知识点】tidyr包：pivot系列函数](#知识点tidyr包pivot系列函数)
--   [【实践6】长宽转换](#实践6长宽转换)
+- [【知识点】data.table核心要素](#知识点data.table核心要素)
+- [【探索发现】data.table vs. dplyr (tidyverse) 数据操作代码风格比较](#探索发现data.table-vs.-dplyr-tidyverse-数据操作代码风格比较)
+- [【探索发现】性能大PK：data.table (R) vs. dplyr (R) vs. pandas (Python)](#探索发现性能大pkdata.table-r-vs.-dplyr-r-vs.-pandas-python)
+- [【实践1】增删查改](#实践1增删查改)（重点）
+- [【实践2】行列筛选](#实践2行列筛选)（重点）
+- [【实践3】排序去重](#实践3排序去重)
+- [【自由练习】数据基本操作](#自由练习数据基本操作)
+- [【实践4】分组汇总](#实践4分组汇总)（重点）
+- [【知识点】data.table核心知识点总结](#知识点data.table核心知识点总结)
+- [【知识点】dplyr包：join系列函数](#知识点dplyr包join系列函数)
+- [【实践5】匹配拼接](#实践5匹配拼接)（重点）
+- [【知识点】宽数据 vs. 长数据](#知识点宽数据-vs.-长数据)
+- [【知识点】tidyr包：pivot系列函数](#知识点tidyr包pivot系列函数)
+- [【实践6】长宽转换](#实践6长宽转换)
 
 ```{r, message=FALSE, warning=FALSE}
 ## 本章所需R包
@@ -70,17 +70,17 @@ library(bruceR)
 
 #### 【知识点】data.table核心要素 {#知识点data.table核心要素}
 
--   [一图学会data.table包（官方速查表）](https://psychbruce.github.io/RCourse/cheatsheet/data.table.pdf)
--   极简代码风格：`data[i, j, by]` —— 只需要一对中括号，就能完成所有操作！
-    -   `i`：行操作
-    -   `j`：列操作
-    -   `by`：分组变量
+- [一图学会data.table包（官方速查表）](https://psychbruce.github.io/RCourse/cheatsheet/data.table.pdf)
+- 极简代码风格：`data[i, j, by]` —— 只需要一对中括号，就能完成所有操作！
+  - `i`：行操作
+  - `j`：列操作
+  - `by`：分组变量
 
 ![](images/clipboard-809273248.png)
 
 #### 【探索发现】data.table vs. dplyr (tidyverse) 数据操作代码风格比较 {#探索发现data.table-vs.-dplyr-tidyverse-数据操作代码风格比较}
 
--   [A data.table and dplyr tour (Atrebas, 2019)](https://atrebas.github.io/post/2019-03-03-datatable-dplyr/){.uri}
+- [A data.table and dplyr tour (Atrebas, 2019)](https://atrebas.github.io/post/2019-03-03-datatable-dplyr/){.uri}
 
 ![](images/clipboard-2585080813.png)
 
@@ -88,7 +88,7 @@ library(bruceR)
 
 #### 【探索发现】性能大PK：data.table (R) vs. dplyr (R) vs. pandas (Python) {#探索发现性能大pkdata.table-r-vs.-dplyr-r-vs.-pandas-python .tabset .tabset-fade .table-pill}
 
--   <https://h2oai.github.io/db-benchmark/>
+- <https://h2oai.github.io/db-benchmark/>
 
 ##### **分组汇总速度 (0.5 GB)**
 
@@ -191,8 +191,8 @@ d[2, "age"] = NA  # 无效年龄（3岁），替换为NA缺失值
 d
 ```
 
--   Q：如何自动筛选、替换无效年龄？
-    -   A：请看下一部分
+- Q：如何自动筛选、替换无效年龄？
+  - A：请看下一部分
 
 （本小节进度：4/4）
 
@@ -334,8 +334,8 @@ unique(d[order(-Gender, -Age, -Edu)], by=c("Gender", "Edu"))
 
 参考前三小节代码（增删查改、行列筛选、排序去重），基于`psych::bfi`或期末自选数据，在自己电脑上自由练习数据基本操作，为【阶段作业①】做准备。
 
--   可以尝试改变上述示例代码中的数值范围、变量范围、筛选条件、排序方式等
--   **自己敲代码，掌握更扎实！（AI替代不了你的肌肉记忆！）**
+- 可以尝试改变上述示例代码中的数值范围、变量范围、筛选条件、排序方式等
+- **自己敲代码，掌握更扎实！（AI替代不了你的肌肉记忆！）**
 
 ------------------------------------------------------------------------
 
@@ -360,8 +360,8 @@ str(d)
 
 `DT[i, j, by]`
 
--   `by`：定义分组变量（原始顺序）
--   `keyby`：定义分组变量（重新排序）
+- `by`：定义分组变量（原始顺序）
+- `keyby`：定义分组变量（重新排序）
 
 ![](images/clipboard-431264484.png)
 
@@ -434,10 +434,10 @@ d[, .(Gender, Age, Mean.Age, Mean.Age.G, Age.Group.C)]
 
 两个数据`d1`和`d2`具有相同变量`"var"`：
 
--   `left_join(d1, d2, by="var")`：向`d1`合并⭐️（最常用）
--   `right_join(d1, d2, by="var")`：向`d2`合并
--   `inner_join(d1, d2, by="var")`：取`d1`和`d2`交集合并
--   `full_join(d1, d2, by="var")`：取`d1`和`d2`并集合并
+- `left_join(d1, d2, by="var")`：向`d1`合并⭐️（最常用）
+- `right_join(d1, d2, by="var")`：向`d2`合并
+- `inner_join(d1, d2, by="var")`：取`d1`和`d2`交集合并
+- `full_join(d1, d2, by="var")`：取`d1`和`d2`并集合并
 
 （data.table也能完成匹配拼接操作，但比dplyr难用）
 
@@ -499,21 +499,21 @@ d.merge
 
 #### 【知识点】宽数据 vs. 长数据 {#知识点宽数据-vs.-长数据}
 
--   **宽数据（wide-format data）**—— “汇总表”或“透视表”
-    -   每个被观测的对象只占一行，而该对象的多个属性或随时间变化的观测值作为不同的列横向展开
-        -   核心特征：一主体一行，多变量多列
-        -   灵活性：增加新变量需增加新列
-        -   优点：对人类阅读比较友好，很像我们常见的电子表格或汇总报表，很多统计模型的输入也要求是宽格式
-        -   缺点：不利于进行某些分析和可视化，因为数据维度（变量）被锁定在列结构中
+- **宽数据（wide-format data）**—— “汇总表”或“透视表”
+  - 每个被观测的对象只占一行，而该对象的多个属性或随时间变化的观测值作为不同的列横向展开
+    - 核心特征：一主体一行，多变量多列
+    - 灵活性：增加新变量需增加新列
+    - 优点：对人类阅读比较友好，很像我们常见的电子表格或汇总报表，很多统计模型的输入也要求是宽格式
+    - 缺点：不利于进行某些分析和可视化，因为数据维度（变量）被锁定在列结构中
 
 ![↑ 宽数据示例](images/clipboard-2390278354.png)
 
--   **长数据（long-format data）**—— “流水记录”或“规范化”的数据库表
-    -   每个被观测的对象会占据多行，每一行通常只包含一个变量在某一个时间点或条件下的观测值
-        -   核心特征：一观测一行，键值对形式
-        -   灵活性：增加新观测或变量只需增加新行，结构稳定
-        -   优点：结构规整，是整洁数据的标准格式，特别适合用`ggplot2`等工具进行数据可视化，也便于进行分组、聚合和复杂变换，数据库存储也常采用类似结构
-        -   缺点：对人类阅读不太直观，显得冗长
+- **长数据（long-format data）**—— “流水记录”或“规范化”的数据库表
+  - 每个被观测的对象会占据多行，每一行通常只包含一个变量在某一个时间点或条件下的观测值
+    - 核心特征：一观测一行，键值对形式
+    - 灵活性：增加新观测或变量只需增加新行，结构稳定
+    - 优点：结构规整，是整洁数据的标准格式，特别适合用`ggplot2`等工具进行数据可视化，也便于进行分组、聚合和复杂变换，数据库存储也常采用类似结构
+    - 缺点：对人类阅读不太直观，显得冗长
 
 ![↑ 长数据示例](images/clipboard-2872093314.png)
 
@@ -614,13 +614,13 @@ d.wide.3
 
 作业要求：
 
--   基于[【作业4】](https://psychbruce.github.io/RCourse/Chap03#%E4%BD%9C%E4%B8%9A4%E6%9C%9F%E6%9C%AB%E8%87%AA%E9%80%89%E5%85%AC%E5%BC%80%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5)和[【作业6】](https://psychbruce.github.io/RCourse/Chap05#%E4%BD%9C%E4%B8%9A6%E6%9C%9F%E6%9C%AB%E4%BD%9C%E4%B8%9A%E6%95%B0%E6%8D%AE%E5%8F%98%E9%87%8F%E8%AE%A1%E7%AE%97){.uri}的期末自选数据和代码积累，综合运用本章所学的各种数据操作方法和代码，对数据进行**增删查改、行列筛选、排序去重、分组汇总、匹配拼接、长宽转换**等操作，体现对目前所学全部内容的掌握和迁移应用
--   使用R Markdown完成，对关键代码及结果要有注释说明
+- 基于[【作业4】](https://psychbruce.github.io/RCourse/Chap03#%E4%BD%9C%E4%B8%9A4%E6%9C%9F%E6%9C%AB%E8%87%AA%E9%80%89%E5%85%AC%E5%BC%80%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5)和[【作业6】](https://psychbruce.github.io/RCourse/Chap05#%E4%BD%9C%E4%B8%9A6%E6%9C%9F%E6%9C%AB%E4%BD%9C%E4%B8%9A%E6%95%B0%E6%8D%AE%E5%8F%98%E9%87%8F%E8%AE%A1%E7%AE%97){.uri}的期末自选数据和代码积累，综合运用本章所学的各种数据操作方法和代码，对数据进行**增删查改、行列筛选、排序去重、分组汇总、匹配拼接、长宽转换**等操作，体现对目前所学全部内容的掌握和迁移应用
+- 使用R Markdown完成，对关键代码及结果要有注释说明
 
 平台提交：
 
--   运行得到的HTML网页文件（本地的“.html”后缀格式文件）
-    -   提交文件命名格式：`学号-姓名-R阶段作业1.html`
+- 运行得到的HTML网页文件（本地的“.html”后缀格式文件）
+  - 提交文件命名格式：`学号-姓名-R阶段作业1.html`
 
 ------------------------------------------------------------------------
 

@@ -39,14 +39,14 @@ knitr::opts_chunk$set(
 
 #### 往期要点回顾
 
--   [Chap11 \# 分面小图](https://psychbruce.github.io/RCourse/Chap11#%E5%88%86%E9%9D%A2%E5%B0%8F%E5%9B%BE){.uri}
--   [Chap11 \# 多图组合](https://psychbruce.github.io/RCourse/Chap11#%E5%A4%9A%E5%9B%BE%E7%BB%84%E5%90%88){.uri}
--   [Chap11 \# 图形文件保存](https://psychbruce.github.io/RCourse/Chap11#%E5%9B%BE%E5%BD%A2%E6%96%87%E4%BB%B6%E4%BF%9D%E5%AD%98){.uri}
+- [Chap11 \# 分面小图](https://psychbruce.github.io/RCourse/Chap11#%E5%88%86%E9%9D%A2%E5%B0%8F%E5%9B%BE){.uri}
+- [Chap11 \# 多图组合](https://psychbruce.github.io/RCourse/Chap11#%E5%A4%9A%E5%9B%BE%E7%BB%84%E5%90%88){.uri}
+- [Chap11 \# 图形文件保存](https://psychbruce.github.io/RCourse/Chap11#%E5%9B%BE%E5%BD%A2%E6%96%87%E4%BB%B6%E4%BF%9D%E5%AD%98){.uri}
 
 #### 本章要点目录
 
--   [【实践1】配色方案设置](#实践1配色方案设置)（重点）
--   [【实践2】主题元素设置](#实践2主题元素设置)
+- [【实践1】配色方案设置](#实践1配色方案设置)（重点）
+- [【实践2】主题元素设置](#实践2主题元素设置)
 
 ```{r, message=FALSE, warning=FALSE}
 ## 本章所需R包
@@ -60,13 +60,13 @@ library(bruceR)
 
 #### 【实践1】配色方案设置 {#实践1配色方案设置}
 
--   Brewer调色板（<https://colorbrewer2.org/>）
-    -   分类色（Qualitative palettes）—— 适用于离散/分类/因子型变量
-        -   Accent, Dark2, Paired, Pastel1, Pastel2, **Set1 (常用)**, Set2, Set3
-    -   对比色（Diverging palettes）—— 适用于连续/数值型变量
-        -   BrBG, PiYG, PRGn, PuOr, **RdBu (常用)**, RdGy, RdYlBu, RdYlGn, Spectral
-    -   渐变色（Sequential palettes）—— 适用于连续/数值型变量
-        -   Blues, BuGn, BuPu, GnBu, Greens, Greys, Oranges, OrRd, PuBu, PuBuGn, PuRd, Purples, RdPu, Reds, YlGn, YlGnBu, YlOrBr, YlOrRd
+- Brewer调色板（<https://colorbrewer2.org/>）
+  - 分类色（Qualitative palettes）—— 适用于离散/分类/因子型变量
+    - Accent, Dark2, Paired, Pastel1, Pastel2, **Set1 (常用)**, Set2, Set3
+  - 对比色（Diverging palettes）—— 适用于连续/数值型变量
+    - BrBG, PiYG, PRGn, PuOr, **RdBu (常用)**, RdGy, RdYlBu, RdYlGn, Spectral
+  - 渐变色（Sequential palettes）—— 适用于连续/数值型变量
+    - Blues, BuGn, BuPu, GnBu, Greens, Greys, Oranges, OrRd, PuBu, PuBuGn, PuRd, Purples, RdPu, Reds, YlGn, YlGnBu, YlOrBr, YlOrRd
 
 ![](images/clipboard-1148945718.png)
 
@@ -105,15 +105,15 @@ p + scale_color_fermenter(palette = "RdYlBu",
                           breaks = seq(10, 40, 3))
 ```
 
--   Viridis调色板
-    -   `"magma"` (or `"A"`)
-    -   `"inferno"` (or `"B"`)
-    -   `"plasma"` (or `"C"`)
-    -   `"viridis"` (or `"D"`)
-    -   `"cividis"` (or `"E"`)
-    -   `"rocket"` (or `"F"`)
-    -   `"mako"` (or `"G"`)
-    -   `"turbo"` (or `"H"`)
+- Viridis调色板
+  - `"magma"` (or `"A"`)
+  - `"inferno"` (or `"B"`)
+  - `"plasma"` (or `"C"`)
+  - `"viridis"` (or `"D"`)
+  - `"cividis"` (or `"E"`)
+  - `"rocket"` (or `"F"`)
+  - `"mako"` (or `"G"`)
+  - `"turbo"` (or `"H"`)
 
 ![](images/clipboard-3035871798.png)
 
@@ -151,41 +151,41 @@ p + scale_color_viridis_b(option="turbo")  # "H"
 
 （1）`theme()`主题元素设置函数（[自学`theme()`函数帮助文档](https://ggplot2.tidyverse.org/reference/theme.html){.uri}）
 
--   `theme()`函数共144个参数！（以下列出了常用参数）
-    -   整张图（`plot.*`）
-        -   背景：`plot.background`
-        -   主标题：`plot.title`, `plot.title.position`
-        -   副标题：`plot.subtitle`
-        -   说明文字：`plot.caption`, `plot.caption.position`
-        -   序号标签：`plot.tag`, `plot.tag.position`
-        -   边距：`plot.margin`
-    -   绘图区（`panel.*`）
-        -   背景：`panel.background`
-        -   网格线：`panel.grid`
-        -   主刻度网格线：`panel.grid.major`
-        -   副刻度网格线：`panel.grid.minor`
-    -   坐标轴（`axis.*`）
-        -   轴线：`axis.line`
-        -   轴标题：`axis.title`
-        -   刻度值：`axis.text`
-        -   刻度线：`axis.ticks`
-    -   图例区（`legend.*`）
-        -   背景：`legend.background`
-        -   位置：`legend.position`, `legend.position.inside`
-        -   方向：`legend.direction`
-        -   图例标题：`legend.title`
-        -   图例刻度值：`legend.text`
-        -   图例刻度线：`legend.ticks`
--   分面图（`strip.*`）
-    -   背景：`strip.background`
-    -   文字：`strip.text`
+- `theme()`函数共144个参数！（以下列出了常用参数）
+  - 整张图（`plot.*`）
+    - 背景：`plot.background`
+    - 主标题：`plot.title`, `plot.title.position`
+    - 副标题：`plot.subtitle`
+    - 说明文字：`plot.caption`, `plot.caption.position`
+    - 序号标签：`plot.tag`, `plot.tag.position`
+    - 边距：`plot.margin`
+  - 绘图区（`panel.*`）
+    - 背景：`panel.background`
+    - 网格线：`panel.grid`
+    - 主刻度网格线：`panel.grid.major`
+    - 副刻度网格线：`panel.grid.minor`
+  - 坐标轴（`axis.*`）
+    - 轴线：`axis.line`
+    - 轴标题：`axis.title`
+    - 刻度值：`axis.text`
+    - 刻度线：`axis.ticks`
+  - 图例区（`legend.*`）
+    - 背景：`legend.background`
+    - 位置：`legend.position`, `legend.position.inside`
+    - 方向：`legend.direction`
+    - 图例标题：`legend.title`
+    - 图例刻度值：`legend.text`
+    - 图例刻度线：`legend.ticks`
+- 分面图（`strip.*`）
+  - 背景：`strip.background`
+  - 文字：`strip.text`
 
 （2）`element_*()`元素属性设置函数（[自学`element_*()`系列函数帮助文档](https://ggplot2.tidyverse.org/reference/element.html){.uri}）
 
--   `element_blank()`：设置为空（移除该元素）
--   `element_rect()`：设置矩形元素（边框与底色）
--   `element_line()`：设置线条元素
--   `element_text()`：设置文本元素
+- `element_blank()`：设置为空（移除该元素）
+- `element_rect()`：设置矩形元素（边框与底色）
+- `element_line()`：设置线条元素
+- `element_text()`：设置文本元素
 
 ```{r}
 p1 = p + scale_color_continuous(palette="YlOrRd")
@@ -208,26 +208,26 @@ p1 + theme_bruce()  # bruceR主题
 
 ## 课程期末总复习
 
--   [课程大纲与学习目标回顾](https://psychbruce.github.io/RCourse/Syllabus_R-Programming_BaoHWS.pdf)
+- [课程大纲与学习目标回顾](https://psychbruce.github.io/RCourse/Syllabus_R-Programming_BaoHWS.pdf)
 
 ## 个性化答疑辅导
 
--   对提问/作业/报告/操作的个性化反馈与指导
+- 对提问/作业/报告/操作的个性化反馈与指导
 
 # 【期末作业】数据分析与可视化
 
 作业要求：
 
--   自主选择任意一个感兴趣的公开数据，综合运用本课程所学内容，迭代积累完成一项完整的R语言数据分析与可视化编程期末作业
-    -   **随堂作业1\~10、个人阶段作业①②是期末大作业的基础和拆分任务**，请在这些平时作业基础上，进一步修改完善R代码、文字注释和文档结构，即可作为期末大作业提交！
--   使用R Markdown完成，对关键代码及结果要有注释说明
+- 自主选择任意一个感兴趣的公开数据，综合运用本课程所学内容，迭代积累完成一项完整的R语言数据分析与可视化编程期末作业
+  - **随堂作业1\~10、个人阶段作业①②是期末大作业的基础和拆分任务**，请在这些平时作业基础上，进一步修改完善R代码、文字注释和文档结构，即可作为期末大作业提交！
+- 使用R Markdown完成，对关键代码及结果要有注释说明
 
 平台提交：
 
--   R Markdown原始代码文件（.Rmd）和运行得到的HTML网页文件（.html）
-    -   提交文件命名格式
-        -   `学号-姓名-R期末作业.Rmd`
-        -   `学号-姓名-R期末作业.html`
+- R Markdown原始代码文件（.Rmd）和运行得到的HTML网页文件（.html）
+  - 提交文件命名格式
+    - `学号-姓名-R期末作业.Rmd`
+    - `学号-姓名-R期末作业.html`
 
 ------------------------------------------------------------------------
 

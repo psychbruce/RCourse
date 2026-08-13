@@ -29,6 +29,8 @@
 - [第11章：多图组合（2学时）](https://psychbruce.github.io/RCourse/Chap11)（随堂作业10）
 - [第12章：主题配色（2学时）](https://psychbruce.github.io/RCourse/Chap12)（个人期末大作业）
 
+## 温馨提示
+
 📖 每章对应一个代码文档（R Markdown运行得到的HTML网页），点击章节进入浏览，然后可从右上角“Code” → “Download Rmd”下载原始代码文件。
 
 📤 随堂作业提交：大部分情况需要在[“超星泛雅”平台](https://ecnu.fanya.chaoxing.com/portal)提交R Markdown运行得到的本地HTML网页文件的**关键部分截图（只需上传截图）**，布置后一周内提交。
@@ -63,10 +65,13 @@
     - data.table与dplyr对比：[English](https://atrebas.github.io/post/2019-03-03-datatable-dplyr/)
     - data.table与pandas对比：[English](https://atrebas.github.io/post/2020-06-14-datatable-pandas/), [中文](https://cosx.org/2021/01/dt-pd/)
     - R作图参考：<https://r-graph-gallery.com/>
-- 本课程代码文档R Markdown配置
-  - 网页CSS样式：<https://psychbruce.github.io/RCourse/RmdCSS.css>
-    - 另存为文件，放于Rmd文档同级别目录，并在下方代码中配置
-  - Rmd文档属性配置模板（用于Rmd文档开头位置）
+- 网络爬虫基础工具：网页CSS元素选择器
+  - [SelectorGadget](javascript:(function()%7Bvar%20s=document.createElement('div');s.innerHTML='Loading...';s.style.color='black';s.style.padding='20px';s.style.position='fixed';s.style.zIndex='9999';s.style.fontSize='3.0em';s.style.border='2px%20solid%20black';s.style.right='40px';s.style.top='40px';s.setAttribute('class','selector_gadget_loading');s.style.background='white';document.body.appendChild(s);s=document.createElement('script');s.setAttribute('type','text/javascript');s.setAttribute('src','https://dv0akt2986vzh.cloudfront.net/unstable/lib/selectorgadget.js');document.body.appendChild(s);%7D)();)（将这个超链接拖拽到你的浏览器书签栏，即可使用）
+    - [使用教程](https://selectorgadget.com/)
+
+## R Markdown配置模板
+
+- Rmd文档属性配置模板（用于Rmd文档开头位置）
 
 ```         
 ---
@@ -87,6 +92,7 @@ output:
 ---
 ```
 
-- 网络爬虫基础工具：网页CSS元素选择器
-  - [SelectorGadget](javascript:(function()%7Bvar%20s=document.createElement('div');s.innerHTML='Loading...';s.style.color='black';s.style.padding='20px';s.style.position='fixed';s.style.zIndex='9999';s.style.fontSize='3.0em';s.style.border='2px%20solid%20black';s.style.right='40px';s.style.top='40px';s.setAttribute('class','selector_gadget_loading');s.style.background='white';document.body.appendChild(s);s=document.createElement('script');s.setAttribute('type','text/javascript');s.setAttribute('src','https://dv0akt2986vzh.cloudfront.net/unstable/lib/selectorgadget.js');document.body.appendChild(s);%7D)();)（将这个超链接拖拽到你的浏览器书签栏，即可使用）
-    - [使用教程](https://selectorgadget.com/)
+- RmdCSS样式模板：<https://psychbruce.github.io/RCourse/RmdCSS.css>
+  - 下载：打开链接，另存为文件，放于Rmd文档同级别目录
+  - 配置：在Rmd文档模板中配置
+    - `css: RmdCSS.css`是关键的配置代码，指定本地.css文件

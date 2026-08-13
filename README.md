@@ -1,9 +1,7 @@
-# 《R语言》课程代码文档
-
-## 课程大纲与代码文档索引
+# 《R语言》课程大纲与代码文档索引
 
 💻 [课程大纲 Syllabus](https://psychbruce.github.io/RCourse/Syllabus_R-Programming_BaoHWS.pdf) \| 🌍 [公开数据可选列表](https://docs.qq.com/sheet/DTXNCUWtzWWNuU05Y)\
-🙋‍♀️ [R语言答疑 Q&A](https://psychbruce.notion.site/R-Q-A-34e013131cd9807d9fd9df5280601338) \| ❤️ [课程反馈问卷](https://v.wjx.cn/vm/Pvjfj4I.aspx)\
+🙋‍♀️ [R语言答疑 Q&A](https://psychbruce.notion.site/R-Q-A-34e013131cd9807d9fd9df5280601338) \| 👍 [R课程历年评教](https://psychbruce.notion.site/R-382013131cd980da8f11c6808ce67145)\
 本课程实行“无PPT化”，全部利用代码文档实践学习，建议在电脑端浏览\
 （如果网页加载较慢，建议连接ECNU校园网或[下载GitHub原始文件](https://github.com/psychbruce/RCourse)）
 
@@ -81,8 +79,7 @@ output:
     toc: true
     toc_depth: 3
     toc_float:
-      collapsed: false
-      smooth_scroll: false
+      collapsed: true
     code_download: true
     anchor_sections: true
     highlight: pygments

@@ -9,7 +9,6 @@ output:
     toc_depth: 3
     toc_float:
       collapsed: false
-      smooth_scroll: false
     code_download: true
     anchor_sections: true
     highlight: pygments
@@ -278,7 +277,7 @@ unlink(c("data.csv", "data.sav", "data.xlsx", "data_named.xlsx",
          "datasets1.RData", "datasets2.RData"))
 ```
 
-```{r, warning=FALSE}
+```{r, eval=FALSE, warning=FALSE}
 ## 导入在线数据（douban_movies.RData）
 data = import("https://psychbruce.github.io/RCourse/data/douban_movies.RData")
 # View(data)

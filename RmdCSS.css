@@ -1,38 +1,78 @@
-/* RmdCSS Designer: Bao, H. W. S. (https://psychbruce.github.io) */
+/* Designer: Bao, H. W. S. (https://psychbruce.github.io) */
+/* Updated: 2026-07-15 */
 
 /* Page */
 body div.main-container { max-width: 1366px; }
 div.toc-content { padding-left: 20px; padding-right: 20px; }
 
-/* Font */
-body { font-family: "Source Sans Pro", "Arial", sans-serif;
-       font-size: 20px; color: #000; }
-code { font-family: "Maple Mono SC NF", "Consolas", monospace; }
+/* Main Font */
+body {
+    font-family: "Source Sans Pro", "Arial", sans-serif;
+    font-size: 20px;
+    color: #000;
+}
+code {
+    font-family: "Maple Mono SC NF", "Consolas", monospace;
+}
 
-/* Header */
-#header { text-align: center; }
+/* Header Font */
+#header {
+    border-bottom: 2px solid #ccc;
+    margin-bottom: 30px;
+    /* text-align: center; */
+}
 h1, h2, h3, h4, h5, h6 { font-weight: bold; line-height: 2; }
-.title { font-size: 36px; }
+.title { font-size: 37px; }
+.date { font-size: 20px; font-weight: normal; }
 h1 { font-size: 36px; }
 h2 { font-size: 32px; }
 h3 { font-size: 28px; }
 h4 { font-size: 24px; }
 h5 { font-size: 22px; }
 
-/* Text */
-p, li { font-size: 20px; line-height: 1.5;
-        margin-top: 10px; margin-bottom: 10px; }
-#TOC li { font-size: 16px; }
+/* Other Font */
+p, li {
+    font-size: 20px;
+    line-height: 1.5;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 button span { font-size: 16px; }
 label { font-weight: normal; }
 
-/* Code */
+/* Code Block */
+pre {
+    word-break: normal;
+    word-wrap: normal;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    border-left: 5px solid #ccc;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.20);
+    margin: 0 0 4em 0;
+}
+div.sourceCode {
+    border-radius: 10px;
+    background-color: transparent;
+    box-shadow: 1px 2px 10px rgba(51, 122, 183, 0.20);
+    margin: 1.5em 0 1.5em 0;
+}
+pre.sourceCode {
+    overflow: auto;
+    background-color: transparent;
+    border: 1px solid rgba(51, 122, 183, 0.20);
+    border-left: 5px solid #337ab7;
+}
 pre code { font-size: 20px; white-space: pre; }
 pre code .do { font-style: normal; font-weight: bold; }
 pre code .co { font-style: normal; color: #999; }
 pre code .fu { font-weight: bold; color: #8959a8; }
-pre { word-break: normal; word-wrap: normal; }
-pre.sourceCode { overflow: auto; }
+
+/* Table of Content */
+#TOC {
+    border-radius: 10px;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.20);
+}
+#TOC li { font-size: 16px; }
 
 /* Block Quote */
 blockquote ol:last-child, blockquote p:last-child, blockquote ul:last-child {
@@ -46,3 +86,4 @@ blockquote ol:last-child, blockquote p:last-child, blockquote ul:last-child {
 .table .even { background-color: #f5f5f5; }
 .table thead tr th { border-bottom-width: 0; line-height: 1.2; }
 .table tbody tr td { border-top-width: 0; line-height: 1.2; }
+table.Rtable1 { font-size: 20px; margin: 1em auto; }

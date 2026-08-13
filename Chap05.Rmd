@@ -9,7 +9,6 @@ output:
     toc_depth: 3
     toc_float:
       collapsed: false
-      smooth_scroll: false
     code_download: true
     anchor_sections: true
     highlight: pygments

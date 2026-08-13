@@ -1,0 +1,14 @@
+{
+  rmarkdown::render("Chap01.Rmd")
+  rmarkdown::render("Chap02.Rmd")
+  rmarkdown::render("Chap03.Rmd")
+  rmarkdown::render("Chap04.Rmd")
+  rmarkdown::render("Chap05.Rmd")
+  rmarkdown::render("Chap06.Rmd")
+  rmarkdown::render("Chap07.Rmd")
+  rmarkdown::render("Chap08.Rmd")
+  rmarkdown::render("Chap09.Rmd")
+  rmarkdown::render("Chap10.Rmd")
+  rmarkdown::render("Chap11.Rmd")
+  rmarkdown::render("Chap12.Rmd")
+}

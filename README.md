@@ -88,11 +88,11 @@ output:
     code_download: true
     anchor_sections: true
     highlight: pygments
-    css: RmdCSS.css
+    css: RmdCSSv2.css
 ---
 ```
 
-- RmdCSS样式模板：<https://psychbruce.github.io/RCourse/RmdCSS.css>
+- RmdCSS样式模板：<https://psychbruce.github.io/RCourse/RmdCSSv2.css>
   - 下载：打开链接，另存为文件，放于Rmd文档同级别目录
   - 配置：在Rmd文档模板中配置
-    - `css: RmdCSS.css`是关键的配置代码，指定本地.css文件
+    - `css: RmdCSSv2.css`是关键的配置代码，指定本地.css文件

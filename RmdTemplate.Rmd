@@ -1,0 +1,44 @@
+---
+title: "R Markdown模板"
+subtitle: "R Code Workflow"
+author: "作者姓名"
+date: "`r Sys.Date()`"  # 自动获取当天日期
+output:
+  html_document:
+    toc: true
+    toc_depth: 2
+    toc_float:
+      collapsed: true
+    code_download: true
+    anchor_sections: true
+    highlight: pygments
+    css: RmdCSSv2.css
+---
+
+```{r Config, include=FALSE}
+options(
+  knitr.kable.NA = "",
+  digits = 4
+)
+knitr::opts_chunk$set(
+  comment = "",
+  fig.width = 8,
+  fig.height = 6,
+  dpi = 500
+)
+```
+
+# R包
+
+```{r, message=FALSE, warning=FALSE}
+# library(bruceR)
+```
+
+# 数据分析
+
+```{r}
+summary(airquality)
+model = lm(Ozone ~ ., data=airquality)
+summary(model)
+knitr::kable(summary(model)$coefficients, digits=2)  # print regression coefficients table
+```
